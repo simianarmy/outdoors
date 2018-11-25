@@ -5,18 +5,44 @@ import Layout from "../components/layout"
 
 export default ({data}) => {
   const post = data.markdownRemark;
+  const frontmatter = post.frontmatter;
 
   return (
     <Layout>
       <div>
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{frontmatter.title}</h1>
         <p>
-          <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
-          {post.frontmatter.photos && (
-            <a href={post.frontmatter.photos} rel="noopener noreferrer" target="_blank">More Photos</a>
+          <Img fluid={frontmatter.cover.childImageSharp.fluid} />
+          {frontmatter.photos && (
+            <a href={frontmatter.photos} rel="noopener noreferrer" target="_blank">More Photos</a>
           )}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="markdownContent" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="details">
+          <table>
+            <tr>
+              <td>Difficulty</td><td>{frontmatter.difficulty}</td>
+            </tr>
+            <tr>
+              <td>Distance</td><td>{frontmatter.distance}</td>
+            </tr>
+            <tr>
+              <td>Nights</td><td>{frontmatter.nights}</td>
+            </tr>
+            <tr>
+              <td>Highest Elevation</td><td>{frontmatter.maxElevation} feet</td>
+            </tr>
+            <tr>
+              <td>Jurisdiction</td><td>{frontmatter.jurisdiction}</td>
+            </tr>
+            <tr>
+              <td>Map</td><td>{frontmatter.map}</td>
+            </tr>
+            <tr>
+              <td>Trailhead</td><td>{frontmatter.trailhead}</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </Layout>
   )
@@ -36,6 +62,13 @@ export const query = graphql`
               }
           }
         }
+        difficulty
+        distance
+        nights
+        maxElevation
+        jurisdiction
+        map
+        trailhead
       }
     }
   }

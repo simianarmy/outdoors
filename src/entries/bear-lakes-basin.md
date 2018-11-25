@@ -2,6 +2,13 @@
 title: "Bear Lakes Basin"
 date: "2018-07-04"
 cover: "../images/IMG_5356.jpg"
+difficulty: "Class 1 (4.7 mi), Class 2+ (~3 mi)"
+distance: "~8 miles"
+nights: 1
+maxElevation: "Mt Mallory (13845 ft)"
+jurisdiction: "Inyo National Forest, Lone Pine"
+map: "Tom Harrison Maps Mount Whitney High Country"
+trailhead: "Whitney Portal"
 ---
 
 <iframe
