@@ -1,9 +1,8 @@
 ---
 title: "Bear Lakes Basin"
 date: "2018-07-04"
+cover: "../images/IMG_5356.jpg"
 ---
-
-Bear Lakes Basin & stuff
 
 <iframe
 src='https://www.gaiagps.com/public/2pHsXOUXw5byIPIXhLiT0aLp?embed=True'
