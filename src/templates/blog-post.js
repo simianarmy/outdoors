@@ -11,15 +11,16 @@ export default ({data}) => {
     <Layout>
       <div>
         <h1>{frontmatter.title}</h1>
-        <p>
-          <Img fluid={frontmatter.cover.childImageSharp.fluid} />
-          {frontmatter.photos && (
-            <a href={frontmatter.photos} rel="noopener noreferrer" target="_blank">More Photos</a>
-          )}
-        </p>
+        <br/>
+        <Img fluid={frontmatter.cover.childImageSharp.fluid} />
+        {frontmatter.photos && (
+          <a href={frontmatter.photos} rel="noopener noreferrer" target="_blank">More Photos</a>
+        )}
+        <br/>
         <div className="markdownContent" dangerouslySetInnerHTML={{ __html: post.html }} />
         <div className="details">
           <table>
+            <tbody>
             <tr>
               <td>Difficulty</td><td>{frontmatter.difficulty}</td>
             </tr>
@@ -41,6 +42,7 @@ export default ({data}) => {
             <tr>
               <td>Trailhead</td><td>{frontmatter.trailhead}</td>
             </tr>
+          </tbody>
           </table>
         </div>
       </div>
