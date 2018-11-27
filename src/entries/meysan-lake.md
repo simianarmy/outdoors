@@ -1,15 +1,15 @@
 ---
-title: "Meysan Lake & Mt Mallory"
-date: "2018-08-11"
-cover: "../images/IMG_5356.jpg"
-photos: "https://www.icloud.com/sharedalbum/#B0YGWZuqDGoQ9HL"
-difficulty: "Class 1 (4.7 mi), Class 2+ (~3 mi)"
-distance: "~8 miles"
+title: Meysan Lake & Mt Mallory
+date: 2018-08-11
+cover: ../images/IMG_5356.jpg
+photos: https://www.icloud.com/sharedalbum/#B0YGWZuqDGoQ9HL
+difficulty: Class 1 (4.7 mi), Class 2+ (~3 mi)
+distance: ~8 miles
 nights: 1
-maxElevation: "Mt Mallory (13845 ft)"
-jurisdiction: "Inyo National Forest, Lone Pine"
-map: "Tom Harrison Maps Mount Whitney High Country"
-trailhead: "Whitney Portal"
+maxElevation: Mt Mallory (13845 ft)
+jurisdiction: Inyo National Forest, Lone Pine
+map: Tom Harrison Maps Mount Whitney High Country
+trailhead: Whitney Portal
 ---
 
   This was a fallback destination after drawing a very high number in the

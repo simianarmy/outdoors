@@ -2,7 +2,7 @@
 title: Bear Lakes Basin
 date: 2018-07-05
 cover: "../images/IMG_5286.jpg"
-photos: https://www.icloud.com/sharedalbum/#B0Y5qXGF1dp0P
+photos: https://www.icloud.com/sharedalbum/#B0YG4TcsmG3OeCS
 difficulty: Class 1 & 2 (xc with 3 passes)
 distance: ~30 miles
 nights: 3

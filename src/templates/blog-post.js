@@ -14,7 +14,9 @@ export default ({data}) => {
         <br/>
         <Img fluid={frontmatter.cover.childImageSharp.fluid} />
         {frontmatter.photos && (
-          <a href={frontmatter.photos} rel="noopener noreferrer" target="_blank">More Photos</a>
+          <div  style={{marginBottom: "5px"}}>
+            <a href={frontmatter.photos} rel="noopener noreferrer" target="_blank">More Photos</a>
+          </div>
         )}
         <br/>
         <div className="markdownContent" dangerouslySetInnerHTML={{ __html: post.html }} />
