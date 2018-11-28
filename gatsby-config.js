@@ -40,8 +40,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: "Marc's Outdoors Blog",
+        short_name: 'Marc Outdoors',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#ffffff',
@@ -51,7 +51,7 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
