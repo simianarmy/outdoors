@@ -6,7 +6,7 @@ photos: https://www.facebook.com/media/set/?set=a.10210095196948865&type=1&l=a3d
 difficulty: Class 2
 distance: ~17 miles
 nights: 3
-maxElevation: 50
+maxElevation: 50 ft
 jurisdiction: Olympic National Park
 map: Custom Correct North Olympic Coast
 trailhead: Rialto Beach, La Push

@@ -33,7 +33,7 @@ export default ({data}) => {
               <td>Nights</td><td>{frontmatter.nights}</td>
             </tr>
             <tr>
-              <td>Highest Elevation</td><td>{frontmatter.maxElevation} feet</td>
+              <td>Highest Elevation</td><td>{frontmatter.maxElevation}</td>
             </tr>
             <tr>
               <td>Jurisdiction</td><td>{frontmatter.jurisdiction}</td>
