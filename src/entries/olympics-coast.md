@@ -4,11 +4,11 @@ date: 2016-11-25
 cover: ../images/IMG_4048.jpeg
 photos: https://www.facebook.com/media/set/?set=a.10210095196948865&type=1&l=a3db20248f
 difficulty: Class 2
-distance: ~25 miles
+distance: ~17 miles
 nights: 3
 maxElevation: 50
 jurisdiction: Olympic National Park
-map:
+map: Custom Correct North Olympic Coast
 trailhead: Rialto Beach, La Push
 ---
 
@@ -19,6 +19,10 @@ Continuing on my Epic Thanksgiving holiday trek tradition, I returned to the
 Olympic peninsula to make a hike that I had wanted to do for a few years.  Hike
 is from Rialto Beach in La Push north to Sand Point at the northern edge of the
 park.
+
+Hike involves a lot of careful stepping on slippery rocks or navigating around
+trees.  There are some headlands that require climbing with the help of rope
+ladders.  Rugged beauty, solitude, the Pacific ocean!
 
 The hike requires shuttling about 60 miles.  I was unable to secure a van due
 to the holiday, so decided to shuttle by bike.  Probably not the best
