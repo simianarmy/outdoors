@@ -10,6 +10,7 @@ maxElevation: San Bernardino East Peak (10649 ft)
 jurisdiction: San Bernardino National Forest
 map: USGS Big Bear Lake, Forest Falls
 trailhead: FSR 1N07
+tags: ["san bernardino", "california", "hike", "2018", "10-20 miles", "snow"]
 ---
 
 A 10K+ foot peak just out of town without the normal summer crowds

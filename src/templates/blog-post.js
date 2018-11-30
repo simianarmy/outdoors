@@ -1,7 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
+import "./tags.scss"
+const _ = require("lodash")
+
 
 export default ({data}) => {
   const post = data.markdownRemark;
@@ -47,6 +50,18 @@ export default ({data}) => {
           </tbody>
           </table>
         </div>
+        <div className="tags">
+          <h3>Tags</h3>
+          <div>
+            {frontmatter.tags.map(t => (
+              <Link to={`/tags/${_.kebabCase(t)}`}>
+                <div className="tag">
+                  <span>{t}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </Layout>
   )
@@ -73,6 +88,7 @@ export const query = graphql`
         jurisdiction
         map
         trailhead
+        tags
       }
     }
   }

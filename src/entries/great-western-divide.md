@@ -10,6 +10,11 @@ maxElevation: Forester Pass (13180 ft)
 jurisdiction: Kings Canyon National Park
 map: Tom Harrison Maps Kings Canyon High Country, Mt Whitney High Country
 trailhead: Roads End, Kings Canyon National Park
+tags: ["sierras", "great western divide", "50-60 miles", "kings canyon",
+"forester pass", "north guard", "mount brewer", "south guard", "thunder
+mountain", "mount jordan", "kings-kern divide", "class 2", "pct", "jmt",
+"california", "hike", "2018", "cross-country", "bear", "coyote", "fox",
+"rattlesnake"]
 ---
 
   A damn fine cross-country hike.  Circumnavigates summits of North Guard,
@@ -41,6 +46,9 @@ trailhead: Roads End, Kings Canyon National Park
 
   Saw quite a few bears.  One climbing down from a tree in the parking lot(!), one
   cub/yearling in the bushes next to the trail, and a couple across a river.
+
+  Saw a fox and possibly coyote not far from each other
+
   Just missed a rattlesnake or two.
 
   Next time I will bring a fishing rod - all the lakes were jumping with

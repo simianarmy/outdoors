@@ -10,6 +10,7 @@ maxElevation:
 jurisdiction: Joshua Tree National Forest
 map: USGS Keys View
 trailhead: NW & N park entrance
+tags: ["joshua tree", "desert", "california", "hike", "2018"]
 ---
 
 Checked out Joshua Tree for a couple nights, visiting the NW corner with higher

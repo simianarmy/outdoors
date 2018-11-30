@@ -10,6 +10,8 @@ maxElevation: Glen Pass (11978 ft)
 jurisdiction: Kings Canyon National Park
 map: Tom Harrison Maps Kings Canyon High Country
 trailhead: Roads End
+tags: ["rake lakes", "2017", "sierras", "california", "hike", "30-40 miles",
+"hike", "glen pass", "kings canyon", "bear"]
 ---
 
 First hike in the South Sierras!  This was my first multi-night outing in the

@@ -10,6 +10,8 @@ maxElevation: Italy Pass (12320 ft)
 jurisdiction: White Mountain Ranger District, Bishop
 map: Tom Harrison Maps Mono Divide High Country
 trailhead: Pine Creek
+tags: ["bear lakes", "granite park", "italy pass", "dancing bear pass", "pine creek", "french canyon", "sierras", "california", "hike", "2018", "cross-country",
+"mono divide", "white mountain", "bishop", "30-40 miles"]
 ---
 
 Loop climbs Pine Creek trail,traverses Granite Park and Bear Lakes Basin, over Feather Pass to junction

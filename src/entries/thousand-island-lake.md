@@ -10,6 +10,8 @@ maxElevation: Island Pass (10225 ft)
 jurisdiction: June Lake
 map: Tom Harrison Maps Mammoth High Country
 trailhead: Silver Lake
+tags: ["thousand island lake", "island pass", "2017", "sierras", "california",
+"hike", "20-30 miles", "mammoth", "mono lake", "agnew pass", "snow", "coyote"]
 ---
 
 Arduous but ultimately very rewarding late fall hike through Mammoth high

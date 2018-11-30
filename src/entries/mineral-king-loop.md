@@ -10,6 +10,8 @@ maxElevation: Franklin Pass (11840 ft)
 jurisdiction: Sequoia National Park
 map: Tom Harrison Maps Mount Whitney High Country
 trailhead: Mineral King
+tags: ["mineral king", "sierras", "california", "2018", "50-60 miles",
+"sequoia", "sawtooth pass", "kern canyon", "franklin pass", "hike", "snow"]
 ---
 
   An early season hike with plenty of adventures.  Will definitely return for
