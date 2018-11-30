@@ -12,7 +12,7 @@ map: Tom Harrison Maps Kings Canyon High Country, Mt Whitney High Country
 trailhead: Roads End, Kings Canyon National Park
 tags: ["sierras", "great western divide", "50-60 miles", "kings canyon",
 "forester pass", "north guard", "mount brewer", "south guard", "thunder
-mountain", "mount jordan", "kings-kern divide", "class 2", "pct", "jmt",
+mountain", "mount jordan", "kings-kern divide", "class 2", "PCT", "JMT",
 "california", "hike", "2018", "cross-country", "bear", "coyote", "fox",
 "rattlesnake"]
 ---
