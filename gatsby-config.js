@@ -58,6 +58,21 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-130206157-1",
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/tags/**"],
+        // Enables Google Optimize using your container Id
+      },
+    },
   ],
 }
