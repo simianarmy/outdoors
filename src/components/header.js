@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import heroImage from "../images/IMG_4610.jpeg";
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
@@ -10,8 +11,11 @@ const ListLink = props => (
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: '#a5b27c',
-      marginBottom: '1.45rem',
+      //background: '#a5b27c',
+      //marginBottom: '1.45rem',
+      background: `url(${heroImage}) no-repeat center`,
+      backgroundSize: 'cover',
+      position: 'relative'
     }}
   >
     <div
