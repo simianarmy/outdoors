@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Notes on Travels in Nature',
-    keywords: 'nature, travel, outdoors',
+    keywords: 'nature, travel, outdoors, hiking, backpacking, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, high sierras, glaciers, volcanoes, wild, backcountry, survival',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
