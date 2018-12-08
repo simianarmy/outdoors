@@ -1,6 +1,6 @@
 ---
 title: Wonderland Trail
-date: 2016-07-14
+date: 2016-08-14
 cover: ../images/IMG_3228.jpeg
 photos: https://www.icloud.com/sharedalbum/#B0Y5yeZFhLruVD
 difficulty: Class 1
