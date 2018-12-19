@@ -10,7 +10,7 @@ maxElevation: 50 ft
 jurisdiction: Olympic National Park
 map: Custom Correct North Olympic Coast
 trailhead: Rialto Beach, La Push
-tags: ["olympic", "coast", "beach", "ocean", "washington", "2016", "class 2",
+tags: ["olympics", "coast", "beach", "ocean", "washington", "2016", "class 2",
 "10-20 miles", "shuttle", "cross-country", "hike"]
 ---
 
