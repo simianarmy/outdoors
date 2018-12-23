@@ -25,8 +25,8 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     graphql(`
-      {
-        allMarkdownRemark {
+      query {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               fields {
@@ -49,6 +49,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       // Make the blog post pages
       posts.forEach(({ node }, index) => {
+        console.log('creating page ', node.fields.slug);
         createPage({
           path: node.fields.slug,
           component: blogTemplate,
