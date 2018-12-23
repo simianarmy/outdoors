@@ -21,6 +21,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.2.2",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
     "typography-theme-stow-lake": "^0.15.10"

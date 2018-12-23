@@ -2,13 +2,16 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
+//import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "./blog-post.scss"
 import "./tags.scss"
 const _ = require("lodash")
 
 
-export default ({data}) => {
+export default ({data, location, pageContext}) => {
   const post = data.markdownRemark;
   const frontmatter = post.frontmatter;
+  const { next, prev } = pageContext;
 
   return (
     <Layout>
@@ -49,6 +52,20 @@ export default ({data}) => {
             </tr>
           </tbody>
           </table>
+        </div>
+        <div className="pagination">
+          <p>
+            {prev && (
+              <Link className="prev" to={prev.fields.slug}>
+                {prev.frontmatter.title}
+              </Link>
+            )}
+            {next && (
+              <Link className="next" to={next.fields.slug}>
+                {next.frontmatter.title}
+              </Link>
+            )}
+          </p>
         </div>
         <div className="tags">
           <h3>Tags</h3>

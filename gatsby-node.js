@@ -33,6 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
                 slug
               }
               frontmatter {
+                title
                 tags
               }
             }
@@ -47,7 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
       const tagTemplate = path.resolve("src/templates/tags.js")
 
       // Make the blog post pages
-      posts.forEach(({ node }) => {
+      posts.forEach(({ node }, index) => {
         createPage({
           path: node.fields.slug,
           component: blogTemplate,
@@ -55,6 +56,8 @@ exports.createPages = ({ graphql, actions }) => {
             // Data passed to context is available
             // in page queries as GraphQL variables.
             slug: node.fields.slug,
+            prev: index === 0 ? null : posts[index - 1].node,
+            next: index === (posts.length - 1) ? null : posts[index + 1].node
           },
         });
       });
