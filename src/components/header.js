@@ -2,12 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import heroImage from "../images/IMG_4610.jpeg";
 
-const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
-
 const Header = ({ siteTitle }) => (
   <div
     style={{
@@ -38,10 +32,6 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
-    <ul style={{ listStyle: `none`, float: `right` }}>
-      <ListLink to="/about/">About</ListLink>
-      <ListLink to="/contact/">Contact</ListLink>
-    </ul>
   </div>
 )
 
