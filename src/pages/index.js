@@ -1,41 +1,46 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { rhythm } from '../utils/typography'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SearchInput from '../components/search-input.js';
+import FilteredList from '../components/filtered-list.js';
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SearchInput />
-    <div>
-      <h1>Outings</h1>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            style={{ color: 'inherit', textDecoration: 'none' }}
-          >
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
-              {node.frontmatter.title}{' '}
-              <span
-                style={{
-                  color: '#bbb',
-                }}
-              >
-                — {node.frontmatter.date}
-              </span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </Link>
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      initialItems: props.data.allMarkdownRemark.edges,
+      items: []
+    };
+  }
+
+  componentDidMount() {
+    this.setState({items: this.state.initialItems});
+  }
+
+  filterItems = (item) => {
+    const term = item.toLowerCase();
+    const regex = new RegExp(`\\w*${term}\\w*`, 'gi');
+
+    const items = this.state.initialItems.filter(item => {
+      return regex.test(item.node.frontmatter.title) || regex.test(item.node.rawMarkdownBody);
+    });
+
+    this.setState({items});
+  };
+
+  render() {
+    return (
+      <Layout>
+        <SearchInput onChange={this.filterItems}/>
+        <div>
+          <h1>Outings</h1>
+          <FilteredList items={this.state.items}/>
         </div>
-      ))}
-    </div>
-  </Layout>
-)
+      </Layout>
+    );
+  }
+}
 
 export const query = graphql`
   query {
@@ -44,6 +49,7 @@ export const query = graphql`
       edges {
         node {
           id
+          rawMarkdownBody
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
