@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 // Components
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
-import Layout from "../components/layout.js";
+import Layout from '../components/layout.js'
 
 const TagsPage = ({
   data: {
@@ -47,10 +47,7 @@ export default TagsPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      limit: 2000
-      filter: {}
-    ) {
+    allMarkdownRemark(limit: 2000, filter: {}) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

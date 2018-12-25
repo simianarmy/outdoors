@@ -1,15 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Components
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
+    totalCount === 1 ? '' : 's'
   } tagged with "${tag}"`
 
   return (
@@ -18,7 +18,7 @@ const Tags = ({ pageContext, data }) => {
       <ul>
         {edges.map(({ node }) => {
           const { title } = node.frontmatter
-          const { slug } = node.fields;
+          const { slug } = node.fields
           return (
             <li key={slug}>
               <Link to={slug}>{title}</Link>

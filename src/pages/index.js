@@ -1,26 +1,29 @@
 import React from 'react'
-import { Link, graphql } from "gatsby"
-
-import { rhythm } from "../utils/typography"
+import { Link, graphql } from 'gatsby'
+import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
-//import Image from '../components/image'
+import SearchInput from '../components/search-input.js';
 
-const IndexPage = ({data}) => (
+const IndexPage = ({ data }) => (
   <Layout>
+    <SearchInput />
     <div>
       <h1>Outings</h1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
-          <Link to={node.fields.slug} style={{color: "inherit", textDecoration: "none"}}>
+          <Link
+            to={node.fields.slug}
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
             <h3
               style={{
-                marginBottom: rhythm(1 / 4)
+                marginBottom: rhythm(1 / 4),
               }}
             >
-              {node.frontmatter.title}{" "}
+              {node.frontmatter.title}{' '}
               <span
                 style={{
-                  color: "#bbb"
+                  color: '#bbb',
                 }}
               >
                 — {node.frontmatter.date}
@@ -28,7 +31,7 @@ const IndexPage = ({data}) => (
             </h3>
             <p>{node.excerpt}</p>
           </Link>
-          </div>
+        </div>
       ))}
     </div>
   </Layout>

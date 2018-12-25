@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import heroImage from "../images/IMG_4610.jpeg";
+import heroImage from '../images/IMG_4610.jpeg'
 
 const Header = ({ siteTitle }) => (
   <div
@@ -9,7 +9,7 @@ const Header = ({ siteTitle }) => (
       //marginBottom: '1.45rem',
       background: `url(${heroImage}) no-repeat center`,
       backgroundSize: 'cover',
-      position: 'relative'
+      position: 'relative',
     }}
   >
     <div

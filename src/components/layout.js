@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
-import Footer from './footer';
+import Footer from './footer'
 
-import "./layout.scss";
+import './layout.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -32,18 +32,10 @@ const Layout = ({ children }) => (
         </Helmet>
         <div className="site">
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            className="site-content"
-            style={{
-              margin: '0 auto',
-              maxWidth: 650,
-              padding: '0px 1.0875rem 1.45rem',
-              paddingTop: 0,
-            }}
-          >
+          <div className="site-content">
             {children}
           </div>
-          <Footer/>
+          <Footer />
         </div>
       </>
     )}

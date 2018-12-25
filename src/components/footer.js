@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import { Link } from 'gatsby'
 
 const ListLink = props => (
@@ -16,5 +16,5 @@ const Footer = () => (
       </ul>
     </div>
   </div>
-);
-export default Footer;
+)
+export default Footer
