@@ -10,7 +10,7 @@ maxElevation: Mt Mallory (13845 ft)
 jurisdiction: Inyo National Forest, Lone Pine
 map: Tom Harrison Maps Mount Whitney High Country
 trailhead: Whitney Portal
-tags: ["meysan lake", "mount mallory", "class 2+", "inyo", "sierras",
+tags: ["meysan lake", "mount mallory", "class 2", "inyo", "sierras",
 "california", "2018", "0-10 miles"]
 ---
 
