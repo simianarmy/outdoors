@@ -2,8 +2,8 @@
 
 ## TODO
 
-- Previous / Next entry nav links
+- ~~Previous / Next entry nav links~~
 
-- Content search
+- ~~Content search~~
 
-- Hike / Climb sections
+- Hike / Climb / Alpine sections
