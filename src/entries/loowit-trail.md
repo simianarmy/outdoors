@@ -24,7 +24,7 @@ warned me against continuing on due to the dangerous arroyo crossings and lack
 of water, I thought I would make a another day westwards to the edge of the
 no-camp zone then return on the 3rd day.
 
-Filled up with water at the lake and backtracked counter-clockwise on the Loowit
+Filled up with water at the lake and backtracked clockwise on the Loowit
 trail to the Toutle river campground.  Made the decision to attempt the last
 3/4 of the route in one push on the 3rd day.  Up early but misread the map and
 climbed for 30 minutes instead of crossing the Toutle, which lost me a good
