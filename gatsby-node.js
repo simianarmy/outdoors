@@ -49,7 +49,10 @@ exports.createPages = ({ graphql, actions }) => {
 
       // Make the blog post pages
       posts.forEach(({ node }, index) => {
-        console.log('creating page ', node.fields.slug);
+        //console.log('creating page ', index, node.fields.slug);
+        const prevNode = index === 0 ? null : posts[index - 1].node;
+        const nextNode = index === (posts.length - 1) ? null : posts[index + 1].node;
+
         createPage({
           path: node.fields.slug,
           component: blogTemplate,
@@ -57,8 +60,8 @@ exports.createPages = ({ graphql, actions }) => {
             // Data passed to context is available
             // in page queries as GraphQL variables.
             slug: node.fields.slug,
-            prev: index === 0 ? null : posts[index - 1].node,
-            next: index === (posts.length - 1) ? null : posts[index + 1].node
+            prev: prevNode,
+            next: nextNode
           },
         });
       });
