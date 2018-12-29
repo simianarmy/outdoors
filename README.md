@@ -1,5 +1,7 @@
 # My outdoor blog Gatsby site
 
+Live @ [simianarmy.com](http://www.simianarmy.com)
+
 ## TODO
 
 - ~~Previous / Next entry nav links~~
