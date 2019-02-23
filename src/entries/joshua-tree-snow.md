@@ -3,7 +3,7 @@ title: Joshua Tree
 date: 2019-02-18
 cover: ../images/IMG_5720.jpg
 photos: https://www.icloud.com/sharedalbum/#B0Y5fk75vH0Vyc
-difficulty: 5.7
+difficulty: "5.7"
 distance:
 nights:
 maxElevation:
