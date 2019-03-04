@@ -1,34 +1,33 @@
 ---
 title: Joshua Tree
-date: 2019-02-18
-cover: ../images/IMG_5720.jpg
-photos: https://www.icloud.com/sharedalbum/#B0Y5fk75vH0Vyc
-difficulty: "5.7"
+date: 2019-03-02
+cover: ../images/IMG_5732.jpg
+photos: https://www.icloud.com/sharedalbum/#B0Y5idkMwSziJ7
+difficulty: 5.7 - 5.11c
 distance:
 nights:
 maxElevation:
 jurisdiction: Joshua Tree National Forest
 map: USGS Keys View
-trailhead: N park entrance - Hidden Valley
+trailhead: N park entrance - Hall of Horrors
 tags: ["joshua tree", "desert", "california", "climb", "2019", "top rope",
-"rappel", "hidden valley"]
+"hall of horrors", "aid climb", "body belay"]
 ---
 
-Cool day of climbing at Joshua Tree with real snow in the desert!
+Cool day of climbing at Joshua Tree Hall of Horrors rocks with some strong winds to add some
+challenge.
 
-Beautiful scenerey from a fresh coat of snow on Joshua Tree as we arrived in
-the morning.  Spent the day on a single 5.7 route (Spaghetti & Chili?) where
-Andre practiced placing trad gear while I toproped.  A single crux involving
-undercling holds on a big flake made the route feel much harder than a 5.7, but
-good practice and plenty of rest in between climbs.  Rappelling down from the
-~75ft pitch added some reward to the ending.
+Warmed up on a 5.7 and 5.8 until noon then moved to another formation to find
+a potential 5.7 with trad anchor.  Unable to find a good spot for such an
+anchor, setup on a bolted anchor for what we thought was a 5.10-ish sport climb
+route.  I got to put my body belay skills to the test to lower Andre down to
+the anchor.  Andre did the 1st attempt and it looked pretty insane, but he
+eventually made it up and set some draws to prevent some serious pendulums.
+On my attempt, I quickly found myself at a point where I had to aid climb.  After good
+instructions from Andre, was able to hoist myself up via feet in slings enough
+to get over the crux.  Some challenging moves later made it to the top.  This
+turned out being a 5.11b/c route (Cactus Flower)!  Pretty happy to have been able to finish it,
+even with toprope and aid climbing!  Andre climbed it one more time to clean,
+then did some trad setup but wind was getting too strong to do much more.
 
-Watched a nearby group toprope a 5.10d on a longer route - looked kind of fun
-but probably v challenging.  Enjoyed views of the snow-covered Joshua trees and
-boulders from the top of the crag.  Called it a day after 4 or so climbs.
-
-While packing up, a passing climber informed us that someone had died on our
-route a few years ago - hit his (unprotected) head on a shelf after a piece of gear
-slipped...yikes!  Joshua Tree lead climbing is for pros only!  I'll stick to
-toproping there.
 
