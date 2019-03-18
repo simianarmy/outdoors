@@ -1,53 +1,47 @@
 ---
-title: Red Rock Canyon
-date: 2019-01-21
-cover: ../images/IMG_5684.jpg
-photos: https://www.icloud.com/sharedalbum/#B0YGDdyTvGW9l40
-difficulty: 5.6 - 5.9
+title: Alabama Hills
+date: 2018-11-03
+cover: ../images/DSC_2948.jpg
+photos: https://www.icloud.com/sharedalbum/#B0Y55Z2WMqNXap
+difficulty: 5.6 - 5.8
 distance:
-nights: 2
+nights: 1
 maxElevation:
-jurisdiction: Red Rock National Monument
+jurisdiction: Inyo National Forest, Lone Pine
 map:
-trailhead: Sandstone Quarry & Calico I
-tags: ["2019", "nevada", "climb", "top rope", "rappel", "red rock", "fairview"]
+trailhead: Alabama Hills
+tags: ["2018", "sierras", "california", "climb", "lead climb", "top rope",
+"rappel", "alabama hills", "multipitch", "injury"]
 ---
 
-First time climbing at top climbing destination: Red Rock Canyon, Nevada.
+First time climbing at Alabama Hills.  1 full day mostly lead-climbing on
+various 5.6 - 5.8 routes. Drove up with Andre and met Patrick at Lone Pine.
+Patrick was familiar with the Hills and took us to some great routes of which
+there were hundreds.  Fairly busy with climbers & RV campers but there were
+plenty of routes for everyone.
+Climbed on iconic shark-fin rock with great views of Whitney in the distance.
+Moved on to nice 2-pitch then to some harder bouldery short climbs with Andre
+leading & us top-roping.  Camped at nearby paid campground mostly filled with
+RV campers.
 
-Drove up with Andre Sat morning and made it to the crag by noon.  Parking lot
-was full with tourists but walked up to route a few feet from car.  Andre
-practiced trad climbing on a short 5.6 crack and I followed on top-rope,
-practicing cleaning the cams and draws.  Toes still sore from last weekend's
-climbing on too-small shoes,  but pain would subside by 2nd day and gone on
-3rd.  New shoes may be too big for me than the last, but at least my toes won't
-frickin fall off.  After a couple on the crack moved to some harder routes
-nearby then made for the city for dinner and supplies.  Set up camp at nearby
-campground walk-up sites and hit the sack early.
+Broke tent pole from expensive Hilleberg tent! :(
 
-2nd day started at Callico Hills area on the iconic red rock with some crowded
-but enjoyable 5.8 routes.  Moved on to a 5.6 arrete climb then back to the
-previous day's crack.  After full day, enjoyed some sushi and drove down the
-Vegas strip to see the shiny lights.  Much more crowded and closed-in than
-the 90's Vegas I remember.  Back to camp where we stayed up to watch the rare
-Super Blood Wolf Moon event!  Once the moon had eclipsed and turned a rusty red
-hue, wind really picked up so battened down the hatches and hit the sack.
-Unfortunately since my Hilleberg was still out of commission, only had
-a hammock and ultralight z-packs tent.  With no trees, was relying on the
-z-packs which was no match for the 60 mph gusts assaulting the desert canyon
-all night.  Spent most of the night restoring fallen trecking poles that act as
-the only structure and basically being miserable.  By 5:30 I was already awake
-for Andre's wake-up call.  Broke camp and decided at breakfast that it was
-probably too windy to climb.  Nevertheless it seemed to have died down in town,
-so we drove back to the reserve to check it out.  I thought it was too windy
-but Andre seemed undeterred so we scrambled to a rock with a 5.7 or 5.8
-multipitch.  Rock was just too cold for me and wind was blowing some light
-hail pellets, so I convinced Andre we should bail after the 1st pitch.
+On the 2nd lead climb of the 2nd day, was overconfident on a quite run-out section of
+a 5.7 and unfortunately fell while clipping on the run-out.  Fell about 10 ft
+and struck inner ankle of left foot
+against the bolt.  Impact sheared the skin causing a wide bloody gash.
+I felt the sharp pain but didn't realize I was bleeding until someone on the
+ground asked if that was my blood - after which I noticed quite a bit of red on
+the wall.  Was lowered and helped to the ground by the many bystander climbers
+in the area.  Fortunately we were close to camps and cars so there were plenty
+of people to help with first aid & bandages.  Got wound cleaned and dressed,
+took some ibuprofen and helped to Andre's car.  Still bleeding pretty solidly
+through bandages, we were expecting to have to drive to Bishop for nearest
+hospital, but asked in town and fortunately there was a small hospital with ER
+facility down the street.  Hobbled into the ER dripping blood on the ground and
+spent a few hours getting stitched up (18 stitches!)  Was given crutches and
+new dressings.  We ate lunch at a local diner then Andre drove us home.
 
-After that we decided to check out a climbing spot outside of Barstow, CA on the
-way home to see if it was less windy.  Drove into Apple Valley to a large clump of boulders (Fairview) and were met by
-the friendly local routesetter who sold Andre a guidebook of his and led us to
-some routes.  By the time we got there we had time for only a couple climbs each, but I got more chances to practice anchor & rope management
-with a climber below for future multipitch climbs.
-
+It would take about 2 months before I could walk normally (mostly) again, but
+fortunately no fractures or serious nerve / ligament damage.
 
