@@ -1,8 +1,8 @@
 ---
 title: Taquitz
 date: 2019-06-22
-cover: ../images/IMG_5884.jpeg
-photos: https://www.icloud.com/sharedalbum/#B0YGdIshaGH2cWJ
+cover: ../images/taquitz1.jpg
+photos: https://www.icloud.com/sharedalbum/#B0YGQOeMmGaZdiE
 difficulty: "5.5"
 distance:
 nights: 1
@@ -40,7 +40,7 @@ before crashing for the night.  Weather was warm enough for me to be comfortable
 
 Next day we had a relaxing start with breakfast in town then found the base of
 the day's route, Fingertip Traverse (5.5).  Lots of cool climbing, even using
-a tree at one point.  The namesake traverse was a bit scary for me - involving
+a tree at one point (filled with biting ants).  The namesake traverse was a bit scary for me - involving
 fingertips and a scary exposed drop that I'm not sure I would evef be
 comfortable leading..
 A girl from acouple who were climbing a more difficult route nearby sounded
