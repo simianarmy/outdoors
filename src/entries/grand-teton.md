@@ -3,7 +3,7 @@ title: Grand Teton
 date: 2019-08-29
 cover: ../images/IMG_6150.jpg
 photos: https://www.icloud.com/sharedalbum/#B0Y5ejO177o94a
-difficulty: 5.4
+difficulty: "5.4"
 distance: ~7 miles
 nights: 4
 maxElevation: Grand Teton (13700 ft)
