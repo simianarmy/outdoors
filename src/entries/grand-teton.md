@@ -1,8 +1,8 @@
 ---
 title: Grand Teton
 date: 2019-08-29
-cover: ../images/IMG_20190901_124510035_HDR.jpg
-photos:
+cover: ../images/IMG_6150.jpg
+photos: https://www.icloud.com/sharedalbum/#B0Y5ejO177o94a
 difficulty: 5.4
 distance: ~7 miles
 nights: 4
