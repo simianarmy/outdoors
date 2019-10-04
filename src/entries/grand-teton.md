@@ -10,8 +10,7 @@ maxElevation: Grand Teton (13700 ft)
 jurisdiction: Grand Teton National Park
 map:
 trailhead: Lupine Meadows
-tags: ["grand teton", "wyoming", "owen-spalding", "climb", "trad",
-"2019", "0-10 miles", "free rappel", "multipitch", "double-rope belay"]
+tags: ["grand teton", "wyoming", "owen-spalding", "climb", "trad", "2019", "0-10 miles", "free rappel", "multipitch", "double-rope belay"]
 ---
 
 Grand Teton camp & climb
