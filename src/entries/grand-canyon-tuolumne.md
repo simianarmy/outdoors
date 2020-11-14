@@ -1,6 +1,6 @@
 ---
 title: Grand Canyon of the Tuolumne River
-date: 2020-09-29
+date: 2020-10-29
 cover: "../images/IMG_7649.jpeg"
 photos: https://www.icloud.com/sharedalbum/#B0YGdPblXGHtrzy 
 difficulty: Class 1
