@@ -1,0 +1,117 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title"
+      }
+    },
+    "header_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Header Image"
+      }
+    },
+    "photo_album_link": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Photo Album Link"
+      }
+    },
+    "notes": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Notes"
+      }
+    },
+    "fun_facts": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Fun Facts"
+      }
+    },
+    "route_map_link": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Route Map Link"
+      }
+    },
+    "difficulty": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Class 1",
+          "Class 2",
+          "Class 3",
+          "Class 4",
+          "Class 5",
+          "5.4",
+          "5.5",
+          "5.6",
+          "5.7",
+          "5.8",
+          "5.9",
+          "5.10",
+          "5.10+"
+        ],
+        "default_value": "Class 1",
+        "label": "Difficulty"
+      }
+    },
+    "distance_miles": {
+      "type": "Number",
+      "config": {
+        "label": "Distance Miles"
+      }
+    },
+    "nights": {
+      "type": "Number",
+      "config": {
+        "label": "Nights"
+      }
+    },
+    "max_elevation_feet": {
+      "type": "Number",
+      "config": {
+        "label": "Max Elevation Feet"
+      }
+    },
+    "jurisdition": {
+      "type": "Text",
+      "config": {
+        "label": "Jurisdition"
+      }
+    },
+    "map_name": {
+      "type": "Text",
+      "config": {
+        "label": "Map Name"
+      }
+    },
+    "trailhead": {
+      "type": "Text",
+      "config": {
+        "label": "Trailhead"
+      }
+    },
+    "tags": {
+      "type": "Text",
+      "config": {
+        "label": "Tags"
+      }
+    }
+  }
+}

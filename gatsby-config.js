@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Notes on Travels in Nature',
-    keywords: 'nature, travel, outdoors, hiking, backpacking, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, high sierras, glaciers, volcanoes, wild, backcountry, survival',
+    keywords:
+      'nature, travel, outdoors, hiking, backpacking, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, high sierras, glaciers, volcanoes, wild, backcountry, survival',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -17,6 +18,33 @@ module.exports = {
       options: {
         name: `entries`,
         path: `${__dirname}/src/entries/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'simianarmy',
+        fetchLinks: [],
+        htmlSerializer: ({ node, key, value }) => (
+          type,
+          element,
+          content,
+          children
+        ) => {},
+        schemas: {
+          page: require(`${__dirname}/custom_types/outing.json`),
+        },
+        lang: '*',
+        imageImgixParams: {
+          auto: 'compress,format',
+          fit: 'max',
+          q: 50,
+        },
+        imagePlaceholderImgixParams: {
+          w: 100,
+          blur: 15,
+          q: 50,
+        },
       },
     },
     {
@@ -62,7 +90,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-130206157-1",
+        trackingId: 'UA-130206157-1',
         // Puts tracking script in the head instead of the body
         head: true,
         // Setting this parameter is optional
@@ -70,10 +98,10 @@ module.exports = {
         // Setting this parameter is also optional
         respectDNT: true,
         // Avoids sending pageview hits from custom paths
-        exclude: ["/tags/**"],
+        exclude: ['/tags/**'],
         // Enables Google Optimize using your container Id
       },
     },
-    `gatsby-mdx`
+    `gatsby-mdx`,
   ],
 }
