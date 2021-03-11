@@ -4,9 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require('path');
+const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const _ = require("lodash")
+const _ = require('lodash')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -20,74 +20,69 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  return new Promise((resolve, reject) => {
-    graphql(`
-      query {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                tags
-              }
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              tags
             }
           }
         }
       }
-    `
-    ).then(result => {
-      const posts = result.data.allMarkdownRemark.edges;
+    }
+  `)
 
-      const blogTemplate = path.resolve(`./src/templates/blog-post.js`);
-      const tagTemplate = path.resolve("src/templates/tags.js")
+  const posts = result.data.allMarkdownRemark.edges
 
-      // Make the blog post pages
-      posts.forEach(({ node }, index) => {
-        //console.log('creating page ', index, node.fields.slug);
-        const prevNode = index === 0 ? null : posts[index - 1].node;
-        const nextNode = index === (posts.length - 1) ? null : posts[index + 1].node;
+  const blogTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const tagTemplate = path.resolve('src/templates/tags.js')
 
-        createPage({
-          path: node.fields.slug,
-          component: blogTemplate,
-          context: {
-            // Data passed to context is available
-            // in page queries as GraphQL variables.
-            slug: node.fields.slug,
-            prev: prevNode,
-            next: nextNode
-          },
-        });
-      });
+  // Make the blog post pages
+  posts.forEach(({ node }, index) => {
+    //console.log('creating page ', index, node.fields.slug);
+    const prevNode = index === 0 ? null : posts[index - 1].node
+    const nextNode = index === posts.length - 1 ? null : posts[index + 1].node
 
-      let tags = []
-      // Iterate through each post, putting all found tags into `tags`
-      _.each(posts, edge => {
-        if (_.get(edge, "node.frontmatter.tags")) {
-          tags = tags.concat(edge.node.frontmatter.tags)
-        }
-      })
-      // Eliminate duplicate tags
-      tags = _.uniq(tags)
+    createPage({
+      path: node.fields.slug,
+      component: blogTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug,
+        prev: prevNode,
+        next: nextNode,
+      },
+    })
+  })
 
-      // Make tag pages
-      tags.forEach(tag => {
-        createPage({
-          path: `/tags/${_.kebabCase(tag)}/`,
-          component: tagTemplate,
-          context: {
-            tag,
-          },
-        })
-      });
+  let tags = []
+  // Iterate through each post, putting all found tags into `tags`
+  _.each(posts, edge => {
+    if (_.get(edge, 'node.frontmatter.tags')) {
+      tags = tags.concat(edge.node.frontmatter.tags)
+    }
+  })
+  // Eliminate duplicate tags
+  tags = _.uniq(tags)
 
-      resolve()
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag)}/`,
+      component: tagTemplate,
+      context: {
+        tag,
+      },
     })
   })
 }
