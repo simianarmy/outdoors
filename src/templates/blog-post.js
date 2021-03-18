@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/layout'
@@ -19,7 +19,9 @@ export default ({ data, location, pageContext }) => {
       <div>
         <h1>{frontmatter.title}</h1>
         <br />
-        <Img fluid={frontmatter.cover.childImageSharp.fluid} />
+        <GatsbyImage
+          image={frontmatter.cover.childImageSharp.gatsbyImageData}
+        />
         {frontmatter.photos && (
           <div style={{ marginBottom: '5px' }}>
             <a
@@ -107,9 +109,7 @@ export const query = graphql`
         photos
         cover {
           childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         difficulty
