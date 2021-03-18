@@ -19,10 +19,12 @@ export default ({ data, location, pageContext }) => {
       <div>
         <h1>{frontmatter.title}</h1>
         <br />
-        <GatsbyImage
-          image={frontmatter.cover.childImageSharp.gatsbyImageData}
-        />
-        {frontmatter.photos && (
+        {frontmatter.cover ? (
+          <GatsbyImage
+            image={frontmatter.cover.childImageSharp.gatsbyImageData}
+          />
+        ) : null}
+        {frontmatter.photos ? (
           <div style={{ marginBottom: '5px' }}>
             <a
               href={frontmatter.photos}
@@ -32,7 +34,7 @@ export default ({ data, location, pageContext }) => {
               More Photos
             </a>
           </div>
-        )}
+        ) : null}
         <br />
         <MDXRenderer>{post.body}</MDXRenderer>
         <div className="details">
