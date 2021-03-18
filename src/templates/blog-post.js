@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
 import Layout from '../components/layout'
 //import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import './blog-post.scss'
@@ -8,7 +10,7 @@ import './tags.scss'
 const _ = require('lodash')
 
 export default ({ data, location, pageContext }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const frontmatter = post.frontmatter
   const { next, prev } = pageContext
 
@@ -30,10 +32,7 @@ export default ({ data, location, pageContext }) => {
           </div>
         )}
         <br />
-        <div
-          className="markdownContent"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <MDXRenderer>{post.body}</MDXRenderer>
         <div className="details">
           <table>
             <tbody>
@@ -101,8 +100,8 @@ export default ({ data, location, pageContext }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         photos
