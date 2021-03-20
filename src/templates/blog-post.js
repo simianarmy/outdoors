@@ -9,7 +9,7 @@ import './blog-post.scss'
 import './tags.scss'
 const _ = require('lodash')
 
-export default ({ data, location, pageContext }) => {
+const BlogPost = ({ data, location, pageContext }) => {
   const post = data.mdx
   const frontmatter = post.frontmatter
   const { next, prev } = pageContext
@@ -101,6 +101,8 @@ export default ({ data, location, pageContext }) => {
     </Layout>
   )
 }
+
+export default BlogPost;
 
 export const query = graphql`
   query($slug: String!) {
