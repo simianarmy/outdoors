@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout.js'
 
-export default () => (
+const About = () => (
   <Layout>
     <h1>About Me</h1>
     <p>A dude walking and sometimes climbing</p>
@@ -12,4 +12,6 @@ export default () => (
     </blockquote>
   </p>
   </Layout>
-)
+);
+
+export default About;

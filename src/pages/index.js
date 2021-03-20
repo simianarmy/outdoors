@@ -1,55 +1,58 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+
 import Layout from '../components/layout'
-import SearchInput from '../components/search-input.js';
-import FilteredList from '../components/filtered-list.js';
+import SearchInput from '../components/search-input.js'
+import FilteredList from '../components/filtered-list.js'
 
 class IndexPage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      initialItems: props.data.allMarkdownRemark.edges,
-      items: []
-    };
+      initialItems: props.data.allMdx.edges,
+      items: [],
+    }
   }
 
   componentDidMount() {
-    this.setState({items: this.state.initialItems});
+    this.setState({ items: this.state.initialItems })
   }
 
-  filterItems = (item) => {
-    const term = item.toLowerCase();
-    const regex = new RegExp(`\\w*${term}\\w*`, 'gi');
+  filterItems = item => {
+    const term = item.toLowerCase()
+    const regex = new RegExp(`\\w*${term}\\w*`, 'gi')
 
     const items = this.state.initialItems.filter(item => {
-      return regex.test(item.node.frontmatter.title) || regex.test(item.node.rawMarkdownBody);
-    });
+      return (
+        regex.test(item.node.frontmatter.title) || regex.test(item.node.body)
+      )
+    })
 
-    this.setState({items});
-  };
+    this.setState({ items })
+  }
 
   render() {
     return (
       <Layout>
-        <SearchInput onChange={this.filterItems}/>
+        <SearchInput onChange={this.filterItems} />
         <div>
           <h1>Outings</h1>
-          <FilteredList items={this.state.items}/>
+          <FilteredList items={this.state.items} />
         </div>
       </Layout>
-    );
+    )
   }
 }
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
           id
-          rawMarkdownBody
+          body
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")

@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
 import Layout from '../components/layout'
 //import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import './blog-post.scss'
 import './tags.scss'
 const _ = require('lodash')
 
-export default ({ data, location, pageContext }) => {
-  const post = data.markdownRemark
+const BlogPost = ({ data, location, pageContext }) => {
+  const post = data.mdx
   const frontmatter = post.frontmatter
   const { next, prev } = pageContext
 
@@ -17,8 +19,12 @@ export default ({ data, location, pageContext }) => {
       <div>
         <h1>{frontmatter.title}</h1>
         <br />
-        <Img fluid={frontmatter.cover.childImageSharp.fluid} />
-        {frontmatter.photos && (
+        {frontmatter.cover ? (
+          <GatsbyImage
+            image={frontmatter.cover.childImageSharp.gatsbyImageData}
+          />
+        ) : null}
+        {frontmatter.photos ? (
           <div style={{ marginBottom: '5px' }}>
             <a
               href={frontmatter.photos}
@@ -28,12 +34,9 @@ export default ({ data, location, pageContext }) => {
               More Photos
             </a>
           </div>
-        )}
+        ) : null}
         <br />
-        <div
-          className="markdownContent"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <MDXRenderer>{post.body}</MDXRenderer>
         <div className="details">
           <table>
             <tbody>
@@ -99,18 +102,18 @@ export default ({ data, location, pageContext }) => {
   )
 }
 
+export default BlogPost;
+
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         photos
         cover {
           childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         difficulty
