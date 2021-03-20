@@ -20,13 +20,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  return new Promise((resolve, reject) => {
-    graphql(`
-      query {
-        allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+  const allMdx = await graphql(` query { allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               fields {
@@ -40,8 +37,8 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(result => {
-      const posts = result.data.allMdx.edges
+    `);
+      const posts = allMdx.data.allMdx.edges
 
       const blogTemplate = path.resolve(`./src/templates/blog-post.js`)
       const tagTemplate = path.resolve('src/templates/tags.js')
@@ -86,8 +83,4 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
-
-      resolve()
-    })
-  })
 }

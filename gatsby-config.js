@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Notes on Travels in Nature',
@@ -75,6 +79,17 @@ module.exports = {
         // Avoids sending pageview hits from custom paths
         exclude: ['/tags/**'],
         // Enables Google Optimize using your container Id
+      },
+    },
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `simianarmy`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          outing: require("./src/schemas/outing.json"),
+        }
       },
     },
   ],
