@@ -1,0 +1,107 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "uid"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title"
+      }
+    },
+    "start_time": {
+      "type": "Timestamp",
+      "config": {
+        "label": "Start Time"
+      }
+    },
+    "end_time": {
+      "type": "Timestamp",
+      "config": {
+        "label": "End Time"
+      }
+    },
+    "total_miles": {
+      "type": "Number",
+      "config": {
+        "label": "Total Miles"
+      }
+    },
+    "starting_geopoint": {
+      "type": "GeoPoint",
+      "config": {
+        "label": "Starting geopoint"
+      }
+    },
+    "ending_geopoint": {
+      "type": "GeoPoint",
+      "config": {
+        "label": "Ending geopoint"
+      }
+    },
+    "max_elevation": {
+      "type": "Number",
+      "config": {
+        "label": "Max Elevation"
+      }
+    },
+    "difficulty": {
+      "type": "Select",
+      "config": {
+        "options": ["class 1", "class 2", "class 3", "class 4", "class 5"],
+        "default_value": "class 1",
+        "label": "Difficulty"
+      }
+    },
+    "starting_city": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Starting City"
+      }
+    },
+    "ending_city": {
+      "type": "Text",
+      "config": {
+        "label": "Ending City"
+      }
+    },
+    "resupply": {
+      "type": "Boolean",
+      "config": {
+        "default_value": true,
+        "label": "Resupply"
+      }
+    },
+    "days_in_town": {
+      "type": "Number",
+      "config": {
+        "label": "Days in town"
+      }
+    },
+    "notes": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Notes"
+      }
+    },
+    "tags": {
+      "type": "Text",
+      "config": {
+        "label": "tags"
+      }
+    },
+    "maps": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Maps"
+      }
+    }
+  }
+}

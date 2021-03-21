@@ -1,18 +1,21 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import Layout from '../components/layout'
+import Layout from "../components/layout";
+import TagList from "../components/taglist";
+import Pagination from "../components/pagination";
+
 //import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import './blog-post.scss'
-import './tags.scss'
-const _ = require('lodash')
+import "./blog-post.scss";
+import "./tags.scss";
+const _ = require("lodash");
 
 const BlogPost = ({ data, location, pageContext }) => {
-  const post = data.mdx
-  const frontmatter = post.frontmatter
-  const { next, prev } = pageContext
+  const post = data.mdx;
+  const frontmatter = post.frontmatter;
+  const { next, prev } = pageContext;
 
   return (
     <Layout>
@@ -25,7 +28,7 @@ const BlogPost = ({ data, location, pageContext }) => {
           />
         ) : null}
         {frontmatter.photos ? (
-          <div style={{ marginBottom: '5px' }}>
+          <div style={{ marginBottom: "5px" }}>
             <a
               href={frontmatter.photos}
               rel="noopener noreferrer"
@@ -71,36 +74,21 @@ const BlogPost = ({ data, location, pageContext }) => {
             </tbody>
           </table>
         </div>
-        <div className="pagination">
-          <p>
-            {prev && (
-              <Link className="prev" to={prev.fields.slug}>
-                {prev.frontmatter.title}
-              </Link>
-            )}
-            {next && (
-              <Link className="next" to={next.fields.slug}>
-                {next.frontmatter.title}
-              </Link>
-            )}
-          </p>
-        </div>
-        <div className="tags">
-          <h3>Tags</h3>
-          <div>
-            {frontmatter.tags.map(t => (
-              <Link to={`/tags/${_.kebabCase(t)}`}>
-                <div className="tag">
-                  <span>{t}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
+        <Pagination
+          prev={{
+            slug: _.get(prev, "fields.slug"),
+            title: _.get(prev, "frontmatter.title"),
+          }}
+          next={{
+            slug: _.get(next, "fields.slug"),
+            title: _.get(next, "frontmatter.title"),
+          }}
+        />
+        <TagList tags={frontmatter.tags} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export default BlogPost;
 
@@ -127,4 +115,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

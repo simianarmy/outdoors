@@ -89,6 +89,7 @@ module.exports = {
         linkResolver: ({ node, key, value }) => (post) => `/${post.uid}`,
         schemas: {
           outing: require("./src/schemas/outing.json"),
+          "thruhike-section": require("./src/schemas/thruhike-section.json"),
         },
       },
     },
