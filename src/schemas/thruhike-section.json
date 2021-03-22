@@ -57,17 +57,16 @@
         "label": "Difficulty"
       }
     },
-    "starting_city": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-        "label": "Starting City"
-      }
-    },
-    "ending_city": {
+    "starting_location": {
       "type": "Text",
       "config": {
-        "label": "Ending City"
+        "label": "Starting location"
+      }
+    },
+    "ending_location": {
+      "type": "Text",
+      "config": {
+        "label": "Ending location"
       }
     },
     "resupply": {
@@ -77,12 +76,6 @@
         "label": "Resupply"
       }
     },
-    "days_in_town": {
-      "type": "Number",
-      "config": {
-        "label": "Days in town"
-      }
-    },
     "notes": {
       "type": "StructuredText",
       "config": {
@@ -90,17 +83,17 @@
         "label": "Notes"
       }
     },
-    "tags": {
-      "type": "Text",
-      "config": {
-        "label": "tags"
-      }
-    },
     "maps": {
       "type": "StructuredText",
       "config": {
         "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
         "label": "Maps"
+      }
+    },
+    "tags": {
+      "type": "Text",
+      "config": {
+        "label": "tags"
       }
     }
   }

@@ -1,3 +1,5 @@
+const linkResolver = require("./src/utils/link-resolver");
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -86,7 +88,7 @@ module.exports = {
       options: {
         repositoryName: `simianarmy`,
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => (post) => `/${post.uid}`,
+        linkResolver: () => (doc) => linkResolver(doc),
         schemas: {
           outing: require("./src/schemas/outing.json"),
           "thruhike-section": require("./src/schemas/thruhike-section.json"),

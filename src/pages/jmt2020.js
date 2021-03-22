@@ -12,18 +12,14 @@ function displayTime(timestamp) {
   }).format(Date(timestamp));
 }
 
-function CDT2021Page({ data }) {
+function JMT2020Page({ data }) {
   const posts = data.allPrismicThruhikeSection.edges;
 
   return (
     <Layout>
       <div className="thruhikePage">
-        <h1>CDT 2021</h1>
-        <h3>Coming Soon!</h3>
-        <div className="notes">
-          TODO: Need the CDT logo
-          <p>Fake data below - for testing purposes only</p>
-        </div>
+        <h1>JMT 2020</h1>
+        <div className="notes">Notes & Stats</div>
         <div className="sections">
           {posts.map(({ node }) => (
             <section key={node.uid}>
@@ -59,12 +55,12 @@ function CDT2021Page({ data }) {
   );
 }
 
-export default CDT2021Page;
+export default JMT2020Page;
 
 export const query = graphql`
   query {
     allPrismicThruhikeSection(
-      filter: { tags: { in: "cdt21" } }
+      filter: { tags: { in: "jmt20" } }
       sort: { fields: [data___start_time], order: ASC }
     ) {
       edges {
