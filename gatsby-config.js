@@ -87,7 +87,7 @@ module.exports = {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `simianarmy`,
-        accessToken: `${process.env.API_KEY}`,
+        accessToken: `${process.env.PRISMIC_API_KEY}`,
         linkResolver: () => (doc) => linkResolver(doc),
         schemas: {
           outing: require("./src/schemas/outing.json"),
