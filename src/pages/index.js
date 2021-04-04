@@ -1,60 +1,60 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Layout from "../components/layout";
-import SearchInput from "../components/search-input.js";
-import FilteredList from "../components/filtered-list.js";
+import Layout from '../components/layout'
+import SearchInput from '../components/search-input.js'
+import FilteredList from '../components/filtered-list.js'
 
-import "./index.scss";
+import './index.scss'
 
-class IndexPage extends React.Component {
-  constructor(props) {
-    super(props);
+function IndexPage({ data }) {
+  const initialItems = data.allMdx.edges
+  const [items, setItems] = React.useState(initialItems)
 
-    this.state = {
-      initialItems: props.data.allMdx.edges,
-      items: [],
-    };
-  }
+  const filterItems = (item) => {
+    const term = item.toLowerCase()
+    let regex
 
-  componentDidMount() {
-    this.setState({ items: this.state.initialItems });
-  }
+    try {
+      regex = new RegExp(`\\w*${term}\\w*`, 'gi')
+    } catch (e) {
+      console.warn('illegal regex input', e)
+      return
+    }
 
-  filterItems = (item) => {
-    const term = item.toLowerCase();
-    const regex = new RegExp(`\\w*${term}\\w*`, "gi");
-
-    const items = this.state.initialItems.filter((item) => {
-      return (
+    const filteredItems = initialItems.filter(
+      (item) =>
         regex.test(item.node.frontmatter.title) || regex.test(item.node.body)
-      );
-    });
-
-    this.setState({ items });
-  };
-
-  render() {
-    return (
-      <Layout>
-        <div className="container">
-          <div className="flex-grid">
-            <aside className="col sidebar">
-              <h4>Thru-Hikes</h4>
-              <Link to={"/jmt2020"}>JMT 2020</Link>
-              <br />
-              <Link to={"/cdt2021"}>CDT ??</Link>
-            </aside>
-            <section className="col main">
-              <SearchInput onChange={this.filterItems} />
-              <h1>Outings</h1>
-              <FilteredList items={this.state.items} />
-            </section>
-          </div>
-        </div>
-      </Layout>
-    );
+    )
+    setItems(filteredItems)
   }
+
+  return (
+    <Layout>
+      <div className="container">
+        <div className="flex-grid">
+          <aside className="col sidebar">
+            <div className="nav-name">
+              <h4>Thru-Hikes</h4>
+            </div>
+            <div className="nav-items">
+              <div className="nav-item">
+                <Link to={'/jmt2020'}>JMT 2020</Link>
+              </div>
+              <div className="nav-item">
+                <Link to={'/cdt2021'}>CDT ??</Link>
+              </div>
+            </div>
+          </aside>
+          <section className="col main">
+            <SearchInput onChange={filterItems} />
+            <h1>Outings</h1>
+            <FilteredList items={items} />
+          </section>
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export const query = graphql`
@@ -77,6 +77,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default IndexPage;
+export default IndexPage

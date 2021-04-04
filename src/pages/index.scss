@@ -13,7 +13,34 @@
 }
 .sidebar {
   flex: 1;
+  white-space: nowrap;
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .main {
   flex: 3;
+}
+@media (max-width: 425px) {
+  .flex-grid {
+    flex-direction: column;
+  }
+  .col.sidebar {
+    padding: 0 0 0 1rem;
+
+    h4 {
+      margin: 0.5rem 0;
+    }
+
+    .nav-items {
+      flex-direction: row;
+
+      .nav-item {
+        margin-right: 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
