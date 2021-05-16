@@ -22,7 +22,6 @@ function CDT2021Page({ data }) {
         <h3>Coming Soon!</h3>
         <div className="notes">
           TODO: Need the CDT logo
-          <p>Fake data below - for testing purposes only</p>
         </div>
         <div className="sections">
           {posts.map(({ node }) => (
