@@ -42,7 +42,7 @@ function IndexPage({ data }) {
                 <Link to={'/jmt2020'}>JMT 2020</Link>
               </div>
               <div className="nav-item">
-                <Link to={'/cdt2021'}>CDT ??</Link>
+                <Link to={'/cdt2021'}>CDT 2021</Link>
               </div>
             </div>
           </aside>
