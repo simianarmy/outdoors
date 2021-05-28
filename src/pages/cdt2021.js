@@ -18,11 +18,9 @@ function CDT2021Page({ data }) {
   return (
     <Layout>
       <div className="thruhikePage">
+<img src="https://images.app.goo.gl/iDJB3icJKGcG2gHk6" />
+
         <h1>CDT 2021</h1>
-        <h3>Coming Soon!</h3>
-        <div className="notes">
-          TODO: Need the CDT logo
-        </div>
         <div className="sections">
           {posts.map(({ node }) => (
             <section key={node.uid}>
