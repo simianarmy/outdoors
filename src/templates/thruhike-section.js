@@ -33,7 +33,7 @@ function displayTime(timestamp) {
 }
 
 function calculateNights(start, end) {
-  return Math.floor(
+  return Math.round(
     (Date(end).getTime() - Date(start).getTime()) / (86400 * 1000)
   );
 }
