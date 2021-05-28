@@ -18,7 +18,7 @@ function CDT2021Page({ data }) {
   return (
     <Layout>
       <div className="thruhikePage">
-<img src="https://images.app.goo.gl/iDJB3icJKGcG2gHk6" />
+<img src="https://oneofsevenproject.com/wp-content/uploads/2017/01/CDT-Logo.png" />
 
         <h1>CDT 2021</h1>
         <div className="sections">
