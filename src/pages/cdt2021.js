@@ -1,22 +1,9 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { Date } from "prismic-reactjs";
 
 import { rhythm } from "../utils/typography";
+import { calculateNights, displayMonthAndDay } from "../utils/dates";
 import Layout from "../components/layout";
-
-function displayTime(timestamp) {
-  return Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "2-digit",
-  }).format(Date(timestamp));
-}
-
-function calculateNights(start, end) {
-  return Math.round(
-    (Date(end).getTime() - Date(start).getTime()) / (86400 * 1000)
-  );
-}
 
 function CDT2021Page({ data }) {
   const posts = data.allPrismicThruhikeSection.edges;
@@ -27,7 +14,11 @@ function CDT2021Page({ data }) {
   const neroDays = 19; // same
   const avgMilesPerDay = totalMiles / (totalDays - zeroDays);
   const avgMilesPerDayNoNero = totalMiles / (totalDays - zeroDays - neroDays);
-  //const maxMiles = Math.max(...(pdata.map(p => p.total_miles)));
+  const sectionNights = pdata.map(p => calculateNights(p.start_time, p.end_time));
+  const avgSectionNights = sectionNights.reduce((acc, curr) => (acc + curr), 0) / sectionNights.length;
+  const maxSectionNights = Math.max(...sectionNights);
+  const avgSectionMiles = totalMiles / pdata.length;
+  const maxSectionMiles = Math.max(...(pdata.map(p => p.total_miles)));
 
   return (
     <Layout>
@@ -65,6 +56,22 @@ function CDT2021Page({ data }) {
             <td><b>Pairs of Shoes</b></td>
             <td><span>4</span></td>
           </tr>
+          <tr>
+            <td><b>Max Section Nights</b></td>
+            <td><span>{maxSectionNights}</span></td>
+          </tr>
+          <tr>
+            <td><b>Avg Section Nights</b></td>
+            <td><span>{avgSectionNights.toFixed(1)}</span></td>
+          </tr>
+          <tr>
+            <td><b>Max Section Miles</b></td>
+            <td><span>{maxSectionMiles}</span></td>
+          </tr>
+          <tr>
+            <td><b>Avg Section Miles</b></td>
+            <td><span>{avgSectionMiles.toFixed(1)}</span></td>
+          </tr>
         </table>
         <div className="sections">
           <h2>Sections</h2>
@@ -90,8 +97,8 @@ function CDT2021Page({ data }) {
                 >
                   {node.data.starting_location} - {node.data.ending_location}
                   <br />
-                  {displayTime(node.data.start_time)} -{" "}
-                  {displayTime(node.data.end_time)}
+                  {displayMonthAndDay(node.data.start_time)} -{" "}
+                  {displayMonthAndDay(node.data.end_time)}
                 </span>
               </div>
             </section>

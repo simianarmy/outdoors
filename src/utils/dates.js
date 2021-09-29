@@ -1,3 +1,5 @@
+import { Date } from "prismic-reactjs";
+
 /**
  * @param {Date} date JS or compatible date object
  * @returns {String} standardized display date with hours
@@ -11,6 +13,17 @@ export function displayTime(date) {
 }
 
 /**
+ * @param {String} date
+ * @returns {String} Month DD format
+ */
+export function displayMonthAndDay(timestamp) {
+  return Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "2-digit",
+  }).format(Date(timestamp));
+}
+
+/**
  * @param {Date} date JS or compatible date object
  * @returns {String} standardized display date
  */
@@ -21,3 +34,15 @@ export function displayDate(date) {
     day: '2-digit',
   }).format(date)
 }
+
+/**
+ * @param {Date} start
+ * @param {Date} end
+ * @returns {Number}
+ */
+export function calculateNights(start, end) {
+  return Math.round(
+    (Date(end).getTime() - Date(start).getTime()) / (86400 * 1000)
+  );
+}
+

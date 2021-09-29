@@ -1,16 +1,9 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { Date } from "prismic-reactjs";
 
 import { rhythm } from "../utils/typography";
+import { displayMonthAndDay } from "../utils/dates";
 import Layout from "../components/layout";
-
-function displayTime(timestamp) {
-  return Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "2-digit",
-  }).format(Date(timestamp));
-}
 
 function JMT2020Page({ data }) {
   const posts = data.allPrismicThruhikeSection.edges;
@@ -43,8 +36,8 @@ function JMT2020Page({ data }) {
                 >
                   {node.data.starting_location} - {node.data.ending_location}
                   <br />
-                  {displayTime(node.data.start_time)} -{" "}
-                  {displayTime(node.data.end_time)}
+                  {displayMonthAndDay(node.data.start_time)} -{" "}
+                  {displayMonthAndDay(node.data.end_time)}
                 </span>
               </div>
             </section>
