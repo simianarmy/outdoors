@@ -12,16 +12,62 @@ function displayTime(timestamp) {
   }).format(Date(timestamp));
 }
 
+function calculateNights(start, end) {
+  return Math.round(
+    (Date(end).getTime() - Date(start).getTime()) / (86400 * 1000)
+  );
+}
+
 function CDT2021Page({ data }) {
   const posts = data.allPrismicThruhikeSection.edges;
+  const pdata = posts.map(p => p.node.data);
+  const totalMiles = pdata.reduce((prev, curr) => (prev + curr.total_miles), 0);
+  const totalDays = calculateNights(pdata[0].start_time, pdata[pdata.length-1].end_time) + 1;
+  const zeroDays = 11; // could be calculated
+  const neroDays = 19; // same
+  const avgMilesPerDay = totalMiles / (totalDays - zeroDays);
+  const avgMilesPerDayNoNero = totalMiles / (totalDays - zeroDays - neroDays);
+  //const maxMiles = Math.max(...(pdata.map(p => p.total_miles)));
 
   return (
     <Layout>
       <div className="thruhikePage">
-<img src="https://oneofsevenproject.com/wp-content/uploads/2017/01/CDT-Logo.png" />
+<img src="https://oneofsevenproject.com/wp-content/uploads/2017/01/CDT-Logo.png" alt="cdt logo" />
 
         <h1>CDT 2021</h1>
+        <h2>Stats</h2>
+        <table>
+          <tr>
+            <td><b>Miles</b></td>
+            <td><span>{totalMiles}</span></td>
+          </tr>
+          <tr>
+            <td><b>Days</b></td>
+            <td><span>{totalDays}</span></td>
+          </tr>
+          <tr>
+            <td><b>Zero Days</b></td>
+            <td><span>{zeroDays}</span></td>
+          </tr>
+          <tr>
+            <td><b>Nero Days</b></td>
+            <td><span>{neroDays}</span></td>
+          </tr>
+          <tr>
+            <td><b>Avg. Miles / Day (- zeros)</b></td>
+            <td><span>{avgMilesPerDay.toFixed(1)}</span></td>
+          </tr>
+          <tr>
+            <td><b>Avg. Miles / Day (- zero/nero)</b></td>
+            <td><span>{avgMilesPerDayNoNero.toFixed(1)}</span></td>
+          </tr>
+          <tr>
+            <td><b>Pairs of Shoes</b></td>
+            <td><span>4</span></td>
+          </tr>
+        </table>
         <div className="sections">
+          <h2>Sections</h2>
           {posts.map(({ node }) => (
             <section key={node.uid}>
               <Link
@@ -68,13 +114,14 @@ export const query = graphql`
         node {
           uid
           data {
+            end_time
+            ending_location
+            start_time
+            starting_location
             title {
               text
             }
-            start_time
-            end_time
-            starting_location
-            ending_location
+            total_miles
           }
         }
       }
