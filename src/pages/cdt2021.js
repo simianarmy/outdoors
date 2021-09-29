@@ -26,6 +26,14 @@ function CDT2021Page({ data }) {
 <img src="https://oneofsevenproject.com/wp-content/uploads/2017/01/CDT-Logo.png" alt="cdt logo" />
 
         <h1>CDT 2021</h1>
+        <span
+          style={{
+            color: "#bbb",
+          }}
+        >
+          {displayMonthAndDay(pdata[0].start_time)} -{" "}
+          {displayMonthAndDay(pdata[pdata.length-1].end_time)}
+        </span>
         <h2>Stats</h2>
         <table>
           <tr>
