@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21aa9698-dea8-41bb-9043-9e340a0c1555/deploy-status)](https://app.netlify.com/sites/angry-villani-5aa8c7/deploys)
+
 # My outdoor blog Gatsby site
 
 Live @ [simianarmy.com](http://www.simianarmy.com)
