@@ -1,19 +1,30 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
+import Layout from "../components/layout";
 import { rhythm } from "../utils/typography";
 import { displayMonthAndDay } from "../utils/dates";
-import Layout from "../components/layout";
+import { ThruStats } from "../utils/thrustats";
 
 function JMT2020Page({ data }) {
   const posts = data.allPrismicThruhikeSection.edges;
+  const pdata = posts.map(p => p.node.data);
 
   return (
     <Layout>
       <div className="thruhikePage">
         <h1>JMT 2020</h1>
-        <div className="notes">Notes & Stats</div>
+        <span
+          style={{
+            color: "#bbb",
+          }}
+        >
+          {displayMonthAndDay(pdata[0].start_time)} -{" "}
+          {displayMonthAndDay(pdata[pdata.length-1].end_time)}
+        </span>
+        <ThruStats data={pdata} zeroDays={0} neroDays={1} numShoes={1} />
         <div className="sections">
+          <h2>Sections</h2>
           {posts.map(({ node }) => (
             <section key={node.uid}>
               <Link
@@ -67,6 +78,7 @@ export const query = graphql`
             end_time
             starting_location
             ending_location
+            total_miles
           }
         }
       }
