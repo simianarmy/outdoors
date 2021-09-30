@@ -14,7 +14,7 @@ export function ThruStats({data, zeroDays, neroDays, numShoes}) {
   const maxSectionMiles = Math.max(...(data.map(p => p.total_miles)));
 
   return (
-    <section>
+    <section id="stats">
         <h2>Stats</h2>
         <table>
           <tr>
