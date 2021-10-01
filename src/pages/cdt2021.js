@@ -126,11 +126,21 @@ function CDT2021Page({ data }) {
             <li>Wet wipes</li>
             <li>TP</li>
           </ul>
+          <h4>Toiletries</h4>
+          <ul>
+            <li>Toothbrush</li>
+            <li>Toothpaste</li>
+            <li>Camp soap</li>
+            <li>Scissors</li>
+            <li>Clippers</li>
+            <li>Alcohol wipes</li>
+          </ul>
           <h4>1st Aid</h4>
           <ul>
             <li>Small kit</li>
             <li>3M Ultrathon Deet</li>
             <li>Tent/pack repair kit</li>
+            <li>Toe warmer packets</li>
           </ul>
           <h4>Wear</h4>
           <ul>
@@ -145,7 +155,8 @@ function CDT2021Page({ data }) {
             <li>REI buff</li>
             <li>EE fleece cap</li>
             <li>Mountain Hardwear rain pants</li>
-            <li>OR waterproof jacket</li>
+            <li>OR raincoat</li>
+            <li>Melanzana fleece hoodie</li>
             <li>Glove liners</li>
             <li>Wool mittens</li>
           </ul>
@@ -156,10 +167,12 @@ function CDT2021Page({ data }) {
           </ul>
           <h4>Misc</h4>
           <ul>
-            <li>Toe wormer packets</li>
+            <li>Black Diamond Trail Ergo trecking poles</li>
             <li>Dry bags</li>
             <li>Sit pad</li>
             <li>Bluetooth earbuds w case</li>
+            <li>Sharpie</li>
+            <li>Pen</li>
           </ul>
         </section>
       </div>
