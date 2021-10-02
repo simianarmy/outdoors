@@ -9,7 +9,7 @@
     "title": {
       "type": "StructuredText",
       "config": {
-        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
         "label": "Title"
       }
     },
@@ -31,18 +31,6 @@
         "label": "Total Miles"
       }
     },
-    "starting_geopoint": {
-      "type": "GeoPoint",
-      "config": {
-        "label": "Starting geopoint"
-      }
-    },
-    "ending_geopoint": {
-      "type": "GeoPoint",
-      "config": {
-        "label": "Ending geopoint"
-      }
-    },
     "max_elevation": {
       "type": "Number",
       "config": {
@@ -52,7 +40,13 @@
     "difficulty": {
       "type": "Select",
       "config": {
-        "options": ["class 1", "class 2", "class 3", "class 4", "class 5"],
+        "options": [
+          "class 1",
+          "class 2",
+          "class 3",
+          "class 4",
+          "class 5"
+        ],
         "default_value": "class 1",
         "label": "Difficulty"
       }
@@ -79,15 +73,15 @@
     "notes": {
       "type": "StructuredText",
       "config": {
-        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
         "label": "Notes"
       }
     },
-    "maps": {
-      "type": "StructuredText",
+    "map_html": {
+      "type": "Text",
       "config": {
-        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-        "label": "Maps"
+        "label": "map_html",
+        "placeholder": "Markup for displaying embedded maps"
       }
     },
     "tags": {

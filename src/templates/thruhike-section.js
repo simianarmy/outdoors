@@ -42,6 +42,7 @@ function ThruhikeSection({ data, location, pageContext }) {
   const section = data.prismicThruhikeSection.data;
   const { next, prev } = pageContext;
   const totalNights = calculateNights(section.start_time, section.end_time);
+  console.log({section});
 
   return (
     <Layout>
@@ -78,20 +79,9 @@ function ThruhikeSection({ data, location, pageContext }) {
                 <td>{totalNights}</td>
               </tr>
               <tr>
-                <td>Highest Elevation</td>
+                <td>Max Elevation</td>
                 <td>{section.max_elevation} ft</td>
               </tr>
-              {/*
-            <tr>
-              <td>Geolocation</td>
-              <td>
-                {section.starting_geopoint.latitude},{" "}
-                {section.starting_geopoint.longitude} -
-                {section.ending_geopoint.latitude},{" "}
-                {section.ending_geopoint.longitude}
-              </td>
-            </tr>
-                */}
               <tr>
                 <td>Difficulty</td>
                 <td>{section.difficulty}</td>
@@ -100,12 +90,11 @@ function ThruhikeSection({ data, location, pageContext }) {
                 <td>Resupply</td>
                 <td>{section.resupply ? "Yes" : "No"}</td>
               </tr>
-              <tr>
-                <td>Map</td>
-                <td>{section.map}</td>
-              </tr>
             </tbody>
           </table>
+          {section.map_html ? (
+            <div dangerouslySetInnerHTML={{ __html: section.map_html }} />
+          ) : null}
         </div>
       </section>
       <Pagination
@@ -135,13 +124,7 @@ export const query = graphql`
         tags
         end_time
         ending_location
-        ending_geopoint {
-          latitude
-          longitude
-        }
-        maps {
-          raw
-        }
+        map_html
         max_elevation
         notes {
           raw
@@ -149,10 +132,6 @@ export const query = graphql`
         resupply
         start_time
         starting_location
-        starting_geopoint {
-          latitude
-          longitude
-        }
         title {
           raw
           text

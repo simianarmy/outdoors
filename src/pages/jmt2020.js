@@ -22,8 +22,13 @@ function JMT2020Page({ data }) {
           {displayMonthAndDay(pdata[0].start_time)} -{" "}
           {displayMonthAndDay(pdata[pdata.length-1].end_time)}
         </span>
+        <nav>
+        <a href="#stats">Stats</a>&nbsp;
+        <a href="#sections">Sections</a>&nbsp;
+        <a href="#gear">Gear</a>
+        </nav>
         <ThruStats data={pdata} zeroDays={0} neroDays={1} numShoes={1} />
-        <div className="sections">
+        <div id="sections" className="sections">
           <h2>Sections</h2>
           {posts.map(({ node }) => (
             <section key={node.uid}>
@@ -54,6 +59,89 @@ function JMT2020Page({ data }) {
             </section>
           ))}
         </div>
+        <section id="gear" className="loadout">
+          <h2>Gear</h2>
+          <h4>Big 3</h4>
+          <ul>
+            <li>Pack: ULA Circuit</li>
+            <li>Kammock ROO Double hammock</li>
+            <li>hammock straps & cordage</li>
+            <li>Etowah Outfitters 10x10 tarp</li>
+            <li>Kelty 20 deg sleeping bag</li>
+            <li>Xlymit UL sleeping pad</li>
+          </ul>
+          <h4>Cook</h4>
+          <ul>
+            <li>MSR Reactor 1L stove</li>
+            <li>REI cup</li>
+            <li>plastic spoon</li>
+            <li>Bic Lighter</li>
+          </ul>
+          <h4>Hydration</h4>
+          <ul>
+            <li>Platypus gravity filter 2L</li>
+            <li>REI Nalgene 1L</li>
+            <li>Potable Aqua tablets</li>
+          </ul>
+          <h4>Light</h4>
+          <ul>
+            <li>Luminaid packlite nova solar lantern</li>
+            <li>?? headlamp</li>
+            <li>3 AAA batteries</li>
+          </ul>
+          <h4>Sun</h4>
+          <ul>
+            <li>Sunscreen in plastic jar</li>
+            <li>Chapstick</li>
+            <li>sunglasses</li>
+          </ul>
+          <h4>Nav</h4>
+          <ul>
+            <li>Suunto compass</li>
+            <li>Tom Harrison maps</li>
+            <li>iPhone 6 (Gaia)</li>
+            <li>iPhone cable</li>
+            <li>Apple wall plug USB</li>
+            <li>Battery pack</li>
+            <li>Micro USB cable</li>
+            <li>ResQLink PLB</li>
+          </ul>
+          <h4>Toilet</h4>
+          <ul>
+            <li>Trowel</li>
+            <li>TP</li>
+          </ul>
+          <h4>Toiletries</h4>
+          <ul>
+            <li>Toothbrush</li>
+            <li>Toothpaste</li>
+            <li>Camp soap</li>
+          </ul>
+          <h4>1st Aid</h4>
+          <ul>
+            <li>Small kit</li>
+          </ul>
+          <h4>Wear</h4>
+          <ul>
+            <li>Asolo trail runners</li>
+            <li>REI thermal bottom</li>
+            <li>Patagonia thermal top</li>
+            <li>Darn Tough socks x 2</li>
+            <li>REI liner sleep socks</li>
+            <li>Icebreaker boxer briefs x 2</li>
+            <li>Icebreaker merino t-shirt</li>
+            <li>OR wool touq</li>
+            <li>OR Helium raincoat</li>
+            <li>OR Helium down puffy</li>
+            <li>North Face fleece</li>
+          </ul>
+          <h4>Misc</h4>
+          <ul>
+            <li>Trecking pole</li>
+            <li>ULA pack cover</li>
+            <li>Dry bags</li>
+          </ul>
+        </section>
       </div>
     </Layout>
   );
