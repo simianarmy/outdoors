@@ -78,7 +78,7 @@ function CDT2021Page({ data }) {
           <h4>Cook</h4>
           <ul>
             <li>Zpacks bear bag L w rock sack & rope</li>
-            <li>Ursack</li>
+            <li>Ursack Major</li>
             <li>Loksack</li>
             <li>Vargo Bot 700 ml</li>
             <li>Soto Windmaster stove</li>
@@ -90,7 +90,7 @@ function CDT2021Page({ data }) {
           <ul>
             <li>Sawyer Squeeze</li>
             <li>CNOC 2L bladder</li>
-            <li>REI Nalgene 1L</li>
+            <li>REI nalgene 1L</li>
             <li>Smart Water 1L</li>
             <li>Potable Aqua tablets</li>
             <li>Katadin tablets</li>

@@ -72,15 +72,16 @@ function JMT2020Page({ data }) {
           </ul>
           <h4>Cook</h4>
           <ul>
+            <li>BearVault BV500</li>
             <li>MSR Reactor 1L stove</li>
             <li>REI cup</li>
-            <li>plastic spoon</li>
-            <li>Bic Lighter</li>
+            <li>Spoon</li>
+            <li>Bic lighter</li>
           </ul>
           <h4>Hydration</h4>
           <ul>
             <li>Platypus gravity filter 2L</li>
-            <li>REI Nalgene 1L</li>
+            <li>REI nalgene 1L</li>
             <li>Potable Aqua tablets</li>
           </ul>
           <h4>Light</h4>
@@ -134,6 +135,7 @@ function JMT2020Page({ data }) {
             <li>OR Helium raincoat</li>
             <li>OR Helium down puffy</li>
             <li>North Face fleece</li>
+            <li>River shorts</li>
           </ul>
           <h4>Misc</h4>
           <ul>
