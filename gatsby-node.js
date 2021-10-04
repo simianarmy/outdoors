@@ -122,22 +122,25 @@ exports.createPages = async ({ graphql, actions }) => {
       tags = tags.concat(edge.node.frontmatter.tags);
     }
   });
+  let thruTags = [];
   _.each(hikes, (edge) => {
     if (_.get(edge, "node.data.tags")) {
-      tags = tags.concat(edge.node.data.tags.split(","));
+      thruTags = thruTags.concat(edge.node.data.tags.split(","));
     }
   });
 
   // Eliminate duplicate tags
-  tags = _.uniq(tags);
+  tags = _.uniq(tags.concat(thruTags).map(t => _.trim(t, ' "')));
 
   // Make tag pages
   tags.forEach((tag) => {
+    //console.log("creating tag page", _.kebabCase(tag));
     createPage({
       path: `/tags/${_.kebabCase(tag)}/`,
       component: tagTemplate,
       context: {
         tag,
+        regexTag: `/${tag}/`
       },
     });
   });

@@ -42,7 +42,6 @@ function ThruhikeSection({ data, location, pageContext }) {
   const section = data.prismicThruhikeSection.data;
   const { next, prev } = pageContext;
   const totalNights = calculateNights(section.start_time, section.end_time);
-  console.log({section});
 
   return (
     <Layout>
