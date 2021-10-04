@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import { rhythm } from "../utils/typography";
+import ThruStats from "../components/thrustats";
+import SectionHike from "../components/sectionhike";
 import { displayMonthAndDay } from "../utils/dates";
-import { ThruStats } from "../utils/thrustats";
 
 import './cdt2021.scss';
 
@@ -35,32 +35,7 @@ function CDT2021Page({ data }) {
         <div id="sections" className="sections">
           <h2>Sections</h2>
           {posts.map(({ node }) => (
-            <section key={node.uid}>
-              <Link
-                to={`/${node.uid}`}
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  {node.data.title.text}{" "}
-                </h3>
-              </Link>
-              <div>
-                <span
-                  style={{
-                    color: "#bbb",
-                  }}
-                >
-                  {node.data.starting_location} - {node.data.ending_location}
-                  <br />
-                  {displayMonthAndDay(node.data.start_time)} -{" "}
-                  {displayMonthAndDay(node.data.end_time)}
-                </span>
-              </div>
-            </section>
+            <SectionHike {...node} />
           ))}
         </div>
         <section id="gear" className="loadout">

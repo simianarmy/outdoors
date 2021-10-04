@@ -1,8 +1,8 @@
 import React from "react";
 
-import { calculateNights } from "./dates";
+import { calculateNights } from "../utils/dates";
 
-export function ThruStats({data, zeroDays, neroDays, numShoes}) {
+function ThruStats({data, zeroDays, neroDays, numShoes}) {
   const totalMiles = data.reduce((prev, curr) => (prev + curr.total_miles), 0);
   const totalDays = calculateNights(data[0].start_time, data[data.length-1].end_time) + 1;
   const avgMilesPerDay = totalMiles / (totalDays - zeroDays);
@@ -66,3 +66,4 @@ export function ThruStats({data, zeroDays, neroDays, numShoes}) {
   );
 }
 
+export default ThruStats;
