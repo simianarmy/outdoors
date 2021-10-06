@@ -169,6 +169,10 @@ export const query = graphql`
           data {
             end_time
             ending_location
+            location_icon {
+              url
+              alt
+            }
             start_time
             starting_location
             title {

@@ -4,12 +4,13 @@ import { Link } from "gatsby";
 import { rhythm } from "../utils/typography";
 import { displayMonthAndDay } from "../utils/dates";
 
+import "./sectionhike.scss";
+
 function SectionHike({uid, data}) {
   return (
-    <section key={uid}>
+    <section className="sectionHikeContainer" key={uid}>
       <Link
         to={`/${uid}`}
-        style={{ color: "inherit", textDecoration: "none" }}
       >
         <h3
           style={{
@@ -19,14 +20,20 @@ function SectionHike({uid, data}) {
           {data.title.text}{" "}
         </h3>
       </Link>
-      <div>
-        <span
-          style={{
-            color: "#bbb",
-          }}
-        >
-          {data.starting_location} - {data.ending_location}
-          <br />
+      <div className="sectionLocation">
+        <div className="locationHeader">
+        {data.location_icon?.url ?
+          (<div className="locationIcon">
+            <img src={data.location_icon.url} alt="location" />
+          </div>) : null
+        }
+        <div className="locationStartEnd">
+          <span>
+            {data.starting_location} - {data.ending_location}
+          </span>
+        </div>
+        </div>
+        <span className="dates">
           {displayMonthAndDay(data.start_time)} -{" "}
           {displayMonthAndDay(data.end_time)}
         </span>
