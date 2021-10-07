@@ -1,25 +1,25 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { rhythm } from "../utils/typography";
+//import { rhythm } from "../utils/typography";
 import { displayMonthAndDay } from "../utils/dates";
 
 import "./sectionhike.scss";
 
-function SectionHike({uid, data}) {
+function SectionHike({uid, data, num}) {
   return (
     <section className="sectionHikeContainer" key={uid}>
       <Link
         to={`/${uid}`}
       >
-        <h3
+        {/*<h3
           style={{
             marginBottom: rhythm(1 / 4),
           }}
         >
-          {data.title.text}{" "}
+          Section {num}
         </h3>
-      </Link>
+        */}
       <div className="sectionLocation">
         <div className="locationHeader">
         {data.location_icon?.url ?
@@ -38,6 +38,7 @@ function SectionHike({uid, data}) {
           {displayMonthAndDay(data.end_time)}
         </span>
       </div>
+      </Link>
     </section>
   );
 }

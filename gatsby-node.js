@@ -9,6 +9,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 const _ = require("lodash");
 
 const blogTemplate = path.resolve(`./src/templates/blog-post.js`);
+const thruhikeTemplate = path.resolve(`./src/templates/thruhike.js`);
 const thruhikeSectionTemplate = path.resolve(
   `./src/templates/thruhike-section.js`
 );
@@ -31,6 +32,22 @@ const createBlogPosts = ({ posts, createPage }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
+        prev: prevNode,
+        next: nextNode,
+      },
+    });
+  });
+};
+
+const createThruHikes = ({ thruhikes, createPage }) => {
+  thruhikes.forEach(({ node }, index) => {
+    const [prevNode, nextNode] = getPrevNextNodes(thruhikes, index);
+
+    createPage({
+      path: node.uid,
+      component: thruhikeTemplate,
+      context: {
+        slug: node.uid,
         prev: prevNode,
         next: nextNode,
       },
@@ -92,6 +109,18 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
   const allPrismic = await graphql(`
     query {
+      allPrismicThruhike(
+        sort: { fields: [data___start_date], order: DESC }
+      ) {
+        edges {
+          node {
+            uid
+            data {
+              nav_title
+            }
+          }
+        }
+      }
       allPrismicThruhikeSection(
         sort: { fields: [data___start_time], order: DESC }
       ) {
@@ -99,10 +128,9 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             uid
             data {
+              ending_location
+              starting_location
               tags
-              title {
-                text
-              }
             }
           }
         }
@@ -111,6 +139,9 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
   const posts = allMdx.data.allMdx.edges;
   createBlogPosts({ posts, createPage });
+
+  const thruhikes = allPrismic.data.allPrismicThruhike.edges;
+  createThruHikes({ thruhikes, createPage });
 
   const hikes = allPrismic.data.allPrismicThruhikeSection.edges;
   createThruHikeSections({ hikes, createPage });

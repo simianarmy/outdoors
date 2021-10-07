@@ -22,7 +22,7 @@ const Tags = ({ pageContext, data }) => {
     slug: node.fields.slug
   }));
   allNodes = allNodes.concat(thruEdges.map(({ node }) => ({
-    title: node.data.title.text,
+    title: node.data.starting_location,
     slug: `/${node.uid}`
   })));
 
@@ -68,9 +68,6 @@ Tags.propTypes = {
           node: PropTypes.shape({
             uid: PropTypes.string.isRequired,
             data: PropTypes.shape({
-              title: PropTypes.shape({
-                text: PropTypes.string.isRequired,
-              }),
             }),
           }),
         }),
@@ -91,9 +88,8 @@ export const pageQuery = graphql`
         node {
           uid
           data {
-            title {
-              text
-            }
+            starting_location
+            ending_location
           }
         }
       }

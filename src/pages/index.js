@@ -8,8 +8,10 @@ import FilteredList from '../components/filtered-list.js'
 import './index.scss'
 
 function IndexPage({ data }) {
-  const initialItems = data.allMdx.edges
-  const [items, setItems] = React.useState(initialItems)
+  console.log('index data', data);
+  const outings = data.allMdx.edges
+  const thruhikes = data.allPrismicThruhike.edges;
+  const [items, setItems] = React.useState(outings)
 
   const filterItems = (item) => {
     const term = item.toLowerCase()
@@ -22,7 +24,7 @@ function IndexPage({ data }) {
       return
     }
 
-    const filteredItems = initialItems.filter(
+    const filteredItems = outings.filter(
       (item) =>
         regex.test(item.node.frontmatter.title) || regex.test(item.node.body)
     )
@@ -38,12 +40,11 @@ function IndexPage({ data }) {
               <h4>Thru-Hikes</h4>
             </div>
             <div className="nav-items">
-              <div className="nav-item">
-                <Link to={'/jmt2020'}>JMT 2019</Link>
-              </div>
-              <div className="nav-item">
-                <Link to={'/cdt2021'}>CDT 2021</Link>
-              </div>
+              {thruhikes.map(({node}) => (
+                <div className="nav-item" key={node.uid}>
+                  <Link to={`/${node.uid}`}>{node.data.nav_title}</Link>
+                </div>
+              ))}
             </div>
           </aside>
           <section className="col main">
@@ -72,6 +73,16 @@ export const query = graphql`
           excerpt
           fields {
             slug
+          }
+        }
+      }
+    }
+    allPrismicThruhike(sort: { fields: [data___start_date], order: DESC }) {
+      edges {
+        node {
+          uid
+          data {
+            nav_title
           }
         }
       }

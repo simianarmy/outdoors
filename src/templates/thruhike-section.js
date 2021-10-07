@@ -5,7 +5,6 @@ import { Date, RichText } from "prismic-reactjs";
 import Layout from "../components/layout";
 import TagList from "../components/taglist";
 import Pagination from "../components/pagination";
-
 import "./thruhike-section.scss";
 
 const _ = require("lodash");
@@ -38,23 +37,21 @@ function calculateNights(start, end) {
   );
 }
 
-function ThruhikeSection({ data, location, pageContext }) {
+function ThruhikeSection({ data, pageContext }) {
   const section = data.prismicThruhikeSection.data;
   const { next, prev } = pageContext;
   const totalNights = calculateNights(section.start_time, section.end_time);
 
   return (
     <Layout>
-      <Link to={parentPagePath(data.prismicThruhikeSection.tags[0])}>Back</Link>
+      <Link to={`/${section.thruhike.uid}`}>Back</Link>
       <section className="thruhikeSection">
-        <div className="title">
-          <RichText render={section.title.raw} />
-        </div>
-        <div className="subheading">
-          <span className="locations">
-            {section.starting_location} - {section.ending_location}
-          </span>
-          <br />
+        <div className="heading">
+          <h3>
+            <span className="locations">
+              {section.starting_location} - {section.ending_location}
+            </span>
+          </h3>
           <span className="dates">
             {displayTime(section.start_time)} - {displayTime(section.end_time)}
           </span>
@@ -97,13 +94,13 @@ function ThruhikeSection({ data, location, pageContext }) {
         </div>
       </section>
       <Pagination
-        prev={{
-          slug: `/${_.get(prev, "uid")}`,
-          title: _.get(prev, "data.title.text"),
-        }}
         next={{
+          slug: `/${_.get(prev, "uid")}`,
+          title: prev ? `${_.get(prev, "data.starting_location")} - ${_.get(prev, "data.ending_location")}` : null,
+        }}
+        prev={{
           slug: `/${_.get(next, "uid")}`,
-          title: _.get(next, "data.title.text"),
+          title: next ? `${_.get(next, "data.starting_location")} - ${_.get(next, "data.ending_location")}` : null,
         }}
       />
       <TagList tags={section.tags.split(",")} />
@@ -120,7 +117,6 @@ export const query = graphql`
       tags
       data {
         difficulty
-        tags
         end_time
         ending_location
         map_html
@@ -131,9 +127,9 @@ export const query = graphql`
         resupply
         start_time
         starting_location
-        title {
-          raw
-          text
+        tags
+        thruhike {
+          uid
         }
         total_miles
       }

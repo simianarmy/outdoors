@@ -91,6 +91,7 @@ module.exports = {
         linkResolver: () => (doc) => linkResolver(doc),
         schemas: {
           outing: require('./src/schemas/outing.json'),
+          thruhike: require('./src/schemas/thruhike.json'),
           'thruhike-section': require('./src/schemas/thruhike-section.json'),
         },
       },

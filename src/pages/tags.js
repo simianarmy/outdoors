@@ -10,7 +10,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout.js'
 const _ = require("lodash");
 
-const parseTagsFromString = (str) => str.split(',').map(t => _.toLower(_.trim(t, ' "')));
+const parseTagsFromString = (str) => str.split(',').map(t => _.trim(t, ' "'));
 
 const TagsPage = ({
   data: {

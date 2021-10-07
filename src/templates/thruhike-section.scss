@@ -1,5 +1,10 @@
 .thruhikeSection {
-  .subheading {
+  .heading {
+    h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
     .locations {
       font-weight: bold;
       margin-bottom: 0.22em;
@@ -11,7 +16,6 @@
   }
 
   .notes {
-    margin-top: 2rem;
     padding-top: 40px;
     padding-bottom: 40px;
 

@@ -1,0 +1,90 @@
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "Unique ID"
+      }
+    },
+    "nav_title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Nav Title"
+      }
+    },
+    "display_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label" : "Display title"
+      }
+    },
+    "start_date" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "Start date"
+      }
+    },
+    "icon" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 32,
+          "height" : 32
+        },
+        "thumbnails" : [ ],
+        "label" : "Icon"
+      }
+    },
+    "blurb" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label" : "Blurb"
+      }
+    },
+    "num_shoes_worn" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Number of shoes worn"
+      }
+    },
+    "num_zero_days" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Number of zero days"
+      }
+    },
+    "num_nero_days" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Number of nero days"
+      }
+    },
+    "starting_pack_weight" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Starting pack weight"
+      }
+    },
+    "ending_pack_weight" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Ending pack weight"
+      }
+    },
+    "pack_base_weight": {
+      "type": "Text",
+      "config": {
+        "label": "Pack base weight"
+      }
+    },
+    "lighterpack_link" : {
+      "type" : "Link",
+      "config" : {
+        "label" : "lighterpack_link",
+        "select" : null
+      }
+    }
+  }
+}
