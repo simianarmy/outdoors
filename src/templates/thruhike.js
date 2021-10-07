@@ -23,13 +23,11 @@ function Nav() {
 }
 
 function Thruhike({ data, pageContext }) {
-  console.log({pageContext});
   const hike = data.prismicThruhike.data;
   const sections = data.allPrismicThruhikeSection.edges;
   const pdata = sections.map(p => p.node.data);
   const { next, prev } = pageContext;
 
-  console.log({hike});
   return (
     <Layout>
       <div className="thruhikePage">

@@ -10,9 +10,9 @@ Live @ [simianarmy.com](http://www.simianarmy.com)
 
 - ~~Content search~~
 
-- Hike / Climb / Alpine sections
+- ~~Thruhike parent page & prismic schema~~
 
-- Thruhike parent page & prismic schema
+- Hike / Climb / Alpine sections
 
 - Photos display
 

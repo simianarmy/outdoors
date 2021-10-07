@@ -8,7 +8,6 @@ import FilteredList from '../components/filtered-list.js'
 import './index.scss'
 
 function IndexPage({ data }) {
-  console.log('index data', data);
   const outings = data.allMdx.edges
   const thruhikes = data.allPrismicThruhike.edges;
   const [items, setItems] = React.useState(outings)
