@@ -9,20 +9,6 @@ import "./thruhike-section.scss";
 
 const _ = require("lodash");
 
-/**
- * A little cheat here to generate the link to the parent page
- */
-function parentPagePath(tag) {
-  switch (tag) {
-    case "cdt21":
-      return "/cdt2021";
-    case "jmt20":
-      return "/jmt2020";
-    default:
-      return "/";
-  }
-}
-
 function displayTime(timestamp) {
   return Intl.DateTimeFormat("en-US", {
     month: "short",
