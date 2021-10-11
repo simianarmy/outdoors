@@ -7,6 +7,7 @@ import ThruStats from "../components/thrustats";
 import SectionHike from "../components/sectionhike";
 import Pagination from "../components/pagination";
 import { displayMonthAndDay } from "../utils/dates";
+import htmlSerializer from "../utils/html-serializer";
 
 import './thruhike.scss';
 
@@ -53,7 +54,7 @@ function Thruhike({ data, pageContext }) {
           </span>
         </div>
         <div className="info">
-          <RichText render={hike.blurb.raw} />
+          <RichText render={hike.blurb.raw} htmlSerializer={htmlSerializer} />
         </div>
         <ThruStats data={pdata} {...hike} />
         <section id="gear" className="loadout">
