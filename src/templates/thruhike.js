@@ -49,14 +49,17 @@ function Thruhike({ data, pageContext }) {
               color: "#bbb",
             }}
           >
-            {displayMonthAndDay(pdata[0].start_time)} -{" "}
-            {displayMonthAndDay(pdata[pdata.length-1].end_time)}
+            {pdata.length > 0?
+            displayMonthAndDay(pdata[0].start_time) -
+            displayMonthAndDay(pdata[pdata.length-1].end_time)
+            : null
+            }
           </span>
         </div>
         <div className="info">
           <RichText render={hike.blurb.raw} htmlSerializer={htmlSerializer} />
         </div>
-        <ThruStats data={pdata} {...hike} />
+        {pdata.length ? <ThruStats data={pdata} {...hike} /> : null}
         <section id="gear" className="loadout">
           <h2>Gear</h2>
           <a href={Link.url(hike.lighterpack_link)} target="_blank" rel="noreferrer">Lighterpack</a>
