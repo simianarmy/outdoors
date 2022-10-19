@@ -17,7 +17,6 @@ export function displayTime(date) {
  * @returns {String} Month DD format
  */
 export function displayMonthAndDay(timestamp) {
-  console.log('displaying month/day', timestamp);
   return Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "2-digit",

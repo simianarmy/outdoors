@@ -27,6 +27,9 @@ function Thruhike({ data, pageContext }) {
   const hike = data.prismicThruhike.data;
   const sections = data.allPrismicThruhikeSection.edges;
   const pdata = sections.map(p => p.node.data);
+  const datesHeader = pdata.length > 0 ?
+   `${displayMonthAndDay(pdata[0].start_time)} - ${displayMonthAndDay(pdata[pdata.length-1].end_time)}`
+    : null;
   const { next, prev } = pageContext;
 
   return (
@@ -49,11 +52,7 @@ function Thruhike({ data, pageContext }) {
               color: "#bbb",
             }}
           >
-            {pdata.length > 0?
-            displayMonthAndDay(pdata[0].start_time) -
-            displayMonthAndDay(pdata[pdata.length-1].end_time)
-            : null
-            }
+            {datesHeader}
           </span>
         </div>
         <div className="info">
