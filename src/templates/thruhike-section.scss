@@ -1,23 +1,11 @@
 .thruhikeSection {
-  .heading {
-    h3 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .locations {
-      font-weight: bold;
-      margin-bottom: 0.22em;
-    }
-
-    .dates {
-      color: rgb(187, 187, 187);
-    }
+  .titleRow {
+    font-weight: bold;
   }
 
   .notes {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    margin-top: 20px;
+    padding-bottom: 20px;
 
     .pattern {
       height: 100%;
@@ -31,8 +19,5 @@
         word-spacing: 5px;
       }
     }
-  }
-
-  .details {
   }
 }

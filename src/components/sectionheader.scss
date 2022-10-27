@@ -1,0 +1,17 @@
+.sectionHeader {
+  .titleRow {
+    display: flex;
+    margin-top: 2rem;
+    height: 32px;
+
+    img {
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .dates {
+    margin-top: 0;
+    color: rgb(187, 187, 187);
+  }
+}

@@ -1,26 +1,28 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { Date, RichText } from "prismic-reactjs";
+import { Date as PrismicDate } from "prismic-reactjs";
 
 import Layout from "../components/layout";
-import TagList from "../components/taglist";
+import Notes from "../components/notes";
 import Pagination from "../components/pagination";
+import SectionHeader from "../components/sectionheader";
+import TagList from "../components/taglist";
 import "./thruhike-section.scss";
 
 const _ = require("lodash");
 
-function displayTime(timestamp) {
+function calculateNights(start, end) {
+  return Math.round(
+    (PrismicDate(end).getTime() - PrismicDate(start).getTime()) / (86400 * 1000)
+  );
+}
+
+function displayDateTime(timestamp) {
   return Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "2-digit",
     hour: "numeric",
-  }).format(Date(timestamp));
-}
-
-function calculateNights(start, end) {
-  return Math.round(
-    (Date(end).getTime() - Date(start).getTime()) / (86400 * 1000)
-  );
+  }).format(new Date(timestamp));
 }
 
 function ThruhikeSection({ data, pageContext }) {
@@ -32,23 +34,8 @@ function ThruhikeSection({ data, pageContext }) {
     <Layout>
       <Link to={`/${section.thruhike.uid}`}>Back</Link>
       <section className="thruhikeSection">
-        <div className="heading">
-          <h3>
-            <span className="locations">
-              {section.starting_location} - {section.ending_location}
-            </span>
-          </h3>
-          <span className="dates">
-            {displayTime(section.start_time)} - {displayTime(section.end_time)}
-          </span>
-        </div>
-        <div className="notes">
-          <div className="pattern">
-            <div className="content">
-              <RichText render={section.notes.raw} />
-            </div>
-          </div>
-        </div>
+        <SectionHeader section={section} startDate={displayDateTime(section.start_time)} endDate={displayDateTime(section.end_time)} />
+        {section.notes ? <Notes richText={section.notes.raw} /> : null }
         <div className="details">
           <table>
             <tbody>
@@ -105,6 +92,9 @@ export const query = graphql`
         difficulty
         end_time
         ending_location
+        location_icon {
+          url
+        }
         map_html
         max_elevation
         notes {
