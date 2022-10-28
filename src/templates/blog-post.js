@@ -1,19 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { get } from "lodash";
 
 import Layout from '../components/layout'
 import TagList from '../components/taglist'
 import Pagination from '../components/pagination'
 import { displayDate } from '../utils/dates'
 
-//import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import './blog-post.scss'
 import './tags.scss'
-const _ = require('lodash')
 
-const BlogPost = ({ data, location, pageContext }) => {
+const BlogPost = ({ data, location, pageContext, children }) => {
   const post = data.mdx
   const frontmatter = post.frontmatter
   const { next, prev } = pageContext
@@ -46,7 +44,7 @@ const BlogPost = ({ data, location, pageContext }) => {
           {displayDate(startDate)} - {displayDate(endDate)}
         </div>
         <div className="body">
-          <MDXRenderer>{post.body}</MDXRenderer>
+          {children}
         </div>
         <div className="details">
           <table>
@@ -84,12 +82,12 @@ const BlogPost = ({ data, location, pageContext }) => {
         </div>
         <Pagination
           prev={{
-            slug: _.get(prev, 'fields.slug'),
-            title: _.get(prev, 'frontmatter.title'),
+            slug: get(prev, 'fields.slug'),
+            title: get(prev, 'frontmatter.title'),
           }}
           next={{
-            slug: _.get(next, 'fields.slug'),
-            title: _.get(next, 'frontmatter.title'),
+            slug: get(next, 'fields.slug'),
+            title: get(next, 'frontmatter.title'),
           }}
         />
         <TagList tags={frontmatter.tags} />
@@ -103,7 +101,6 @@ export default BlogPost
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      body
       frontmatter {
         title
         date

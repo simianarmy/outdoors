@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { Date as PrismicDate } from "prismic-reactjs";
+import { get } from "lodash";
 
 import Layout from "../components/layout";
 import Notes from "../components/notes";
@@ -8,8 +9,6 @@ import Pagination from "../components/pagination";
 import SectionHeader from "../components/sectionheader";
 import TagList from "../components/taglist";
 import "./thruhike-section.scss";
-
-const _ = require("lodash");
 
 function calculateNights(start, end) {
   return Math.round(
@@ -35,7 +34,7 @@ function ThruhikeSection({ data, pageContext }) {
       <Link to={`/${section.thruhike.uid}`}>Back</Link>
       <section className="thruhikeSection">
         <SectionHeader section={section} startDate={displayDateTime(section.start_time)} endDate={displayDateTime(section.end_time)} />
-        {section.notes ? <Notes richText={section.notes.raw} /> : null }
+        {section.notes ? <Notes richText={section.notes} /> : null }
         <div className="details">
           <table>
             <tbody>
@@ -68,12 +67,12 @@ function ThruhikeSection({ data, pageContext }) {
       </section>
       <Pagination
         next={{
-          slug: `/${_.get(prev, "uid")}`,
-          title: prev ? `${_.get(prev, "data.starting_location")} - ${_.get(prev, "data.ending_location")}` : null,
+          slug: `/${get(prev, "uid")}`,
+          title: prev ? `${get(prev, "data.starting_location")} - ${get(prev, "data.ending_location")}` : null,
         }}
         prev={{
-          slug: `/${_.get(next, "uid")}`,
-          title: next ? `${_.get(next, "data.starting_location")} - ${_.get(next, "data.ending_location")}` : null,
+          slug: `/${get(next, "uid")}`,
+          title: next ? `${get(next, "data.starting_location")} - ${get(next, "data.ending_location")}` : null,
         }}
       />
       <TagList tags={section.tags.split(",")} />

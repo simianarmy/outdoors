@@ -7,6 +7,17 @@ import FilteredList from '../components/filtered-list.js'
 
 import './index.scss'
 
+// Head must be exported from a Page
+export const Head = ({ location, params, data, pageContext }) => {
+  return (
+  <>
+    <title>{data.site.siteMetadata?.title}</title>
+    <meta name="description" content="Marc Mauger's backpacking trip reports" />
+    <meta name="keywords" content={data.site.siteMetadata?.keywords} />
+  </>
+  );
+};
+
 function IndexPage({ data }) {
   const outings = data.allMdx.edges
   const thruhikes = data.allPrismicThruhike.edges;
@@ -31,7 +42,7 @@ function IndexPage({ data }) {
   }
 
   return (
-    <Layout>
+    <Layout data={data}>
       <div className="container">
         <div className="flex-grid">
           <aside className="col sidebar">
@@ -59,6 +70,12 @@ function IndexPage({ data }) {
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+        keywords
+      }
+    }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {

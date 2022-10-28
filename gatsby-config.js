@@ -11,7 +11,6 @@ module.exports = {
       'nature, travel, outdoors, hiking, backpacking, thru-hiking, ultralight, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, sierras, glaciers, volcanoes, wild, backcountry, survival, PCT, JMT, CDT',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,17 +29,19 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.md', '.mdx'],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 650,
+        mdxOptions: {
+          gatsbyRemarkPlugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                // It's important to specify the maxWidth (in pixels) of
+                // the content container as this plugin uses this as the
+                // base for generating different widths of each image.
+                maxWidth: 650,
+              },
             },
-          },
-        ],
+          ],
+        },
       },
     },
     'gatsby-plugin-image',

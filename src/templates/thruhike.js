@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Link, RichText } from "prismic-reactjs";
+import { get } from "lodash";
 
 import Layout from "../components/layout";
 import ThruStats from "../components/thrustats";
@@ -10,8 +11,6 @@ import { displayMonthAndDay } from "../utils/dates";
 import htmlSerializer from "../utils/html-serializer";
 
 import './thruhike.scss';
-
-const _ = require("lodash");
 
 function Nav() {
   return (
@@ -71,12 +70,12 @@ function Thruhike({ data, pageContext }) {
         </div>
       <Pagination
         next={{
-          slug: `/${_.get(prev, "uid")}`,
-          title: _.get(prev, "data.nav_title")
+          slug: `/${get(prev, "uid")}`,
+          title: get(prev, "data.nav_title")
         }}
         prev={{
-          slug: `/${_.get(next, "uid")}`,
-          title: _.get(next, "data.nav_title")
+          slug: `/${get(next, "uid")}`,
+          title: get(next, "data.nav_title")
         }}
       />
       </div>

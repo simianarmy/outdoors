@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
-const _ = require("lodash");
+import kebabCase from 'lodash/kebabCase'
 
 function TagList({ tags }) {
   return (
     <div className="tags">
       <h3>Tags</h3>
       {tags.map((t, idx) => (
-        <Link key={`tag-${idx}`} to={`/tags/${_.kebabCase(t)}`}>
+        <Link key={`tag-${idx}`} to={`/tags/${kebabCase(t)}`}>
           <div className="tag">
             <span>{t}</span>
           </div>

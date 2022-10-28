@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 
 // Utilities
 import kebabCase from 'lodash/kebabCase'
+import { each, trim } from "lodash";
 
 // Components
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout.js'
-const _ = require("lodash");
 
-const parseTagsFromString = (str) => str.split(',').map(t => _.trim(t, ' "'));
+const parseTagsFromString = (str) => str.split(',').map(t => trim(t, ' "'));
 
 const TagsPage = ({
   data: {
@@ -24,9 +24,9 @@ const TagsPage = ({
     return acc;
   }, {});
   // count the tags from the prismic string data
-  _.each(edges, curr => {
+  each(edges, curr => {
     const tags = parseTagsFromString(curr.node.data.tags);
-    _.each(tags, t => {
+    each(tags, t => {
       if (tagCounts[t]) {
         tagCounts[t] += 1;
       } else {

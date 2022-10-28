@@ -9,7 +9,7 @@ export default function Notes({richText}) {
       {hidden ? (<button onClick={() => setHidden(false)}>Notes</button>) :
       <div className="pattern">
         <div className="content">
-          <RichText render={richText} />
+          <RichText render={richText.raw} />
         </div>
       </div>
       }

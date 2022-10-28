@@ -27,7 +27,7 @@ const createBlogPosts = ({ posts, createPage }) => {
 
     createPage({
       path: node.fields.slug,
-      component: blogTemplate,
+      component: `${blogTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
@@ -101,6 +101,9 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               tags
+            }
+            internal {
+              contentFilePath
             }
           }
         }
