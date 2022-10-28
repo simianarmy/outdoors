@@ -44,5 +44,3 @@ junction leading down to the car.
 
 Next time: Start at Windy Ridge & go counter-clockwise.  In the late spring.
 
-
-

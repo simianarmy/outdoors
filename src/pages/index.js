@@ -12,7 +12,7 @@ export const Head = ({ location, params, data, pageContext }) => {
   return (
   <>
     <title>{data.site.siteMetadata?.title}</title>
-    <meta name="description" content="Marc Mauger's backpacking trip reports" />
+    <meta name="description" content="Marc Maugers backpacking trip reports" />
     <meta name="keywords" content={data.site.siteMetadata?.keywords} />
   </>
   );

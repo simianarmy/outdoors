@@ -24,4 +24,3 @@ popular lake with no crowds to bother me.  Last day hiked along Cooper River
 and past Cooper Lake to close the loop.
 
 
-

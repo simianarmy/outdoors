@@ -9,6 +9,7 @@ nights: 3
 maxElevation: Island Pass (10225 ft)
 jurisdiction: June Lake
 map: Tom Harrison Maps Mammoth High Country
+routeUrl: https://www.gaiagps.com/public/FD5XgTaM12DRn0ZZTcW2VnQH?embed=True
 trailhead: Silver Lake
 tags: ["thousand island lake", "island pass", "2017", "sierras", "california",
 "hike", "20-30 miles", "mammoth", "mono lake", "agnew pass", "snow", "coyote"]
@@ -46,8 +47,3 @@ Visited Mono Lake on the way back
 
 ![Route Map](../images/IMG_5628.jpg)
 
-<iframe
-src='https://www.gaiagps.com/public/FD5XgTaM12DRn0ZZTcW2VnQH?embed=True'
-style='border:none; overflow-y: hidden; background-color:white; min-width:
-320px; max-width:420px; width:100%; height: 420px;' scrolling='no'
-seamless='seamless'></iframe>

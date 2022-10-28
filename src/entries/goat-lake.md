@@ -19,5 +19,3 @@ Pleasant overnighter at Goat Lake
 Jaunt through wildflowers and ridge views to Goat Lake where it was a tad too
 icy looking to swim in.  Nice ridge hike to loop back to trailhead.
 
-
-

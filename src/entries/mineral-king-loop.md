@@ -9,6 +9,7 @@ nights: 4
 maxElevation: Franklin Pass (11840 ft)
 jurisdiction: Sequoia National Park
 map: Tom Harrison Maps Mount Whitney High Country
+routeUrl: https://www.gaiagps.com/public/QH2TRyxLntS7on6VMyzo1KTx?embed=True
 trailhead: Mineral King
 tags: ["mineral king", "sierras", "california", "2018", "50-60 miles",
 "sequoia", "sawtooth pass", "kern canyon", "franklin pass", "hike", "snow"]
@@ -40,8 +41,3 @@ tags: ["mineral king", "sierras", "california", "2018", "50-60 miles",
   backtracking and trying again without the GPS led me the right way (sort of)
   though by then I had managed to lose my map!
 
-<iframe
-src='https://www.gaiagps.com/public/QH2TRyxLntS7on6VMyzo1KTx?embed=True'
-style='border:none; overflow-y: hidden; background-color:white; min-width:
-320px; max-width:420px; width:100%; height: 420px;' scrolling='no'
-seamless='seamless'></iframe>

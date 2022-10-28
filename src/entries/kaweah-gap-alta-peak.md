@@ -84,8 +84,3 @@ myself since they were performing a controlled burn in the area and had put
 up signs preventing tourists from entering the area I had descended into.
 Took in the beautiful giant sequoias before returning to car.
 
-
-
-
-
-

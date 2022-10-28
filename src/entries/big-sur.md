@@ -9,6 +9,7 @@ nights: 2
 maxElevation: 3370 ft
 jurisdiction: Silver Peaks Wilderness
 map:
+routeUrl: https://www.gaiagps.com/public/954QBIdU2nAMo5lZ56GBu98C?embed=True
 trailhead: Salmon Creek
 tags: ["2020", "big sur", "california", "thanksgiving", "los padres", "silver peak", "salmon creek", "hike", "20-30 miles"]
 ---
@@ -27,4 +28,3 @@ Finished by backtracking on road then down Salmon Creek trail back to car.
 
 Couple who passed me on the 1st day ran into a rattlesnake on trail that tried to bite!  Luckily they were OK and I didn't spot any on trail.
 
-<iframe src='https://www.gaiagps.com/public/954QBIdU2nAMo5lZ56GBu98C?embed=True' style='border:none; overflow-y: hidden; background-color:white; min-width: 320px; max-width:420px; width:100%; height: 420px;' scrolling='no' seamless='seamless'></iframe>

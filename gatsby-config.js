@@ -29,8 +29,9 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.md', '.mdx'],
+        gatsbyRemarkPlugins: [`gatsby-remark-responsive-iframe`],
         mdxOptions: {
-          gatsbyRemarkPlugins: [
+          remarkPlugins: [
             {
               resolve: `gatsby-remark-images`,
               options: {
@@ -40,10 +41,14 @@ module.exports = {
                 maxWidth: 650,
               },
             },
+            {
+              resolve: `gatsby-remark-responsive-iframe`,
+            },
           ],
         },
       },
     },
+    `gatsby-transformer-remark`,
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

@@ -9,6 +9,7 @@ nights: 4
 maxElevation: Forester Pass (13180 ft)
 jurisdiction: Kings Canyon National Park
 map: Tom Harrison Maps Kings Canyon High Country, Mt Whitney High Country
+routeUrl: https://www.gaiagps.com/public/wqhkAwvJ4Xc5M3niE9M5FZTO?embed=True
 trailhead: Roads End, Kings Canyon National Park
 tags: ["sierras", "great western divide", "50-60 miles", "kings canyon",
 "forester pass", "north guard", "mount brewer", "south guard", "thunder
@@ -53,9 +54,3 @@ mountain", "mount jordan", "kings-kern divide", "class 2", "PCT", "JMT",
 
   Next time I will bring a fishing rod - all the lakes were jumping with
   fishies!
-
-<iframe
-src='https://www.gaiagps.com/public/wqhkAwvJ4Xc5M3niE9M5FZTO?embed=True'
-style='border:none; overflow-y: hidden; background-color:white; min-width:
-320px; max-width:420px; width:100%; height: 420px;' scrolling='no'
-seamless='seamless'></iframe>

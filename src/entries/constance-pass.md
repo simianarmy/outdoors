@@ -44,4 +44,3 @@ the Seattle skyline.  It was already crowded with people with the same idea and
 the barren pass didn't exactly have a lot of flat camping spots, so skipped it
 for Buckhorn lake, which was way too crowded for my taste.
 
-

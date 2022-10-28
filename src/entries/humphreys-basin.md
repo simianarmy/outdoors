@@ -9,6 +9,7 @@ nights: 4
 maxElevation: Royce Lakes (11720 ft)
 jurisdiction: White Mountain Ranger District, Bishop
 map: Tom Harrison Maps Mono Divide High Country
+routeUrl: https://www.gaiagps.com/public/RCFVIXT9eSlbgblBzrNA13Pp?embed=True
 trailhead: Pine Creek
 tags: ["elba lake", "puppet lake", "roget lake", "mesa lake", "desolation lake", "royce lakes", "humphreys basin", "roget lake pass", "pine creek pass", "granite park", "piute canyon trail", "hutchinson meadow", "french canyon", "sierras", "california", "hike", "2020", "cross-country", "mono divide", "white mountain", "bishop", "40-50 miles"]
 ---
@@ -40,8 +41,3 @@ Granite Park due to unknown snow conditions on N. side.  Turned out being a
 smart decision b/c when I surveyed the descent from the Granite Park side saw
 that the way down was all steep snowpack.
 
-<iframe
-src='https://www.gaiagps.com/public/RCFVIXT9eSlbgblBzrNA13Pp?embed=True'
-style='border:none; overflow-y: hidden; background-color:white; min-width:
-320px; max-width:420px; width:100%; height: 420px;' scrolling='no'
-seamless='seamless'></iframe>

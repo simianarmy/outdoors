@@ -9,6 +9,7 @@ nights: 3
 maxElevation: Sheperds Pass (12035 ft)
 jurisdiction: John Muir & Sequoia National Park
 map: Tom Harrison Maps Mt Whitney High Country
+routeUrl: https://www.gaiagps.com/datasummary/track/5ecce33c2df9800800302520576ad46a/?embed=True
 trailhead: Sheperds Pass - Independence
 tags: ["sierras", "sheperds pass", "lake south america", "sequoia national park", "class 1", "PCT", "JMT", "california", "hike", "2020", "cross-country", "coyote", "40-50 miles"]
 ---
@@ -43,8 +44,3 @@ miles downhill to the TH seemed to take forever.  Made it to car by 7pm
 A coyote ran past me on my way down from Lake S America.  They were making
 a lot of noise in the area.
 
-<iframe
-src='https://www.gaiagps.com/datasummary/track/5ecce33c2df9800800302520576ad46a/?embed=True'
-style='border:none; overflow-y: hidden; background-color:white; min-width:
-320px; max-width:420px; width:100%; height: 420px;' scrolling='no'
-seamless='seamless'></iframe>

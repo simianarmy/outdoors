@@ -104,10 +104,3 @@ Got to airport in time to relax in the Delta sky lounge thanks to Andre's
 access.  LAX was the usual zoo at 10pm and it took over an hour to get a taxi
 and get out of the airport.
 
-
-
-
-
-
-
-

@@ -1,16 +1,25 @@
-.dates {
-  margin-top: 1rem;
-  color: rgb(187, 187, 187);
-}
+.blog-post {
+  .dates {
+    margin-top: 1rem;
+    color: rgb(187, 187, 187);
+  }
 
-.body {
-  margin-top: 1rem;
-}
+  .body {
+    margin-top: 1rem;
+  }
 
-.pagination {
-  font-size: 14px;
+  iframe {
+    border: none;
+    overflow-y: hidden;
+    background-color: white;
+    min-width: 320px;
+  }
 
-  .next {
-    float: right;
+  .pagination {
+    font-size: 14px;
+
+    .next {
+      float: right;
+    }
   }
 }

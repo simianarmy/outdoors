@@ -38,6 +38,3 @@ a passing ranger gave me a ride & saved me some pain.
 
 Didn't see a single person the entire trip!
 
-
-
-

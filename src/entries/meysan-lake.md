@@ -9,6 +9,7 @@ nights: 1
 maxElevation: Mt Mallory (13845 ft)
 jurisdiction: Inyo National Forest, Lone Pine
 map: Tom Harrison Maps Mount Whitney High Country
+routeUrl: https://www.gaiagps.com/public/tK345RIEiTrYOShSa7QVS2vF?embed=True
 trailhead: Whitney Portal
 tags: ["meysan lake", "mount mallory", "class 2", "inyo", "sierras",
 "california", "2018", "0-10 miles"]
@@ -28,12 +29,4 @@ tags: ["meysan lake", "mount mallory", "class 2", "inyo", "sierras",
   We explored the way down the West side of the pass to Sky Blue Lake which is
   doable but would have taken us too long and we wanted to beat any possible
   afternoon rain/lightning, common in the fall.
-
-<iframe
-src='https://www.gaiagps.com/public/tK345RIEiTrYOShSa7QVS2vF?embed=True'
-style='border:none; overflow-y: hidden; background-color:white; min-width:
-320px; max-width:420px; width:100%; height: 420px;' scrolling='no'
-seamless='seamless'></iframe>
-
-
 

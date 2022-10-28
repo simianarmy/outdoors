@@ -39,8 +39,3 @@ within spitting distance from me :-o
 First close black bear encounter where the bears didn't run away!  Got some
 good videos.
 
-
-
-
-
-

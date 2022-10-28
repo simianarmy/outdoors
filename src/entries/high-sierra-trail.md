@@ -9,6 +9,7 @@ nights: 5
 maxElevation: Mt Whitney (14505 ft)
 jurisdiction: Sequoia National Park
 map: Tom Harrison Maps Mount Whitney High Country
+routeUrl: https://www.gaiagps.com/public/TzwrMWJOcLPWghFtwSMIGQ1o?embed=True
 trailhead: Wolverton - Alta Peak Trail
 tags: ["high sierra trail", "sierras", "california", "2020", "50-60 miles",
 "sequoia", "kaweah gap", "hamilton lakes", "hike", "x-country", "kaweah pass", "kawea basin", "fire",
@@ -17,9 +18,9 @@ tags: ["high sierra trail", "sierras", "california", "2020", "50-60 miles",
 
 An accidental hike of the High Sierra Trail with some cross-country detours.
 
-Was planning another attempt of the Circumnavigation of the Kaweahs trip I had attempted in '19, 
+Was planning another attempt of the Circumnavigation of the Kaweahs trip I had attempted in '19,
 but again circumstances beyond my control led me on a different path...this time the actual full HST!
-Ranger had warned me of various new fires in the Sequoias that could threaten my plans, so I left 
+Ranger had warned me of various new fires in the Sequoias that could threaten my plans, so I left
 with a somewhat flexible itinerary, though always with the plan of returning to the trailhead.
 
 Noticed quite a bit of smoke in the valley on the 1st days hike to Hamilton Lakes once I joined the HST from the Wolverton trailhead.  A few different groups at Hamilton camping, probably also hiking the HST so felt OK about continuing on even though the trail went South towards the growing CQF complex fire, which was growinmg uncontrolled through the Golden Trout wilderness and North towards Kern river valley and NW towards Sequoias groves.
@@ -46,8 +47,4 @@ E. Side Sierra transported me to my car the next day & all worked out.
 * Very few people on the normally busy HST
 * X-country to Kaweah Basin would be great to try again to see it without smoke, but scared to have to do that scramb le down again.
 * 2nd time on Whitney summit
-
-<iframe src='https://www.gaiagps.com/public/TzwrMWJOcLPWghFtwSMIGQ1o?embed=True' style='border:none; overflow-y: hidden; background-color:white; min-width: 320px; max-width:420px; width:100%; height: 420px;' scrolling='no' seamless='seamless'></iframe>
-
-
 

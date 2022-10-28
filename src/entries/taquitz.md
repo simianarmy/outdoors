@@ -56,8 +56,3 @@ the parking lot.  A nice dinner in Idyllwild before returning home.
 
 All in all a great experience.
 
-
-
-
-
-

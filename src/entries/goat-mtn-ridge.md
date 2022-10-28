@@ -25,5 +25,3 @@ In the morning, took a side trip up to a ridge over Green River Valley with
 epic views of the Mt Margaret Wilderness' northern peaks.  Great views of
 Rainier to the North on the way up, and a clear view of St Helens, Mt Adams, & Mt Hood from the ridge.
 
-
-

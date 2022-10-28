@@ -9,6 +9,7 @@ nights: 2
 maxElevation: 1666 ft
 jurisdiction: Catalina Island
 map: GPS
+routeUrl: https://www.gaiagps.com/public/Qibxr7QHCO7CirobBkz1EjWM?embed=True
 trailhead: Hermit Gulch
 tags: ["2020", "california", "catalina", "island", "bison", "hike", "20-30 miles"]
 ---
@@ -23,4 +24,3 @@ Bison visited our campsite the next morning for some good photo ops.  Passed by 
 
 Unable to complete the trail that continues to the Northern peninsula due to campgrounds being full.
 
-<iframe src='https://www.gaiagps.com/public/Qibxr7QHCO7CirobBkz1EjWM?embed=True' style='border:none; overflow-y: hidden; background-color:white; min-width: 320px; max-width:420px; width:100%; height: 420px;' scrolling='no' seamless='seamless'></iframe>

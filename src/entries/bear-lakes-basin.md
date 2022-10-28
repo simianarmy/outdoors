@@ -9,6 +9,7 @@ nights: 3
 maxElevation: Italy Pass (12320 ft)
 jurisdiction: White Mountain Ranger District, Bishop
 map: Tom Harrison Maps Mono Divide High Country
+routeUrl: https://www.gaiagps.com/public/HwCiJYODbcBRnR2fK3el6nlR?embed=True
 trailhead: Pine Creek
 tags: ["bear lakes", "granite park", "italy pass", "dancing bear pass", "pine creek", "french canyon", "sierras", "california", "hike", "2018", "cross-country",
 "mono divide", "white mountain", "bishop", "30-40 miles"]
@@ -30,9 +31,3 @@ Canyon trail through rugged terrain.
 Getting a hammock setup in treeless terrain took much longer than I thought.
 Spent a good 3 hours scouting rocks, trying various attachments until I found
 a perfect shelf.
-
-<iframe
-src='https://www.gaiagps.com/public/HwCiJYODbcBRnR2fK3el6nlR?embed=True'
-style='border:none; overflow-y: hidden; background-color:white; min-width:
-320px; max-width:420px; width:100%; height: 420px;' scrolling='no'
-seamless='seamless'></iframe>

@@ -1,19 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { get } from "lodash";
+import get from "lodash/get";
 
 import Layout from '../components/layout'
-import TagList from '../components/taglist'
 import Pagination from '../components/pagination'
+import RouteMap from '../components/routemap';
+import TagList from '../components/taglist'
 import { displayDate } from '../utils/dates'
 
 import './blog-post.scss'
 import './tags.scss'
 
-const BlogPost = ({ data, location, pageContext, children }) => {
-  const post = data.mdx
-  const frontmatter = post.frontmatter
+const BlogPost = ({ data: { mdx }, pageContext, children }) => {
+  const frontmatter = mdx.frontmatter
   const { next, prev } = pageContext
   const startDate = new Date(frontmatter.date)
   const endDate = new Date(startDate)
@@ -21,12 +21,13 @@ const BlogPost = ({ data, location, pageContext, children }) => {
 
   return (
     <Layout>
-      <div>
+      <div className="blog-post">
         <h1>{frontmatter.title}</h1>
         <br />
         {frontmatter.cover ? (
           <GatsbyImage
             image={frontmatter.cover.childImageSharp.gatsbyImageData}
+            alt="cover photo"
           />
         ) : null}
         {frontmatter.photos ? (
@@ -46,6 +47,10 @@ const BlogPost = ({ data, location, pageContext, children }) => {
         <div className="body">
           {children}
         </div>
+        {frontmatter.routeUrl ?
+          <RouteMap embedUrl={frontmatter.routeUrl} />
+          : null
+        }
         <div className="details">
           <table>
             <tbody>
@@ -116,6 +121,7 @@ export const query = graphql`
         maxElevation
         jurisdiction
         map
+        routeUrl
         trailhead
         tags
       }

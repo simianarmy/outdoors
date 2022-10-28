@@ -24,4 +24,3 @@ Discovered the need for an underquilt when I woke up in my hammock with
 a frozen backside!
 
 
-
