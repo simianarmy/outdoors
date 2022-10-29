@@ -4,9 +4,9 @@ import heroImage from '../images/IMG_4610.jpeg'
 
 const Header = ({ siteTitle }) => (
   <div
-    className="bg-cover relative"
+    className="relative bg-no-repeat bg-center bg-cover"
     style={{
-      background: `url(${heroImage}) no-repeat center`,
+      backgroundImage: `url(${heroImage})`,
     }}
   >
     <div className="m-0 m-auto max-w-2xl py-6 px-4" >

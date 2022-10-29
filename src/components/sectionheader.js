@@ -4,6 +4,9 @@ import SectionIcon from "../components/sectionicon";
 
 //import "./sectionheader.scss";
 
+/**
+ * TODO: Title style depends on calling page
+ */
 export default function SectionHeader({section, startDate, endDate}) {
   return (
     <>

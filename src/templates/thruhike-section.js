@@ -8,7 +8,8 @@ import Notes from "../components/notes";
 import Pagination from "../components/pagination";
 import SectionHeader from "../components/sectionheader";
 import TagList from "../components/taglist";
-import "./thruhike-section.scss";
+
+//import "./thruhike-section.scss";
 
 function calculateNights(start, end) {
   return Math.round(
@@ -31,7 +32,7 @@ function ThruhikeSection({ data, pageContext }) {
 
   return (
     <Layout>
-      <Link to={`/${section.thruhike.uid}`}>Back</Link>
+      <Link className="text-blue-600 hover:underline" to={`/${section.thruhike.uid}`}>Back</Link>
       <section className="thruhikeSection">
         <SectionHeader section={section} startDate={displayDateTime(section.start_time)} endDate={displayDateTime(section.end_time)} />
         {section.notes ? <Notes richText={section.notes} /> : null }
