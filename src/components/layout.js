@@ -6,7 +6,7 @@ import { Head } from '../pages/index';
 import Header from './header'
 import Footer from './footer'
 
-import './layout.scss'
+//import './layout.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -23,9 +23,11 @@ const Layout = ({ children }) => (
     render={(data) => (
       <>
         <Head data={data} />
-        <div className="site">
+        <div className="flex flex-col min-h-screen">
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div className="site-content">{children}</div>
+          <div className="grow mx-auto my-0 px-4 pb-6">
+            {children}
+          </div>
           <Footer />
         </div>
       </>

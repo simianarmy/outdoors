@@ -4,15 +4,14 @@ import kebabCase from 'lodash/kebabCase'
 
 function TagList({ tags }) {
   return (
-    <div className="tags">
-      <h3>Tags</h3>
+    <div className="mt-4">
+      <div className="flex flex-wrap">
       {tags.map((t, idx) => (
-        <Link key={`tag-${idx}`} to={`/tags/${kebabCase(t)}`}>
-          <div className="tag">
-            <span>{t}</span>
-          </div>
+        <Link className="mr-1 hover:underline" key={`tag-${idx}`} to={`/tags/${kebabCase(t)}`}>
+            <span className="py-0 px-0.5 bg-zinc-100 rounded-sm text-sm text-blue-600">{t}</span>
         </Link>
       ))}
+      </div>
     </div>
   );
 }

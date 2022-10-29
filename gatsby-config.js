@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: 'Notes on Travels in Nature',
     keywords:
-      'nature, travel, outdoors, hiking, backpacking, thru-hiking, ultralight, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, sierras, glaciers, volcanoes, wild, backcountry, survival, PCT, JMT, CDT',
+      'nature, travel, outdoors, hiking, backpacking, thru-hiking, ultralight, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, sierras, glaciers, volcanoes, wild, backcountry, survival, PCT, JMT, CDT, PNT',
   },
   plugins: [
     {
@@ -73,7 +73,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
-    'gatsby-plugin-sass',
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

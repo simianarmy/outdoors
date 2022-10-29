@@ -14,8 +14,8 @@ function ThruStats({data, num_zero_days, num_nero_days, num_shoes_worn, pack_bas
   const maxSectionMiles = Math.max(...(data.map(p => p.total_miles)));
 
   return (
-    <section id="stats">
-        <h2>Stats</h2>
+    <section>
+        <h2 className="text-2xl mb-2">Stats</h2>
         <table>
           <thead></thead>
         <tbody>

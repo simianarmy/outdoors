@@ -6,9 +6,8 @@ import { get } from "lodash";
 import Layout from "../components/layout";
 import Notes from "../components/notes";
 import Pagination from "../components/pagination";
-import SectionHeader from "../components/sectionheader";
+import { SectionHeaderBold } from "../components/sectionheader";
 import TagList from "../components/taglist";
-import "./thruhike-section.scss";
 
 function calculateNights(start, end) {
   return Math.round(
@@ -31,11 +30,11 @@ function ThruhikeSection({ data, pageContext }) {
 
   return (
     <Layout>
-      <Link to={`/${section.thruhike.uid}`}>Back</Link>
-      <section className="thruhikeSection">
-        <SectionHeader section={section} startDate={displayDateTime(section.start_time)} endDate={displayDateTime(section.end_time)} />
+      <Link className="text-blue-600 hover:underline" to={`/${section.thruhike.uid}#sections`}>Back</Link>
+      <div>
+        <SectionHeaderBold section={section} startDate={displayDateTime(section.start_time)} endDate={displayDateTime(section.end_time)} />
         {section.notes ? <Notes richText={section.notes} /> : null }
-        <div className="details">
+        <div>
           <table>
             <tbody>
               <tr>
@@ -64,7 +63,7 @@ function ThruhikeSection({ data, pageContext }) {
             <div dangerouslySetInnerHTML={{ __html: section.map_html }} />
           ) : null}
         </div>
-      </section>
+      </div>
       <Pagination
         next={{
           slug: `/${get(prev, "uid")}`,
