@@ -43,23 +43,25 @@ function IndexPage({ data }) {
 
   return (
     <Layout data={data}>
-      <div className="container">
+      <div className="container max-w-xl">
         <div className="flex flex-col sm:flex-row mt-auto mx-neg-4 mb-4">
-          <aside className="mx-2 p-4 flex flex-col whitespace-nowrap">
-            <div className="mb-4 text-lg">
+          <aside className="mx-2 p-4 flex-col flex-1 w-1/4 whitespace-nowrap">
+            <p className="text-lg">
               <h4>Thru-Hikes</h4>
-            </div>
-            <div className="flex flex-row sm:flex-col">
+            </p>
+            <nav className="mt-4 flex flex-row sm:flex-col">
               {thruhikes.map(({node}) => (
                 <div className="mr-4 text-sm sm:m-0 sm:text-base" key={node.uid}>
-                  <Link to={`/${node.uid}`}>{node.data.nav_title}</Link>
+                  <Link className="text-blue-600 hover:underline" to={`/${node.uid}`}>{node.data.nav_title}</Link>
                 </div>
               ))}
-            </div>
+            </nav>
           </aside>
-          <section className="mx-2 p-4 flex-3">
-            <SearchInput onChange={filterItems} />
-            <h1>Outings</h1>
+          <section className="mx-2 p-4 flex flex-col">
+            <div className="flex justify-end">
+              <SearchInput onChange={filterItems} />
+            </div>
+            <h2 className="text-4xl text-bold mb-4">Outings</h2>
             <FilteredList items={items} />
           </section>
         </div>

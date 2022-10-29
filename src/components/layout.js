@@ -25,7 +25,7 @@ const Layout = ({ children }) => (
         <Head data={data} />
         <div className="flex flex-col min-h-screen">
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div className="grow mx-auto my-0 max-w-2xl px-4 pt-0 pb-6">
+          <div className="grow mx-auto my-0 px-4 pb-6">
             {children}
           </div>
           <Footer />

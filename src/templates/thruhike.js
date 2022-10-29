@@ -10,8 +10,6 @@ import Pagination from "../components/pagination";
 import { displayMonthAndDay } from "../utils/dates";
 import htmlSerializer from "../utils/html-serializer";
 
-//import './thruhike.scss';
-
 function Nav() {
   return (
     <nav className="mt-4">
@@ -33,7 +31,7 @@ function Thruhike({ data, pageContext }) {
 
   return (
     <Layout>
-      <div className="thruhikePage">
+      <div>
         <Nav />
         <div className="flex items-center header">
           {hike.icon?.url ? (
@@ -54,30 +52,32 @@ function Thruhike({ data, pageContext }) {
             {datesHeader}
           </span>
         </div>
-        <div className="info">
+        <article className="prose lg:prose-xl">
           <RichText render={hike.blurb.raw} htmlSerializer={htmlSerializer} />
-        </div>
-        {pdata.length ? <ThruStats data={pdata} {...hike} /> : null}
-        <section id="gear" className="mb-4">
-          <h2 className="text-2xl mt-4 mb-2">Gear</h2>
+        </article>
+        {pdata.length ? <div id="stats" className="mt-4"><ThruStats data={pdata} {...hike} /></div> : null}
+        <section id="gear" className="mt-4">
+          <h2 className="text-2xl mb-2">Gear</h2>
           <a href={Link.url(hike.lighterpack_link)} className="text-blue-600 hover:underline" target="_blank" rel="noreferrer">Lighterpack</a>
         </section>
-        <div id="sections" className="mb-4">
-          <h2 className="text-2xl mt-4">Sections</h2>
+        <div id="sections" className="mt-4">
+          <h2 className="text-2xl">Sections</h2>
           {sections.map(({ node }, idx) => (
             <SectionHike {...node} num={idx+1} key={idx} />
           ))}
         </div>
-        <Pagination
-          next={{
-            slug: `/${get(prev, "uid")}`,
-            title: get(prev, "data.nav_title")
-          }}
-          prev={{
-            slug: `/${get(next, "uid")}`,
-            title: get(next, "data.nav_title")
-          }}
-        />
+        <div className="mt-4">
+          <Pagination
+            next={{
+              slug: `/${get(prev, "uid")}`,
+              title: get(prev, "data.nav_title")
+            }}
+            prev={{
+              slug: `/${get(next, "uid")}`,
+              title: get(next, "data.nav_title")
+            }}
+          />
+        </div>
       </div>
     </Layout>
   );

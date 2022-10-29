@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import SectionHeader from "./sectionheader";
 import { displayMonthAndDay } from "../utils/dates";
 
-import "./sectionhike.scss";
+//import "./sectionhike.scss";
 
 function SectionHike({uid, data}) {
   return (

@@ -9,8 +9,10 @@ const ListLink = props => (
 
 const Footer = () => (
   <div className="h-16 bg-slate-400 flex text-white justify-end items-center">
-    <ListLink to="/about/">About</ListLink>
-    <ListLink to="/contact/">Contact</ListLink>
+    <ul>
+      <ListLink to="/about/">About</ListLink>
+      <ListLink to="/contact/">Contact</ListLink>
+    </ul>
   </div>
 )
 export default Footer

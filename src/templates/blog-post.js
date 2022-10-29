@@ -29,7 +29,7 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
         {frontmatter.photos ? (
           <div class="mb-1.5">
             <a
-              className="text-blue-600 hover:underline"
+              className="text-sm text-blue-600 hover:underline"
               href={frontmatter.photos}
               rel="noopener noreferrer"
               target="_blank"
@@ -41,14 +41,16 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
         <div className="mt-4 text-gray-400">
           {displayDate(startDate)} - {displayDate(endDate)}
         </div>
-        <div className="mt-4 mb-4">
+        <article className="mt-4 prose lg:prose-xl prose-slate" >
           {children}
-        </div>
+        </article>
         {frontmatter.routeUrl ?
-          <RouteMap embedUrl={frontmatter.routeUrl} />
+          <div className="mt-4">
+            <RouteMap embedUrl={frontmatter.routeUrl} />
+          </div>
           : null
         }
-        <div className="details">
+        <div className="mt-4">
           <table>
             <tbody>
               <tr>
@@ -92,7 +94,9 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
             title: get(next, 'frontmatter.title'),
           }}
         />
-        <TagList tags={frontmatter.tags} />
+        <div className="mt-4">
+          <TagList tags={frontmatter.tags} />
+        </div>
       </div>
     </Layout>
   )
