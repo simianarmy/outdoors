@@ -9,9 +9,6 @@ import RouteMap from '../components/routemap';
 import TagList from '../components/taglist'
 import { displayDate } from '../utils/dates'
 
-import './blog-post.scss'
-//import './tags.scss'
-
 const BlogPost = ({ data: { mdx }, pageContext, children }) => {
   const frontmatter = mdx.frontmatter
   const { next, prev } = pageContext
@@ -22,8 +19,7 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
   return (
     <Layout>
       <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <br />
+        <h1 className="text-3xl mt-10 mb-7">{frontmatter.title}</h1>
         {frontmatter.cover ? (
           <GatsbyImage
             image={frontmatter.cover.childImageSharp.gatsbyImageData}
@@ -31,8 +27,9 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
           />
         ) : null}
         {frontmatter.photos ? (
-          <div style={{ marginBottom: '5px' }}>
+          <div class="mb-1.5">
             <a
+              className="text-blue-600 hover:underline"
               href={frontmatter.photos}
               rel="noopener noreferrer"
               target="_blank"
@@ -41,10 +38,10 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
             </a>
           </div>
         ) : null}
-        <div className="dates">
+        <div className="mt-4 text-gray-400">
           {displayDate(startDate)} - {displayDate(endDate)}
         </div>
-        <div className="body">
+        <div className="mt-4 mb-4">
           {children}
         </div>
         {frontmatter.routeUrl ?

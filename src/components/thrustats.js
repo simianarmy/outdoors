@@ -15,7 +15,7 @@ function ThruStats({data, num_zero_days, num_nero_days, num_shoes_worn, pack_bas
 
   return (
     <section id="stats">
-        <h2>Stats</h2>
+        <h2 className="text-2xl mt-4 mb-2">Stats</h2>
         <table>
           <thead></thead>
         <tbody>

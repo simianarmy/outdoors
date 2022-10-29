@@ -3,15 +3,15 @@ import { Link } from "gatsby";
 
 function Pagination({ next, prev }) {
   return (
-    <div className="pagination">
+    <div className="text-sm">
       <p>
         {prev.slug && (
-          <Link className="prev" to={prev.slug}>
+          <Link className="prev hover:underline text-blue-600" to={prev.slug}>
             {prev.title}
           </Link>
         )}
         {next.slug && (
-          <Link className="next" to={next.slug}>
+          <Link className="float-right hover:underline text-blue-600" to={next.slug}>
             {next.title}
           </Link>
         )}

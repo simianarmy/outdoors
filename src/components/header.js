@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
   >
     <div className="m-0 m-auto max-w-2xl py-6 px-4" >
       <h1 className="no-underline text-white text-3xl">
-        <Link to="/" >
+        <Link to="/" className="hover:text-white">
           {siteTitle}
         </Link>
       </h1>
