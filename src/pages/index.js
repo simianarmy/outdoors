@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SearchInput from '../components/search-input.js'
 import FilteredList from '../components/filtered-list.js'
 
-import './index.scss'
+//import './index.scss'
 
 // Head must be exported from a Page
 export const Head = ({ location, params, data, pageContext }) => {
@@ -44,20 +44,20 @@ function IndexPage({ data }) {
   return (
     <Layout data={data}>
       <div className="container">
-        <div className="flex-grid">
-          <aside className="col sidebar">
-            <div className="nav-name">
+        <div className="flex flex-col sm:flex-row mt-auto mx-neg-4 mb-4">
+          <aside className="mx-2 p-4 flex flex-col whitespace-nowrap">
+            <div className="mb-4 text-lg">
               <h4>Thru-Hikes</h4>
             </div>
-            <div className="nav-items">
+            <div className="flex flex-row sm:flex-col">
               {thruhikes.map(({node}) => (
-                <div className="nav-item" key={node.uid}>
+                <div className="mr-4 text-sm sm:m-0 sm:text-base" key={node.uid}>
                   <Link to={`/${node.uid}`}>{node.data.nav_title}</Link>
                 </div>
               ))}
             </div>
           </aside>
-          <section className="col main">
+          <section className="mx-2 p-4 flex-3">
             <SearchInput onChange={filterItems} />
             <h1>Outings</h1>
             <FilteredList items={items} />

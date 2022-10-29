@@ -10,7 +10,7 @@ import TagList from '../components/taglist'
 import { displayDate } from '../utils/dates'
 
 import './blog-post.scss'
-import './tags.scss'
+//import './tags.scss'
 
 const BlogPost = ({ data: { mdx }, pageContext, children }) => {
   const frontmatter = mdx.frontmatter

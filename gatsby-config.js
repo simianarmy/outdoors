@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: 'Notes on Travels in Nature',
     keywords:
-      'nature, travel, outdoors, hiking, backpacking, thru-hiking, ultralight, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, sierras, glaciers, volcanoes, wild, backcountry, survival, PCT, JMT, CDT',
+      'nature, travel, outdoors, hiking, backpacking, thru-hiking, ultralight, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, sierras, glaciers, volcanoes, wild, backcountry, survival, PCT, JMT, CDT, PNT',
   },
   plugins: [
     {
@@ -61,7 +61,7 @@ module.exports = {
         background_color: '#ffffff',
         theme_color: '#ffffff',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/mountain.png', // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -74,6 +74,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
