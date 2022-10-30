@@ -63,6 +63,7 @@ const createThruHikeSections = ({ hikes, createPage }) => {
       path: node.uid,
       component: thruhikeSectionTemplate,
       context: {
+        thruHikeId: node.data.thruhike.uid,
         slug: node.uid,
         prev: prevNode,
         next: nextNode,
@@ -134,6 +135,9 @@ exports.createPages = async ({ graphql, actions }) => {
               ending_location
               starting_location
               tags
+              thruhike {
+                uid
+              }
             }
           }
         }

@@ -25,17 +25,23 @@ function displayDateTime(timestamp) {
 
 function ThruhikeSection({ data, pageContext }) {
   const section = data.prismicThruhikeSection.data;
+  const thruhike = data.prismicThruhike.data;
   const { next, prev } = pageContext;
   const totalNights = calculateNights(section.start_time, section.end_time);
 
   return (
     <Layout>
-      <Link className="text-blue-600 hover:underline" to={`/${section.thruhike.uid}#sections`}>Back</Link>
+      <Link className="text-blue-600 hover:underline" to={`/${data.prismicThruhike.uid}#sections`}>{thruhike.nav_title}</Link>
       <div className="max-w-lg">
         <SectionHeaderBold section={section} startDate={displayDateTime(section.start_time)} endDate={displayDateTime(section.end_time)} />
         {section.notes ? <Notes richText={section.notes} /> : null }
         <div>
-          <table className="table-auto">
+          <div>
+            {section.map_html ? (
+              <div dangerouslySetInnerHTML={{ __html: section.map_html }} />
+            ) : null}
+          </div>
+          <table className="max-w-[420px] table-auto">
             <tbody>
               <tr>
                 <td>Distance</td>
@@ -59,11 +65,6 @@ function ThruhikeSection({ data, pageContext }) {
               </tr>
             </tbody>
           </table>
-          <div>
-          {section.map_html ? (
-            <div dangerouslySetInnerHTML={{ __html: section.map_html }} />
-          ) : null}
-          </div>
         </div>
         <Pagination
           next={{
@@ -84,7 +85,13 @@ function ThruhikeSection({ data, pageContext }) {
 export default ThruhikeSection;
 
 export const query = graphql`
-  query($slug: String!) {
+  query($thruHikeId: String, $slug: String!) {
+    prismicThruhike(uid: { eq: $thruHikeId }) {
+      uid
+      data {
+        nav_title
+      }
+    }
     prismicThruhikeSection(uid: { eq: $slug }) {
       uid
       tags
@@ -104,9 +111,6 @@ export const query = graphql`
         start_time
         starting_location
         tags
-        thruhike {
-          uid
-        }
         total_miles
       }
     }
