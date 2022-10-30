@@ -28,15 +28,15 @@ const Tags = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <h1>{tagHeader}</h1>
+      <h1 className="my-4 text-3xl">{tagHeader}</h1>
       <ul>
         {sortBy(allNodes, [(n) => n.title]).map(({ slug, title }) => (
             <li key={slug}>
-              <Link to={slug}>{title}</Link>
+              <Link className="hover:underline" to={slug}>{title}</Link>
             </li>
         ))}
       </ul>
-      <Link to="/tags">All tags</Link>
+      <Link className="hover:underline text-blue-600" to="/tags">All tags</Link>
     </Layout>
   )
 }

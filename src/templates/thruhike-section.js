@@ -31,11 +31,11 @@ function ThruhikeSection({ data, pageContext }) {
   return (
     <Layout>
       <Link className="text-blue-600 hover:underline" to={`/${section.thruhike.uid}#sections`}>Back</Link>
-      <div>
+      <div className="max-w-lg">
         <SectionHeaderBold section={section} startDate={displayDateTime(section.start_time)} endDate={displayDateTime(section.end_time)} />
         {section.notes ? <Notes richText={section.notes} /> : null }
         <div>
-          <table>
+          <table className="table-auto">
             <tbody>
               <tr>
                 <td>Distance</td>
@@ -59,22 +59,24 @@ function ThruhikeSection({ data, pageContext }) {
               </tr>
             </tbody>
           </table>
+          <div>
           {section.map_html ? (
             <div dangerouslySetInnerHTML={{ __html: section.map_html }} />
           ) : null}
+          </div>
         </div>
+        <Pagination
+          next={{
+            slug: `/${get(prev, "uid")}`,
+            title: prev ? `${get(prev, "data.starting_location")} - ${get(prev, "data.ending_location")}` : null,
+          }}
+          prev={{
+            slug: `/${get(next, "uid")}`,
+            title: next ? `${get(next, "data.starting_location")} - ${get(next, "data.ending_location")}` : null,
+          }}
+        />
+        <TagList tags={section.tags.split(",")} />
       </div>
-      <Pagination
-        next={{
-          slug: `/${get(prev, "uid")}`,
-          title: prev ? `${get(prev, "data.starting_location")} - ${get(prev, "data.ending_location")}` : null,
-        }}
-        prev={{
-          slug: `/${get(next, "uid")}`,
-          title: next ? `${get(next, "data.starting_location")} - ${get(next, "data.ending_location")}` : null,
-        }}
-      />
-      <TagList tags={section.tags.split(",")} />
     </Layout>
   );
 }

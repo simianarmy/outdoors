@@ -16,3 +16,9 @@ Live @ [simianarmy.com](http://www.simianarmy.com)
 
 - Photos display
 
+
+## Changelog
+
+- 10/28/22 - Upgraded to Gatsby v4
+- 10/29/22 - Moved styling from sass to tailwindcss
+

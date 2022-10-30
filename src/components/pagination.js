@@ -10,7 +10,7 @@ function Pagination({ next, prev }) {
         </Link>
       )}
       {next.slug && (
-        <Link className="hover:underline text-blue-600 text-sm" to={next.slug}>
+        <Link className="pl-8 hover:underline text-blue-600 text-sm" to={next.slug}>
           {next.title}
         </Link>
       )}

@@ -38,11 +38,11 @@ const TagsPage = ({
   return (
   <Layout>
     <div>
-      <h1>Tags</h1>
+      <h1 className="mt-8 mb-8 text-xl font-bold">All Tags</h1>
       <ul>
         {Object.keys(tagCounts).sort().map(tag => (
           <li key={tag}>
-            <Link to={`/tags/${kebabCase(tag)}/`}>
+            <Link className="hover:underline" to={`/tags/${kebabCase(tag)}/`}>
               {tag} ({tagCounts[tag]})
             </Link>
           </li>
