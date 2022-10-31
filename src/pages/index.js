@@ -3,19 +3,24 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SearchInput from '../components/search-input.js'
+import { SEO } from '../components/seo';
 import FilteredList from '../components/filtered-list.js'
 
-//import './index.scss'
-
 // Head must be exported from a Page
-export const Head = ({ location, params, data, pageContext }) => {
-  return (
+export const Head = () => {
+  return <SEO />;
+  /*
   <>
-    <title>{data.site.siteMetadata?.title}</title>
+    <title>{data.site.siteMetadata.title}</title>
     <meta name="description" content="Marc Maugers backpacking trip reports" />
     <meta name="keywords" content={data.site.siteMetadata?.keywords} />
+    <meta
+      name="twitter:url"
+      content={`https://www.simianarmy.com/`}
+    />
   </>
   );
+  */
 };
 
 function IndexPage({ data }) {
@@ -46,9 +51,7 @@ function IndexPage({ data }) {
       <div className="container max-w-xl">
         <div className="flex flex-col sm:flex-row mt-auto mx-neg-4 mb-4">
           <aside className="mx-2 p-4 flex-col flex-1 w-1/4 whitespace-nowrap">
-            <p className="text-lg">
-              <h4>Thru-Hikes</h4>
-            </p>
+            <h4 className="text-lg">Thru-Hikes</h4>
             <nav className="mt-4 flex flex-row sm:flex-col">
               {thruhikes.map(({node}) => (
                 <div className="mr-4 text-sm sm:m-0 sm:text-base" key={node.uid}>

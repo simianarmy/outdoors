@@ -7,8 +7,11 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Notes on Travels in Nature',
+    description: "Marc Mauger's backpacking trip reports",
     keywords:
       'nature, travel, outdoors, hiking, backpacking, thru-hiking, ultralight, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, sierras, glaciers, volcanoes, wild, backcountry, survival, PCT, JMT, CDT, PNT',
+    twitterUsername: "@simianarmy",
+    siteUrl: "https://www.simianarmy.com"
   },
   plugins: [
     {

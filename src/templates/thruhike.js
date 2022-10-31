@@ -6,6 +6,7 @@ import { get } from "lodash";
 import Layout from "../components/layout";
 import ThruStats from "../components/thrustats";
 import SectionHike from "../components/sectionhike";
+import { SEO } from "../components/seo";
 import Pagination from "../components/pagination";
 import { displayMonthAndDay } from "../utils/dates";
 import htmlSerializer from "../utils/html-serializer";
@@ -85,6 +86,18 @@ function Thruhike({ data, pageContext }) {
 
 export default Thruhike;
 
+export const Head = ({
+  data: {
+    prismicThruhike: {
+      data: {
+        display_title: { text },
+      },
+    },
+  },
+}) => {
+  return <SEO title={text} />
+}
+
 export const query = graphql`
   query($slug: String) {
     prismicThruhike(uid: { eq: $slug }) {
@@ -94,6 +107,7 @@ export const query = graphql`
         }
         display_title {
           raw
+          text
         }
         icon {
           url

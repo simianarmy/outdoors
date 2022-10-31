@@ -6,6 +6,7 @@ import get from "lodash/get";
 import Layout from '../components/layout'
 import Pagination from '../components/pagination'
 import RouteMap from '../components/routemap';
+import { SEO } from '../components/seo';
 import TagList from '../components/taglist'
 import { displayDate } from '../utils/dates'
 
@@ -27,7 +28,7 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
           />
         ) : null}
         {frontmatter.photos ? (
-          <div class="mb-1.5">
+          <div className="mb-1.5">
             <a
               className="text-sm text-blue-600 hover:underline"
               href={frontmatter.photos}
@@ -103,6 +104,16 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
 }
 
 export default BlogPost
+
+export const Head = ({
+  data: {
+    mdx: {
+      frontmatter: { title },
+    },
+  },
+}) => {
+  return <SEO title={title} />
+};
 
 export const query = graphql`
   query($slug: String!) {

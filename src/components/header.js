@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
 import heroImage from '../images/IMG_4610.jpeg'
 
 const Header = ({ siteTitle }) => (
