@@ -7,21 +7,9 @@ import { SEO } from '../components/seo';
 import FilteredList from '../components/filtered-list.js'
 
 // Head must be exported from a Page
-export const Head = () => {
-  return <SEO />;
-  /*
-  <>
-    <title>{data.site.siteMetadata.title}</title>
-    <meta name="description" content="Marc Maugers backpacking trip reports" />
-    <meta name="keywords" content={data.site.siteMetadata?.keywords} />
-    <meta
-      name="twitter:url"
-      content={`https://www.simianarmy.com/`}
-    />
-  </>
-  );
-  */
-};
+export const Head = () => (
+  <SEO />
+);
 
 function IndexPage({ data }) {
   const outings = data.allMdx.edges

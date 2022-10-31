@@ -1,8 +1,14 @@
-import React from "react"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+import React from 'react';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 export const SEO = ({ title, description, pathname, children }) => {
-  const { title: defaultTitle, description: defaultDescription, keywords, siteUrl, twitterUsername } = useSiteMetadata()
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    keywords,
+    siteUrl,
+    twitterUsername,
+  } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
@@ -11,7 +17,7 @@ export const SEO = ({ title, description, pathname, children }) => {
     //image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
-  }
+  };
 
   return (
     <>
@@ -27,5 +33,5 @@ export const SEO = ({ title, description, pathname, children }) => {
       <meta name="twitter:creator" content={seo.twitterUsername} />
       {children}
     </>
-  )
-}
+  );
+};

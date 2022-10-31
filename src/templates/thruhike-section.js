@@ -1,19 +1,19 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { Date as PrismicDate } from 'prismic-reactjs'
-import { get } from 'lodash'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import { Date as PrismicDate } from 'prismic-reactjs';
+import { get } from 'lodash';
 
-import Layout from '../components/layout'
-import Notes from '../components/notes'
-import Pagination from '../components/pagination'
-import { SectionHeaderBold } from '../components/sectionheader'
-import { SEO } from '../components/seo'
-import TagList from '../components/taglist'
+import Layout from '../components/layout';
+import Notes from '../components/notes';
+import Pagination from '../components/pagination';
+import { SectionHeaderBold } from '../components/sectionheader';
+import { SEO } from '../components/seo';
+import TagList from '../components/taglist';
 
 function calculateNights(start, end) {
   return Math.round(
     (PrismicDate(end).getTime() - PrismicDate(start).getTime()) / (86400 * 1000)
-  )
+  );
 }
 
 function displayDateTime(timestamp) {
@@ -21,14 +21,14 @@ function displayDateTime(timestamp) {
     month: 'short',
     day: '2-digit',
     hour: 'numeric',
-  }).format(new Date(timestamp))
+  }).format(new Date(timestamp));
 }
 
 function ThruhikeSection({ data, pageContext }) {
-  const section = data.prismicThruhikeSection.data
-  const thruhike = data.prismicThruhike.data
-  const { next, prev } = pageContext
-  const totalNights = calculateNights(section.start_time, section.end_time)
+  const section = data.prismicThruhikeSection.data;
+  const thruhike = data.prismicThruhike.data;
+  const { next, prev } = pageContext;
+  const totalNights = calculateNights(section.start_time, section.end_time);
 
   return (
     <Layout>
@@ -99,10 +99,10 @@ function ThruhikeSection({ data, pageContext }) {
         <TagList tags={section.tags.split(',')} />
       </div>
     </Layout>
-  )
+  );
 }
 
-export default ThruhikeSection
+export default ThruhikeSection;
 
 export const Head = ({
   data: {
@@ -110,15 +110,14 @@ export const Head = ({
       data: { nav_title },
     },
     prismicThruhikeSection: {
-      data: {
-        starting_location,
-        ending_location,
-      },
+      data: { starting_location, ending_location },
     },
   },
 }) => {
-  return <SEO title={`${nav_title}: ${starting_location} to ${ending_location}`} />
-}
+  return (
+    <SEO title={`${nav_title}: ${starting_location} to ${ending_location}`} />
+  );
+};
 
 export const query = graphql`
   query ($thruHikeId: String, $slug: String!) {
@@ -151,4 +150,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

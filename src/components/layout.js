@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Header from './header'
-import Footer from './footer'
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+import Header from './header';
+import Footer from './footer';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata();
@@ -12,9 +12,7 @@ const Layout = ({ children }) => {
     <>
       <div className="flex flex-col min-h-screen">
         <Header siteTitle={title} />
-        <div className="grow mx-auto my-0 px-4 pb-6">
-          {children}
-        </div>
+        <div className="grow mx-auto my-0 px-4 pb-6">{children}</div>
         <Footer />
       </div>
     </>
@@ -23,6 +21,6 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
