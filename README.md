@@ -14,12 +14,9 @@ Live @ [simianarmy.com](http://www.simianarmy.com)
 
 - Hike / Climb / Alpine sections
 
-- Photos display
+- Photos integration
 
+- 3D Route viewer
 
-## Changelog
-
-- 10/28/22 - Upgraded to Gatsby v4
-
-- 10/29/22 - Moved styling from sass to tailwindcss
+## [Changelog](./Changelog.md)
 

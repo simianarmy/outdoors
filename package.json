@@ -36,12 +36,14 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@prismicio/react": "^2.5.0",
     "@tailwindcss/typography": "^0.5.7",
+    "auto-changelog": "^2.4.0",
     "autoprefixer": "^10.4.13",
     "dotenv": "^8.6.0",
     "gatsby-plugin-postcss": "^5.24.0",
