@@ -9,7 +9,7 @@ function FilteredList({ items }) {
         <h3 className="text-lg font-bold leading-snug">
           {node.frontmatter.title}
         </h3>
-        <span className="text-gray-400 text-xs">
+        <span className="text-slate-500 text-xs">
           {displayDate(new Date(node.frontmatter.date))}
         </span>
         <p className="text-sm">{node.excerpt}</p>
