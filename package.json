@@ -36,7 +36,8 @@
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md"
+    "version": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -46,6 +47,8 @@
     "autoprefixer": "^10.4.13",
     "dotenv": "^8.6.0",
     "gatsby-plugin-postcss": "^5.24.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.18",
     "postcss-import": "^15.0.0",
     "prettier": "^2.7.1",
@@ -55,5 +58,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:simianarmy/outdoors.git"
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
   }
 }
