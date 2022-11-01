@@ -18,5 +18,5 @@ Live @ [simianarmy.com](http://www.simianarmy.com)
 
 - 3D Route viewer
 
-## [Changelog](./Changelog.md)
+## [Changelog](./CHANGELOG.md)
 

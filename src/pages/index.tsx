@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import type { HeadProps, PageProps } from "gatsby"
 
 import Layout from '../components/layout';
 import SearchInput from '../components/search-input.js';
@@ -7,9 +8,9 @@ import { SEO } from '../components/seo';
 import FilteredList from '../components/filtered-list.js';
 
 // Head must be exported from a Page
-export const Head = () => <SEO />;
+export const Head = (props: HeadProps) => <SEO />;
 
-function IndexPage({ data }) {
+export default function IndexPage({ data }: PageProps) {
   const outings = data.allMdx.edges;
   const thruhikes = data.allPrismicThruhike.edges;
   const [items, setItems] = React.useState(outings);
@@ -104,5 +105,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default IndexPage;

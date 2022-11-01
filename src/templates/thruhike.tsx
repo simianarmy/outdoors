@@ -1,6 +1,7 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { Link, RichText } from "prismic-reactjs";
+import { graphql, HeadProps } from "gatsby";
+import { Link } from "prismic-reactjs";
+import { PrismicRichText } from "@prismicio/react";
 import { get } from "lodash";
 
 import Layout from "../components/layout";
@@ -41,7 +42,7 @@ function Thruhike({ data, pageContext }) {
             </div>
           ) : null}
           <div className="my-4 text-3xl">
-            <RichText render={hike.display_title.raw} />
+            <h1>{hike.display_title.text}</h1>
           </div>
         </div>
         <div className="dates">
@@ -54,7 +55,7 @@ function Thruhike({ data, pageContext }) {
           </span>
         </div>
         <article className="prose lg:prose-xl">
-          <RichText render={hike.blurb.raw} htmlSerializer={htmlSerializer} />
+          <PrismicRichText field={hike.blurb.richText} htmlSerializer={htmlSerializer} />
         </article>
         {pdata.length ? <div id="stats" className="mt-4"><ThruStats data={pdata} {...hike} /></div> : null}
         <section id="gear" className="mt-4">
@@ -86,27 +87,28 @@ function Thruhike({ data, pageContext }) {
 
 export default Thruhike;
 
-export const Head = ({
-  data: {
-    prismicThruhike: {
-      data: {
-        display_title: { text },
+type HeadDataProps = {
+  prismicThruhike: {
+    data: {
+      display_title: {
+        text: string
       },
     },
   },
-}) => {
-  return <SEO title={text} />
-}
+};
+
+export const Head = (props: HeadProps<HeadDataProps>) => {
+  return <SEO title={props.data.prismicThruhike.data.display_title.text} />
+};
 
 export const query = graphql`
   query($slug: String) {
     prismicThruhike(uid: { eq: $slug }) {
       data {
         blurb {
-          raw
+          richText
         }
         display_title {
-          raw
           text
         }
         icon {

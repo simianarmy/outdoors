@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { HeadProps, Link, graphql } from 'gatsby';
 import { Date as PrismicDate } from 'prismic-reactjs';
 import { get } from 'lodash';
 
@@ -104,16 +104,20 @@ function ThruhikeSection({ data, pageContext }) {
 
 export default ThruhikeSection;
 
-export const Head = ({
-  data: {
-    prismicThruhike: {
-      data: { nav_title },
-    },
-    prismicThruhikeSection: {
-      data: { starting_location, ending_location },
-    },
+type HeadDataProps = {
+  prismicThruhike: {
+    data: { nav_title: string },
   },
-}) => {
+  prismicThruhikeSection: {
+    data: { starting_location: string, ending_location: string },
+  },
+};
+
+export const Head = (props: HeadProps<HeadDataProps>) => {
+  const { data: {
+    prismicThruhike: { data: { nav_title } },
+    prismicThruhikeSection: { data: { starting_location, ending_location } } }
+  } = props;
   return (
     <SEO title={`${nav_title}: ${starting_location} to ${ending_location}`} />
   );

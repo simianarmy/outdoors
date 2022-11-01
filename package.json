@@ -5,6 +5,8 @@
   "author": "simianarmy@gmail;com",
   "dependencies": {
     "@mdx-js/react": "^2.1.5",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "gatsby": "^4.24.5",
     "gatsby-plugin-google-analytics": "^4.24.0",
     "gatsby-plugin-image": "^2.24.0",

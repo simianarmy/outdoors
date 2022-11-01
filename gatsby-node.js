@@ -4,14 +4,14 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require("path");
+const path = require('path');
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const _ = require("lodash");
+const _ = require('lodash');
 
 const blogTemplate = path.resolve(`./src/templates/blog-post.js`);
-const thruhikeTemplate = path.resolve(`./src/templates/thruhike.js`);
+const thruhikeTemplate = path.resolve(`./src/templates/thruhike.tsx`);
 const thruhikeSectionTemplate = path.resolve(
-  `./src/templates/thruhike-section.js`
+  `./src/templates/thruhike-section.tsx`
 );
 const tagTemplate = path.resolve(`./src/templates/tags.js`);
 
@@ -113,9 +113,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
   const allPrismic = await graphql(`
     query {
-      allPrismicThruhike(
-        sort: { fields: [data___start_date], order: DESC }
-      ) {
+      allPrismicThruhike(sort: { fields: [data___start_date], order: DESC }) {
         edges {
           node {
             uid
@@ -156,19 +154,19 @@ exports.createPages = async ({ graphql, actions }) => {
   let tags = [];
   // Iterate through each post, putting all found tags into `tags`
   _.each(posts, (edge) => {
-    if (_.get(edge, "node.frontmatter.tags")) {
+    if (_.get(edge, 'node.frontmatter.tags')) {
       tags = tags.concat(edge.node.frontmatter.tags);
     }
   });
   let thruTags = [];
   _.each(hikes, (edge) => {
-    if (_.get(edge, "node.data.tags")) {
-      thruTags = thruTags.concat(edge.node.data.tags.split(","));
+    if (_.get(edge, 'node.data.tags')) {
+      thruTags = thruTags.concat(edge.node.data.tags.split(','));
     }
   });
 
   // Eliminate duplicate tags
-  tags = _.uniq(tags.concat(thruTags).map(t => _.trim(t, ' "')));
+  tags = _.uniq(tags.concat(thruTags).map((t) => _.trim(t, ' "')));
 
   // Make tag pages
   tags.forEach((tag) => {
@@ -178,7 +176,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: tagTemplate,
       context: {
         tag,
-        regexTag: `/${tag}/`
+        regexTag: `/${tag}/`,
       },
     });
   });
