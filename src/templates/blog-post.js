@@ -1,31 +1,28 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import get from "lodash/get";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import get from 'lodash/get';
 
-import Layout from '../components/layout'
-import Pagination from '../components/pagination'
+import Layout from '../components/layout';
+import Pagination from '../components/pagination';
 import RouteMap from '../components/routemap';
 import { SEO } from '../components/seo';
-import TagList from '../components/taglist'
-import { displayDate } from '../utils/dates'
+import TagList from '../components/taglist';
+import { displayDate } from '../utils/dates';
 
 const BlogPost = ({ data: { mdx }, pageContext, children }) => {
-  const frontmatter = mdx.frontmatter
-  const { next, prev } = pageContext
-  const startDate = new Date(frontmatter.date)
-  const endDate = new Date(startDate)
-  endDate.setDate(endDate.getDate() + frontmatter.nights)
+  const frontmatter = mdx.frontmatter;
+  const { next, prev } = pageContext;
+  const startDate = new Date(frontmatter.date);
+  const endDate = new Date(startDate);
+  endDate.setDate(endDate.getDate() + frontmatter.nights);
 
   return (
     <Layout>
       <div className="blog-post">
         <h1 className="text-3xl mt-10 mb-7">{frontmatter.title}</h1>
         {frontmatter.cover ? (
-          <GatsbyImage
-            image={frontmatter.cover.childImageSharp.gatsbyImageData}
-            alt="cover photo"
-          />
+          <GatsbyImage image={getImage(frontmatter.cover)} alt="cover photo" />
         ) : null}
         {frontmatter.photos ? (
           <div className="mb-1.5">
@@ -42,15 +39,14 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
         <div className="mt-4 text-gray-400">
           {displayDate(startDate)} - {displayDate(endDate)}
         </div>
-        <article className="mt-4 prose lg:prose-xl prose-slate" >
+        <article className="mt-4 prose lg:prose-xl prose-slate">
           {children}
         </article>
-        {frontmatter.routeUrl ?
+        {frontmatter.routeUrl ? (
           <div className="mt-4">
             <RouteMap embedUrl={frontmatter.routeUrl} />
           </div>
-          : null
-        }
+        ) : null}
         <div className="mt-4">
           <table>
             <tbody>
@@ -100,10 +96,10 @@ const BlogPost = ({ data: { mdx }, pageContext, children }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const Head = ({
   data: {
@@ -112,11 +108,11 @@ export const Head = ({
     },
   },
 }) => {
-  return <SEO title={title} />
+  return <SEO title={title} />;
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
@@ -124,7 +120,11 @@ export const query = graphql`
         photos
         cover {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
         difficulty
@@ -139,4 +139,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
