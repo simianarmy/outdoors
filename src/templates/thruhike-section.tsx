@@ -44,7 +44,7 @@ function ThruhikeSection({ data, pageContext }) {
           startDate={displayDateTime(section.start_time)}
           endDate={displayDateTime(section.end_time)}
         />
-        {section.notes ? <Notes richText={section.notes} /> : null}
+        {section.notes ? <Notes richText={section.notes.richText} /> : null}
         <div>
           <div>
             {section.map_html ? (
@@ -144,7 +144,7 @@ export const query = graphql`
         map_html
         max_elevation
         notes {
-          raw
+          richText
         }
         resupply
         start_time
