@@ -1,8 +1,8 @@
-const linkResolver = require('./src/utils/link-resolver')
+const linkResolver = require('./src/utils/link-resolver');
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -10,8 +10,8 @@ module.exports = {
     description: "Marc Mauger's backpacking trip reports",
     keywords:
       'nature, travel, outdoors, hiking, backpacking, thru-hiking, ultralight, cross-country, rock climbing, cascades, sierras, trekking, adventuring, solo, ultralight, bushcraft, pacific northwest, sierras, glaciers, volcanoes, wild, backcountry, survival, PCT, JMT, CDT, PNT',
-    twitterUsername: "@simianarmy",
-    siteUrl: "https://www.simianarmy.com"
+    twitterUsername: '@simianarmy',
+    siteUrl: 'https://www.simianarmy.com',
   },
   plugins: [
     {
@@ -69,7 +69,7 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    'gatsby-plugin-offline',
+    //'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
@@ -105,5 +105,6 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-netlify',
   ],
-}
+};
