@@ -3,7 +3,7 @@ title: High Sierra Trail & Alta Peak
 date: 2019-07-03
 cover: ../images/IMG_6049.jpg
 photos: https://www.icloud.com/sharedalbum/#B0Y5aVbMK3tRui
-difficulty: Class 1
+difficulty: Class 3
 distance: ~55 miles
 nights: 5
 maxElevation: Alta Peak (11204 ft)
@@ -11,7 +11,7 @@ jurisdiction: Sequoia National Park
 map: Tom Harrison Maps Mount Whitney High Country
 trailhead: Crescent Meadow
 tags: ["high sierra trail", "crescent meadow", "sierras", "california", "2019", "50-60 miles",
-"sequoia", "kaweah gap", "alta peak", "hamilton lakes", "hike", "snow"]
+"sequoia", "kaweah gap", "alta peak", "hamilton lakes", "hike", "snow", "alpine"]
 ---
 
 An inpromptu jaunt around the High Sierra Trail and surroundings.

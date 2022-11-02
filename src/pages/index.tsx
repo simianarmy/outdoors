@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import type { HeadProps, PageProps } from "gatsby"
 
+import FilteredList from '../components/filtered-list.js';
 import Layout from '../components/layout';
+import Nav from '../components/nav';
 import SearchInput from '../components/search-input.js';
 import { SEO } from '../components/seo';
-import FilteredList from '../components/filtered-list.js';
+import useSearchFilter from '../hooks/use-search-filter';
 
 // Head must be exported from a Page
 export const Head = (props: HeadProps) => <SEO />;
@@ -13,51 +15,28 @@ export const Head = (props: HeadProps) => <SEO />;
 export default function IndexPage({ data }: PageProps) {
   const outings = data.allMdx.edges;
   const thruhikes = data.allPrismicThruhike.edges;
-  const [items, setItems] = React.useState(outings);
-
-  const filterItems = (item) => {
-    const term = item.toLowerCase();
-    let regex;
-
-    try {
-      regex = new RegExp(`\\w*${term}\\w*`, 'gi');
-    } catch (e) {
-      console.warn('illegal regex input', e);
-      return;
-    }
-
-    const filteredItems = outings.filter(
-      (item) =>
-        regex.test(item.node.frontmatter.title) || regex.test(item.node.body)
-    );
-    setItems(filteredItems);
-  };
+  const [items, filterText, filterByText, filterByTag] = useSearchFilter(outings);
 
   return (
-    <Layout data={data}>
+    <Layout>
       <div className="container max-w-xl">
         <div className="flex flex-col sm:flex-row mt-auto mx-neg-4 mb-4">
           <aside className="mx-2 p-4 flex-col flex-1 w-1/4 whitespace-nowrap">
-            <h1 className="text-lg">Thru-Hikes</h1>
-            <nav className="mt-4 flex flex-row sm:flex-col">
-              {thruhikes.map(({ node }) => (
-                <div
-                  className="mr-4 text-sm sm:m-0 sm:text-base"
-                  key={node.uid}
-                >
-                  <Link
-                    className="text-blue-600 hover:underline"
-                    to={`/${node.uid}`}
-                  >
-                    {node.data.nav_title}
-                  </Link>
-                </div>
-              ))}
-            </nav>
+            <Nav thruhikes={thruhikes} onFilter={filterByTag} />
           </aside>
           <section className="mx-2 p-4 flex flex-col">
             <div className="flex justify-end">
-              <SearchInput onChange={filterItems} />
+              <div className="flex-col">
+                <SearchInput onChange={filterByText} />
+                {items.length !== outings.length ?
+                (<div>
+                  <span className="text-sm text-slate-500">
+                    {items.length} result{items.length !== 1 ? 's' : ''}
+                    {false && filterText ? ` for '${filterText}'` : null}
+                  </span>
+                </div>)
+                : null}
+              </div>
             </div>
             <h2 className="text-4xl text-bold mb-4">Outings</h2>
             <FilteredList items={items} />
@@ -85,6 +64,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            tags
           }
           excerpt
           fields {
