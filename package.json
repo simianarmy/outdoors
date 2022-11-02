@@ -39,7 +39,8 @@
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublish": "npm version patch"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
