@@ -20,11 +20,11 @@ export default function IndexPage({ data }: PageProps) {
   return (
     <Layout>
       <div className="container max-w-xl">
-        <div className="flex flex-col sm:flex-row mt-auto mx-neg-4 mb-4">
+        <div className="flex flex-col sm:flex-row mt-auto mb-4">
           <aside className="mx-2 p-4 flex-col flex-1 w-1/4 whitespace-nowrap">
             <Nav thruhikes={thruhikes} onFilter={filterByTag} />
           </aside>
-          <section className="mx-2 p-4 flex flex-col">
+          <section className="mx-2 p-4 flex flex-col sm:min-w-[460px]">
             <div className="flex justify-end">
               <div className="flex-col">
                 <SearchInput onChange={filterByText} />
