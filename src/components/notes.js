@@ -12,6 +12,12 @@ export default function Notes({ richText }) {
         </button>
       ) : (
         <div className="h-full bg-neutral-100">
+          <button
+            className="pl-4 md:pl-8 underline text-xs"
+            onClick={() => setHidden(true)}
+          >
+            Hide
+          </button>
           <div className="py-4 px-4 md:px-8 leading-6 text-base tracking-wide content">
             <article className="prose">
               <PrismicRichText field={richText} />

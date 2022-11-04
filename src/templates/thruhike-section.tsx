@@ -1,102 +1,77 @@
 import React from 'react';
 import { HeadProps, Link, graphql } from 'gatsby';
-import { Date as PrismicDate } from 'prismic-reactjs';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { get } from 'lodash';
 
 import Layout from '../components/layout';
 import Notes from '../components/notes';
 import Pagination from '../components/pagination';
+import RouteMap from '../components/routemap';
 import { SectionHeaderBold } from '../components/sectionheader';
+import SectionStats from '../components/sectionstats';
 import { SEO } from '../components/seo';
 import TagList from '../components/taglist';
+import { displayDateTimeFromTimestamp } from '../utils/dates';
 
-function calculateNights(start, end) {
-  return Math.round(
-    (PrismicDate(end).getTime() - PrismicDate(start).getTime()) / (86400 * 1000)
-  );
-}
-
-function displayDateTime(timestamp) {
-  return Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: '2-digit',
-    hour: 'numeric',
-  }).format(new Date(timestamp));
-}
-
-function ThruhikeSection({ data, pageContext }) {
-  const section = data.prismicThruhikeSection.data;
-  const thruhike = data.prismicThruhike.data;
+function ThruhikeSection({ data: { prismicThruhike, prismicThruhikeSection }, pageContext }) {
+  const thruhike = prismicThruhike.data;
+  const section = prismicThruhikeSection.data;
   const { next, prev } = pageContext;
-  const totalNights = calculateNights(section.start_time, section.end_time);
 
+  console.log({section});
   return (
     <Layout>
       <Link
         className="text-blue-600 hover:underline"
-        to={`/${data.prismicThruhike.uid}#sections`}
+        to={`/${prismicThruhike.uid}#sections`}
       >
         {thruhike.nav_title}
       </Link>
       <div className="max-w-lg">
         <SectionHeaderBold
           section={section}
-          startDate={displayDateTime(section.start_time)}
-          endDate={displayDateTime(section.end_time)}
+          startDate={displayDateTimeFromTimestamp(section.start_time)}
+          endDate={displayDateTimeFromTimestamp(section.end_time)}
         />
+        {section.cover_photo.gatsbyImageData ? (
+          <GatsbyImage className="mt-4" image={getImage(section.cover_photo)} alt={section.cover_photo.alt} />
+        ) : null}
         {section.notes ? <Notes richText={section.notes.richText} /> : null}
         <div>
-          <div>
-            {section.map_html ? (
-              <div dangerouslySetInnerHTML={{ __html: section.map_html }} />
-            ) : null}
-          </div>
-          <table className="max-w-[420px] table-auto">
-            <tbody>
-              <tr>
-                <td>Distance</td>
-                <td>{section.total_miles} mi</td>
-              </tr>
-              <tr>
-                <td>Nights</td>
-                <td>{totalNights}</td>
-              </tr>
-              <tr>
-                <td>Max Elevation</td>
-                <td>{section.max_elevation} ft</td>
-              </tr>
-              <tr>
-                <td>Difficulty</td>
-                <td>{section.difficulty}</td>
-              </tr>
-              <tr>
-                <td>Resupply</td>
-                <td>{section.resupply ? 'Yes' : 'No'}</td>
-              </tr>
-            </tbody>
-          </table>
+          {section.map_html ? (
+            <div dangerouslySetInnerHTML={{ __html: section.map_html }} />
+          ) : null
+          }
+          {/* section.map_url unused for now */}
+          {section.gaia_map_url ?
+            <RouteMap embedUrl={section.gaia_map_url} />
+            : null
+          }
         </div>
+        <SectionStats section={section} />
         <Pagination
           next={{
             slug: `/${get(prev, 'uid')}`,
             title: prev
               ? `${get(prev, 'data.starting_location')} - ${get(
-                  prev,
-                  'data.ending_location'
-                )}`
+                prev,
+                'data.ending_location'
+              )}`
               : null,
           }}
           prev={{
             slug: `/${get(next, 'uid')}`,
             title: next
               ? `${get(next, 'data.starting_location')} - ${get(
-                  next,
-                  'data.ending_location'
-                )}`
+                next,
+                'data.ending_location'
+              )}`
               : null,
           }}
         />
-        <TagList tags={section.tags.split(',')} />
+        <div className="mt-8">
+          <TagList tags={section.tags.split(',')} />
+        </div>
       </div>
     </Layout>
   );
@@ -135,22 +110,35 @@ export const query = graphql`
       uid
       tags
       data {
+        animals
+        cover_photo {
+          alt
+          gatsbyImageData(
+            placeholder: BLURRED
+            layout: FULL_WIDTH
+          )
+        }
         difficulty
         end_time
         ending_location
+        hike_partners
         location_icon {
           url
         }
         map_html
+        gaia_map_url
         max_elevation
         notes {
           richText
         }
+        on_trail
         resupply
+        slackpack
         start_time
         starting_location
         tags
         total_miles
+        way_to_town
       }
     }
   }

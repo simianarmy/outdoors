@@ -1,99 +1,166 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "uid"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "uid"
       }
     },
-    "thruhike" : {
-      "type" : "Link",
-      "config" : {
-        "select" : "document",
-        "customtypes" : [ "thruhike" ],
-        "label" : "thruhike"
+    "thruhike": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": [
+          "thruhike"
+        ],
+        "label": "thruhike"
       }
     },
-    "start_time" : {
-      "type" : "Timestamp",
-      "config" : {
-        "label" : "Start Time"
+    "start_time": {
+      "type": "Timestamp",
+      "config": {
+        "label": "Start Time"
       }
     },
-    "end_time" : {
-      "type" : "Timestamp",
-      "config" : {
-        "label" : "End Time"
+    "end_time": {
+      "type": "Timestamp",
+      "config": {
+        "label": "End Time"
       }
     },
-    "total_miles" : {
-      "type" : "Number",
-      "config" : {
-        "label" : "Total Miles"
+    "total_miles": {
+      "type": "Number",
+      "config": {
+        "label": "Total Miles"
       }
     },
-    "max_elevation" : {
-      "type" : "Number",
-      "config" : {
-        "label" : "Max Elevation"
+    "max_elevation": {
+      "type": "Number",
+      "config": {
+        "label": "Max Elevation"
       }
     },
-    "difficulty" : {
-      "type" : "Select",
-      "config" : {
-        "options" : [ "class 1", "class 2", "class 3", "class 4", "class 5" ],
-        "default_value" : "class 1",
-        "label" : "Difficulty"
+    "difficulty": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "class 1",
+          "class 2",
+          "class 3",
+          "class 4",
+          "class 5"
+        ],
+        "default_value": "class 1",
+        "label": "Difficulty"
       }
     },
-    "starting_location" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Starting location"
+    "starting_location": {
+      "type": "Text",
+      "config": {
+        "label": "Starting location"
       }
     },
-    "ending_location" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Ending location"
+    "ending_location": {
+      "type": "Text",
+      "config": {
+        "label": "Ending location"
       }
     },
-    "location_icon" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : {
-          "width" : 32,
-          "height" : 32
+    "cover_photo": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "cover photo"
+      }
+    },
+    "location_icon": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 32,
+          "height": 32
         },
-        "thumbnails" : [ ],
-        "label" : "location_icon"
+        "thumbnails": [],
+        "label": "location_icon"
       }
     },
-    "resupply" : {
-      "type" : "Boolean",
-      "config" : {
-        "default_value" : true,
-        "label" : "Resupply"
+    "resupply": {
+      "type": "Boolean",
+      "config": {
+        "default_value": true,
+        "label": "Resupply"
       }
     },
-    "notes" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "label" : "Notes"
+    "on_trail": {
+      "type": "Boolean",
+      "config": {
+        "default_value": true,
+        "label": "on_trail"
       }
     },
-    "map_html" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "map_html",
-        "placeholder" : "Markup for displaying embedded maps"
+    "slackpack": {
+      "type": "Boolean",
+      "config": {
+        "default_value": false,
+        "label": "Slackpack"
       }
     },
-    "tags" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "tags"
+    "way_to_town": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Walk",
+          "Hitchhike",
+          "Friend",
+          "Trail Angel",
+          "Public Transport",
+          "Taxi",
+          "Other"
+        ],
+        "default_value": "Walk",
+        "label": "way_to_town",
+        "placeholder": "How did I get to town"
+      }
+    },
+    "hike_partners": {
+      "type": "Text",
+      "config": {
+        "label": "hike_partners",
+        "placeholder": "Trail names of hiking partners"
+      }
+    },
+    "animals": {
+      "type": "Text",
+      "config": {
+        "label": "animals"
+      }
+    },
+    "notes": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "Notes"
+      }
+    },
+    "map_html": {
+      "type": "Text",
+      "config": {
+        "label": "map_html",
+        "placeholder": "Markup for displaying embedded maps"
+      }
+    },
+    "gaia_map_url": {
+      "type": "Text",
+      "config": {
+        "label": "gaia_map_url",
+        "placeholder": "Gaia iframe URL"
+      }
+    },
+    "tags": {
+      "type": "Text",
+      "config": {
+        "label": "tags"
       }
     }
   }
