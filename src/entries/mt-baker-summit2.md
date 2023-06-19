@@ -1,11 +1,11 @@
 ---
-title: Mount Baker Ascent - Easton Glacier
+title: Mount Baker 2 - Easton Glacier
 date: 2023-06-03
-cover: ../../images/IMG_1335.png
-photos: https://www.icloud.com/sharedalbum/#B0YJ0DiRHJPZrC4
+cover: ../images/IMG_1335.png
+photos:  https://photos.google.com/share/AF1QipPQs0Jlk32m-LMweuaXowFLUKb23uY4_bF4-rTx0ZWcLU45qbIRdjVRaFGcF1G53w?key=aU5mMjNHcHpMOUNKajZPaFVHbXZXZkhQNGRUVC1n
 difficulty: Class 3
-distance: ~11 miles (round trip)
-nights: 2
+distance: ~15 miles (round trip)
+nights: 1
 maxElevation: 10,871 ft
 jurisdiction: North Cascades National Park
 map: Green Trails - Mount Baker
