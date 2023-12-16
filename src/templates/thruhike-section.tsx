@@ -122,6 +122,7 @@ export const query = graphql`
         end_time
         ending_location
         hike_partners
+        hikers_met
         location_icon {
           url
         }

@@ -130,6 +130,13 @@
         "placeholder": "Trail names of hiking partners"
       }
     },
+    "hikers_met" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "hikers_met",
+        "placeholder" : "Trail names of hikers encountered"
+      }
+    },
     "animals": {
       "type": "Text",
       "config": {
