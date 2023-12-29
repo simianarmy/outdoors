@@ -1,21 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // Utilities
-import kebabCase from 'lodash/kebabCase'
-import { each, trim } from "lodash";
+import kebabCase from 'lodash/kebabCase';
+import { each, trim } from 'lodash';
 
 // Components
-import { Link, graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/layout.js'
+import Layout from '../components/layout.js';
 
-const parseTagsFromString = (str) => str.split(',').map(t => trim(t, ' "'));
+const parseTagsFromString = (str) => str.split(',').map((t) => trim(t, ' "'));
 
 const TagsPage = ({
   data: {
     allMdx: { group },
-    allPrismicThruhikeSection: { edges }
+    allPrismicThruhikeSection: { edges },
   },
 }) => {
   // store mdx tags into map
@@ -24,9 +24,9 @@ const TagsPage = ({
     return acc;
   }, {});
   // count the tags from the prismic string data
-  each(edges, curr => {
+  each(edges, (curr) => {
     const tags = parseTagsFromString(curr.node.data.tags);
-    each(tags, t => {
+    each(tags, (t) => {
       if (tagCounts[t]) {
         tagCounts[t] += 1;
       } else {
@@ -36,22 +36,27 @@ const TagsPage = ({
   });
 
   return (
-  <Layout>
-    <div>
-      <h1 className="mt-8 mb-8 text-xl font-bold">All Tags</h1>
-      <ul>
-        {Object.keys(tagCounts).sort().map(tag => (
-          <li key={tag}>
-            <Link className="hover:underline" to={`/tags/${kebabCase(tag)}/`}>
-              {tag} ({tagCounts[tag]})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </Layout>
+    <Layout>
+      <div>
+        <h1 className="mt-8 mb-8 text-xl font-bold">All Tags</h1>
+        <ul>
+          {Object.keys(tagCounts)
+            .sort()
+            .map((tag) => (
+              <li key={tag}>
+                <Link
+                  className="hover:underline"
+                  to={`/tags/${kebabCase(tag)}/`}
+                >
+                  {tag} ({tagCounts[tag]})
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </div>
+    </Layout>
   );
-}
+};
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
@@ -69,20 +74,20 @@ TagsPage.propTypes = {
           node: PropTypes.shape({
             data: PropTypes.shape({
               tags: PropTypes.string.isRequired,
-            }).isRequired
+            }).isRequired,
           }),
-        }),
-      )
+        })
+      ),
     }),
   }),
-}
+};
 
-export default TagsPage
+export default TagsPage;
 
 export const pageQuery = graphql`
-  query {
+  {
     allMdx(limit: 2000, filter: {}) {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         fieldValue
         totalCount
       }
@@ -97,4 +102,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

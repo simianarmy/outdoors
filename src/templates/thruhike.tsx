@@ -101,48 +101,46 @@ export const Head = (props: HeadProps<HeadDataProps>) => {
   return <SEO title={props.data.prismicThruhike.data.display_title.text} />
 };
 
-export const query = graphql`
-  query($slug: String) {
-    prismicThruhike(uid: { eq: $slug }) {
-      data {
-        blurb {
-          richText
-        }
-        display_title {
-          text
-        }
-        icon {
-          url
-        }
-        lighterpack_link {
-          url
-        }
-        num_zero_days
-        num_nero_days
-        num_shoes_worn
-        pack_base_weight
+export const query = graphql`query ($slug: String) {
+  prismicThruhike(uid: {eq: $slug}) {
+    data {
+      blurb {
+        richText
       }
+      display_title {
+        text
+      }
+      icon {
+        url
+      }
+      lighterpack_link {
+        url
+      }
+      num_zero_days
+      num_nero_days
+      num_shoes_worn
+      pack_base_weight
     }
-    allPrismicThruhikeSection(
-      filter: { data: { thruhike: { uid: { eq: $slug } } } }
-      sort: { fields: [data___start_time], order: ASC }
-    ) {
-      edges {
-        node {
-          uid
-          data {
-            end_time
-            ending_location
-            location_icon {
-              url
-              alt
-            }
-            start_time
-            starting_location
-            total_miles
+  }
+  allPrismicThruhikeSection(
+    filter: {data: {thruhike: {uid: {eq: $slug}}}}
+    sort: {data: {start_time: ASC}}
+  ) {
+    edges {
+      node {
+        uid
+        data {
+          end_time
+          ending_location
+          location_icon {
+            url
+            alt
           }
+          start_time
+          starting_location
+          total_miles
         }
       }
     }
   }
-`;
+}`;

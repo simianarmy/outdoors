@@ -92,8 +92,8 @@ exports.createPages = async ({ graphql, actions }) => {
    * query both mdx and primic data
    */
   const allMdx = await graphql(`
-    query {
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    {
+      allMdx(sort: { frontmatter: { date: DESC } }) {
         edges {
           node {
             fields {
@@ -112,8 +112,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
   const allPrismic = await graphql(`
-    query {
-      allPrismicThruhike(sort: { fields: [data___start_date], order: DESC }) {
+    {
+      allPrismicThruhike(sort: { data: { start_date: DESC } }) {
         edges {
           node {
             uid
@@ -123,9 +123,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allPrismicThruhikeSection(
-        sort: { fields: [data___start_time], order: DESC }
-      ) {
+      allPrismicThruhikeSection(sort: { data: { start_time: DESC } }) {
         edges {
           node {
             uid

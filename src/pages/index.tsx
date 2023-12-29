@@ -47,41 +47,39 @@ export default function IndexPage({ data }: PageProps) {
   );
 }
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        keywords
-      }
+export const query = graphql`{
+  site {
+    siteMetadata {
+      title
+      keywords
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
-          id
-          body
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            tags
-          }
-          excerpt
-          fields {
-            slug
-          }
+  }
+  allMdx(sort: {frontmatter: {date: DESC}}) {
+    totalCount
+    edges {
+      node {
+        id
+        body
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          tags
         }
-      }
-    }
-    allPrismicThruhike(sort: { fields: [data___start_date], order: DESC }) {
-      edges {
-        node {
-          uid
-          data {
-            nav_title
-          }
+        excerpt
+        fields {
+          slug
         }
       }
     }
   }
-`;
+  allPrismicThruhike(sort: {data: {start_date: DESC}}) {
+    edges {
+      node {
+        uid
+        data {
+          nav_title
+        }
+      }
+    }
+  }
+}`;

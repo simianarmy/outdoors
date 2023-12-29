@@ -1,45 +1,52 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // Components
-import { Link, graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby';
 import sortBy from 'lodash/sortBy';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
-  const { edges, totalCount: mdxCount } = data.allMdx
-  const { edges: thruEdges, totalCount: thruCount } = data.allPrismicThruhikeSection;
+  const { tag } = pageContext;
+  const { edges, totalCount: mdxCount } = data.allMdx;
+  const { edges: thruEdges, totalCount: thruCount } =
+    data.allPrismicThruhikeSection;
   const totalCount = mdxCount + thruCount;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } tagged with "${tag}"`
+  } tagged with "${tag}"`;
 
   // normalize edges
   let allNodes = edges.map(({ node }) => ({
     title: node.frontmatter.title,
-    slug: node.fields.slug
+    slug: node.fields.slug,
   }));
-  allNodes = allNodes.concat(thruEdges.map(({ node }) => ({
-    title: node.data.starting_location,
-    slug: `/${node.uid}`
-  })));
+  allNodes = allNodes.concat(
+    thruEdges.map(({ node }) => ({
+      title: node.data.starting_location,
+      slug: `/${node.uid}`,
+    }))
+  );
 
   return (
     <Layout>
       <h1 className="my-4 text-3xl">{tagHeader}</h1>
       <ul>
         {sortBy(allNodes, [(n) => n.title]).map(({ slug, title }) => (
-            <li key={slug}>
-              <Link className="hover:underline" to={slug}>{title}</Link>
-            </li>
+          <li key={slug}>
+            <Link className="hover:underline" to={slug}>
+              {title}
+            </Link>
+          </li>
         ))}
       </ul>
-      <Link className="hover:underline text-blue-600" to="/tags">All tags</Link>
+      <Link className="hover:underline text-blue-600" to="/tags">
+        All tags
+      </Link>
     </Layout>
-  )
-}
+  );
+};
 
 Tags.propTypes = {
   pageContext: PropTypes.shape({
@@ -67,19 +74,18 @@ Tags.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             uid: PropTypes.string.isRequired,
-            data: PropTypes.shape({
-            }),
+            data: PropTypes.shape({}),
           }),
-        }),
+        })
       ),
     }),
   }),
-}
+};
 
-export default Tags
+export default Tags;
 
 export const pageQuery = graphql`
-  query($tag: String, $regexTag: String) {
+  query ($tag: String, $regexTag: String) {
     allPrismicThruhikeSection(
       filter: { data: { tags: { regex: $regexTag } } }
     ) {
@@ -96,7 +102,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
@@ -112,4 +118,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

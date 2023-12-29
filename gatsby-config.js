@@ -5,6 +5,7 @@ require('dotenv').config({
 });
 
 module.exports = {
+  trailingSlash: `always`,
   siteMetadata: {
     title: 'Notes on Travels in Nature',
     description: "Marc Mauger's backpacking trip reports",
