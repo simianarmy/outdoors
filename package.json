@@ -64,6 +64,6 @@
     "url": "git@github.com:simianarmy/outdoors.git"
   },
   "lint-staged": {
-    "*.js": "prettier --write"
+    "!(node_modules/**/*)*.{js,ts,json,css,scss,html}": "prettier --write"
   }
 }
