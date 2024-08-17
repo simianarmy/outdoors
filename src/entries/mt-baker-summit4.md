@@ -1,8 +1,8 @@
 ---
 title: Mount Baker 4 - Easton Glacier
 date: 2024-06-08
-cover: ../images/IMG_0394.png
-photos: https://photos.app.goo.gl/GCm2TneeBzN7mPXDA
+cover: ../images/bakersummithat.jpeg
+photos:
 difficulty: Class 3
 distance: ~15 miles (round trip)
 nights: 1
@@ -40,19 +40,19 @@ Everyone seemed excited about the trip & we made good time to high camp roughly 
 We did some z-pulley / crevasse rescue training in our rope teams before gathering for dinner.  Early bedtime for the usual
 2AM? alpine start.  I didn't get any sleep as usual.
 
-We were all ready to go at 2 & were the 2nd rope team after Juliet's.  Scott - one of the BMC 24 students led our rope team.
+We were all ready to go & were the 2nd rope team after Juliet's.  Scott - one of the BMC 24 students led our rope team.
 Juliet led us on the standard route though the snow was
 noticeably softer than last year.  We all struggled a bit postholing even on the beginning of the glacier.  At some point
-someone noticed a string of lights in the sky which was a Starlink sattelite launch.  We didn't need crampons for quite 
-a while as the snow was soft enough for kick stepping.  Once the grade steepened we eventually stoppred for crampons & 
+someone noticed a string of lights in the sky which was a Starlink satellite launch.  We didn't need crampons for quite 
+a while as the snow was soft enough for kick stepping.  Once the grade steepened we eventually stopped for crampons & 
 continued on.
 
-Slow but steady progress until sunrise as we got to the crater and took a quick break though it seemed like my team was raring to get moving no doubt
+Slow but steady progress until sunrise as we got to the crater and took a quick break though it seemed like my team was rareing to get moving - no doubt
 due to the cold.  The Roman wall was harder for me than last time for some reason - couldve been b/c I had thermal layers on which 
 was too much for such a warm day.  Finally crested onto the flatter summit and I appreciated being off the rope and able to rest.
 Quick pix at the summit then hung out for a while with the other teams who were just arriving.
 
-Long descent as usual & the sun was melting the snow further making the downards stepping sloshy and difficult.  It took a lot 
+Long descent as usual & the sun was melting the snow further making the downwards stepping sloshy and difficult.  It took a lot 
 of energy & we were all ready to lie down at camp despite the relentless sun.
 
 Ate some breakfast and melted some snow as I had probably sweated out my body weight.  Long break at camp as we waited for the rest
