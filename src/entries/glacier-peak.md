@@ -9,7 +9,7 @@ nights: 2
 maxElevation: 10,541 ft
 jurisdiction: Glacier Peak Wilderness
 map: Green Trails - Glacier Peak
-trailhead: White Pass
+trailhead: North Fork Sauk
 tags: [
     'washington',
     'north cascades',
