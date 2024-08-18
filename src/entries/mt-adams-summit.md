@@ -2,7 +2,7 @@
 title: Mount Adams
 date: 2024-07-20
 cover: ../images/IMG_1676.jpeg
-photos:
+photos: https://www.icloud.com/sharedalbum/#B0YGWBC59GokOz8
 difficulty: Class 2
 distance: ~12 miles (round trip)
 nights: 1
