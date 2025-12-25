@@ -8,7 +8,7 @@ distance: 37 miles
 nights: 2
 maxElevation: 6981 ft
 jurisdiction: Mt Rainier National Park
-map:
+map: https://www.gaiagps.com/map/?loc=11.5/-121.7199/46.9426&pubLink=wFtW90QEo9F4biU3qQe3UJGT&trackId=92194b989a4f03ac317f0f3bbf1e8796
 trailhead: Sunrise
 tags: ["wonderland trail", "wonderland north", "2025", "cascades", "washington",
 "hike", "30-40 miles", "mt rainier", "volcano", "bear", "white river", "mystic lake",
