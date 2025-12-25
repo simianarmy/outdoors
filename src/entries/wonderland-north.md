@@ -15,6 +15,8 @@ tags: ["wonderland trail", "wonderland north", "2025", "cascades", "washington",
 "lake james trail", "berkeley park"]
 ---
 
+<iframe src="https://www.gaiagps.com/public/wFtW90QEo9F4biU3qQe3UJGT/?embed=True" style="border:none; overflow-y: hidden; background-color:white; min-width: 320px; max-width:420px; width:100%; height: 420px;" seamless></iframe>
+
 Late season long weeked hike around the less-traveled Wonderland North loop.
 
 Drove Thur evening to White River ranger station and slept in car to secure good
@@ -85,4 +87,5 @@ there 2 days earlier.
 ### Fun Facts
 
 - Bear sighting was nice - missed a Cinnamon-colored mama bear
+
 
