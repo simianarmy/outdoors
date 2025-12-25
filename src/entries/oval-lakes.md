@@ -8,8 +8,8 @@ distance: 18 miles
 nights: 1
 maxElevation: 7677 ft
 jurisdiction:
-map: Gaia
-trailhead:
+map: https://www.gaiagps.com/map/?loc=11.3/-120.4362/48.3093&pubLink=oytcAESOQLtSiPkBW8CR2mzv&trackId=25a02a3871afaf537577a2162e11dc87
+trailhead: Eagle Creek
 tags: ["oval lake", "2025", "cascades", "washington", "hike", "10-20 miles",
 "snow", "avalanche", "east cascades", "twisp", "eagle creek", "gray peak"]
 ---
