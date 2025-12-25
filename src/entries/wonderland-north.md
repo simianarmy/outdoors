@@ -10,7 +10,7 @@ maxElevation: 6981 ft
 jurisdiction: Mt Rainier National Park
 map:
 trailhead: Sunrise
-tags: ["wonderland trail", "wonderland north" "2025", "cascades", "washington",
+tags: ["wonderland trail", "wonderland north", "2025", "cascades", "washington",
 "hike", "30-40 miles", "mt rainier", "volcano", "bear", "white river", "mystic lake",
 "lake james trail", "berkeley park"]
 ---
