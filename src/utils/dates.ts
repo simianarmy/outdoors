@@ -6,9 +6,10 @@
  * @returns {String} Month DD format
  */
 export function displayMonthAndDay(timestamp: string): string {
-  return Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "2-digit",
+  return Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: '2-digit',
+    timeZone: 'UTC',
   }).format(new Date(timestamp));
 }
 
@@ -20,7 +21,8 @@ export function displayDate(date: Date): string {
     year: 'numeric',
     month: 'short',
     day: '2-digit',
-  }).format(date)
+    timeZone: 'UTC',
+  }).format(date);
 }
 
 /**
@@ -31,7 +33,8 @@ export function displayDateTime(date: Date): string {
     month: 'short',
     day: '2-digit',
     hour: 'numeric',
-  }).format(date)
+    timeZone: 'UTC',
+  }).format(date);
 }
 
 export function displayDateTimeFromTimestamp(ts: string): string {
@@ -40,7 +43,7 @@ export function displayDateTimeFromTimestamp(ts: string): string {
 
 export function calculateNights(startTime: string, endTime: string): number {
   return Math.round(
-    (new Date(endTime).getTime() - new Date(startTime).getTime()) / (86400 * 1000)
+    (new Date(endTime).getTime() - new Date(startTime).getTime()) /
+      (86400 * 1000)
   );
 }
-
