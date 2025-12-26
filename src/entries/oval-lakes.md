@@ -96,4 +96,6 @@ so was able to go at my own speed.
 
 ### Fun Facts
 
+- Big branch fell on tarp in the middle of the night - scared me!
+
 - Nothing really fun about avalanches
