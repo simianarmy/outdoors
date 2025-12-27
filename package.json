@@ -1,7 +1,7 @@
 {
   "name": "simianarmy.com",
   "description": "Backpacking trip report site generator",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "author": "simianarmy@gmail;com",
   "dependencies": {
     "@mdx-js/react": "^2.0.0",
